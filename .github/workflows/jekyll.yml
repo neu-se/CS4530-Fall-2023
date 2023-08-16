@@ -18,3 +18,4 @@ jobs:
           CANVAS_COURSE_ID: ${{secrets.CANVAS_COURSE_ID}}
           CANVAS_BASE_URL: ${{ secrets.CANVAS_BASE_URL }}
           JEKYLL_NO_BUNDLER_REQUIRE: true
+          ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
