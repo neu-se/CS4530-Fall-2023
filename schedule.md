@@ -7,4 +7,4 @@ has_children: true
 has_toc: true
 ---
 
-Given the synchronization amongst the sections, and the academic calendar starting on a Monday, the course material generally is designed to run on weeks from Monday-Friday. We provide a schedule for each section:
+Given the synchronization amongst the sections, and the academic calendar starting on a Wednesday, the course material generally is designed to run on weeks from Wednesday-Tuesday. We provide a schedule for each section:
