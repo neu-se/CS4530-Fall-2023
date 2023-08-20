@@ -51,7 +51,8 @@ Your code will automatically be evaluated for linter errors and warnings. Submis
 
 Your code will be automatically evaluated for functional correctness by a test suite that expands on the core tests that are distributed in the handout. 
 Your tests will be automatically evaluated for functional correctness by a process that will inject bugs into our reference solution: to receive full marks your tests must detect a minimum number of injected bugs. 
-You will __not__ receive detailed feedback on which injected bugs you do or do not find, and you will __not__ receive detailed feedback on which tests you do or do not pass.
+Each submission will be graded against the same set of injected bugs (repeated submissions will not receive new/different injected bugs).
+You will __not__ receive detailed feedback on which injected bugs you do or do not find.
 
 The autograding script will impose a strict rate limit of 5 submissions per 24 hours.
 Submissions that fail to grade will not count against the quota.
@@ -150,6 +151,7 @@ export interface TicTacToeGameState {
 }
 /**
  * Type for a move in TicTacToe
+ * The row and column are 0-indexed, so the top left square is (0,0) and the bottom right square is (2,2)
  */
 export interface TicTacToeMove {
   gamePiece: "X" | "O";
