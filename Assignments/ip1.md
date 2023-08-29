@@ -131,7 +131,7 @@ classDiagram
 ## Implementation Tasks
 This deliverable has four parts; each part will be graded on its own rubric. You should complete the assignment one part at a time, in the order presented here.
 
-**General Requirements**: Implement your code *only* in the files specified: `src/games/TicTacToeGame.ts`, `src/games/TicTacToeGame.test.ts` and `src/games/TicTacToeGameArea.ts`. You should not install any additional dependencies. The autograder will ignore any other files that you modify, and will not install any dependencies that you add to the project.
+**General Requirements**: Implement your code *only* in the files specified: `src/town/games/TicTacToeGame.ts`, `src/town/games/TicTacToeGame.test.ts` and `src/town/games/TicTacToeGameArea.ts`. You should not install any additional dependencies. The autograder will ignore any other files that you modify, and will not install any dependencies that you add to the project.
 
 ### Task 1: Joining and Leaving the TicTacToeGame (24 points)
 The `TicTacToeGame` class extends the base `Game` class, implementing the semantics of the game Tic-Tac-Toe. Avery has provided a definition for the types that will be used to represent the state of a `TicTacToeGame` - `TicTacToeGameState`. That type definition is reproduced below:
