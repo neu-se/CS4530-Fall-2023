@@ -147,17 +147,18 @@ export interface TicTacToeGameState {
   x?: PlayerID;
   o?: PlayerID;
   winner?: PlayerID;
-  status: "IN_PROGRESS" | "WAITING_TO_START" | "OVER";
+  status: 'IN_PROGRESS' | 'WAITING_TO_START' | 'OVER';
 }
 /**
  * Type for a move in TicTacToe
  * The row and column are 0-indexed, so the top left square is (0,0) and the bottom right square is (2,2)
  */
 export interface TicTacToeMove {
-  gamePiece: "X" | "O";
-  row: number;
-  col: number; 
+  gamePiece: 'X' | 'O';
+  row: TicTacToeGridPosition;
+  col: TicTacToeGridPosition;
 }
+export type TicTacToeGridPosition = 0 | 1 | 2;
 {% endhighlight %}
 
 As a gentle introduction to this abstraction, your first task is to implement the `_join` and `_leave` methods of `TicTacToeGame`. To implement these methods, you should not need to read any other parts of the codebase - you will not need to access other methods or properties in `Game`, aside from `this.state`.
@@ -197,11 +198,9 @@ Grading for implementation tasks:
 
 Grading for testing tasks:
 * `_join`:
-  * 6 points for detecting all N faults, or
-  * 2 points for detecting at least M faults
-* `_leave`
-  * 6 points for detecting all Q faults, or
-  * 4 points for detecting at least R faults
+  * 6 points for detecting all 25 faults, or
+  * 3 points for detecting 24 faults
+* `_leave`: 6 points 
 
 ### Task 2: Tic-Tac-Toe Game Semantics (50 points total)
 The next (and largest) task for this deliverable is to implement the method `TicTacToeGame.applyMove`, which applies a player's move to the game. This method is responsible for validating the move, and updating the game state to reflect the move. Given the complexity of this method, you should anticipate creating (at least one) private, helper method to implement its logic.
@@ -214,7 +213,6 @@ The next (and largest) task for this deliverable is to implement the method `Tic
    * Validates the move before applying it. If the move is invalid, throws an InvalidParametersError with
    * the error message specified below.
    * A move is invalid if:
-   *    - The move is out of bounds (not in the 3x3 grid - use MOVE_OUT_OF_BOUNDS_MESSAGE)
    *    - The move is on a space that is already occupied (use BOARD_POSITION_NOT_EMPTY_MESSAGE)
    *    - The move is not the player's turn (MOVE_NOT_YOUR_TURN_MESSAGE)
    *    - The game is not in progress (GAME_NOT_IN_PROGRESS_MESSAGE)
@@ -240,7 +238,9 @@ Grading for implementation tasks:
   
 Grading for testing tasks:
 * Applying moves: 6 points
-* Checking for invalid moves: 7 points
+* Checking for invalid moves:
+  * 7 points for detecting all 35 faults
+  * 4 points for detecting 34 faults
 * Handling game-ending moves: 9 points
 
 ### Task 3: Implement the TicTacToeGameArea (16 points total)
