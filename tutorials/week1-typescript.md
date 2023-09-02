@@ -68,17 +68,18 @@ The boolean type has two values: true and false.
 Example:
 ```ts
 let a = true                // boolean
-     var b = false               // boolean
-     const c = true              // true
-     let d: boolean = true       // boolean
-     let e: true = true          // true
+var b = false               // boolean
+const c = true              // boolean
+let d: boolean = true       // boolean
+let e: true = true          // true (can't be assigned the value 'false')
+let f: false = false        // false (can't be assigned the value 'true')
 ```
 *   _Usage_: 
-You can compare them (with ==, ===, ||, &&, and ?), negate them (with !).
+You can use logical operators like `&&` (AND), `||` (OR), or `!` (NOT), relational operators like `==` or `===`, and the conditional operator `?`.
 
 ### Number
 
-Number is the set of all numbers: integers, floats, positives, negatives, Infinity, NaN. 
+`Number`` is the set of all numbers: integers, floats, positives, negatives, Infinity, NaN. 
 
 Example: 
 ```ts
@@ -94,7 +95,7 @@ Numbers can do things, like addition (+), subtraction (-), modulo (%), and compa
 
 ### BigInt
 
-The bigint type is the set of all BigInts, and supports things like addition (+), subtraction (-), multiplication (*), division (/), and comparison (<). 
+The bigint type is the set of all BigInts, used to represent numeric values that are too large to be represented by `number` and supports things like addition (+), subtraction (-), multiplication (*), division (/), and comparison (<). 
 
 Example: 
 ```ts
@@ -122,33 +123,70 @@ let c = a + b               // any
 ```
 
 *   _Usage_: 
-Any functionality that requires the functionality of a  string of characters. Here are a couple of string operations:
+Any functionality that requires the functionality of a string of characters.
 
-**charAt()** : This method returns the character from the specified index. Characters in a string are indexed from left to right. The index of the first character is 0, and the index of the last character in a string, called stringName, is stringName.length – 1. 
+ Here are some common string operations:
+
+#### charAt() 
+This method returns the character at the specified index. Characters in a string are indexed from left to right. The index of the first character is 0, and the index of the last character in a string, called stringName, is stringName.length – 1. 
 
 Syntax: 
 ```ts
 string.charAt(index)
 ```
-**slice()** : This method extracts a section of a string and returns a new string. 
+Example
+```ts
+const petName = 'Champion';
+const thirdCharacter: string = petName.charAt(2) // 'a'
+```
+#### slice()
+This method extracts a section of a string and returns a new string. 
+
 Syntax:
 ```ts 
 string.slice( beginslice [, endSlice])
 ```
-**split()** : This method splits a String object into an array of strings by separating the string into substrings. 
+Example:
+```ts
+const message = 'Welcome to CS4530!';
+const course = message.slice(11, -1); // CS4530
+```
+#### split()
+This method splits a String object into an array of strings by separating the string into substrings. 
+
 Syntax: 
 ```ts 
 string.split([separator][, limit])
 ```
-**concat()**: This method adds two or more strings and returns a new single string. 
+Example:
+```ts
+const csv = 'item1,item2,item3';
+const items = csv.split(','); // ['item1', 'item2', 'item3']
+```
+#### concat()
+ This method adds two or more strings and returns a new single string. 
+
 Syntax: 
 ```ts 
 string.concat(string2, string3[, ..., stringN])
 ```
-**indexOf()**: This method returns the index within the calling String object of the first occurrence of the specified value, starting the search at index or -1 if the value is not found. 
+Example:
+```ts
+const username = 'avery';
+const domain = 'coveytown.app';
+const email = username.concat('@',domain); // avery@coveytown.app
+```
+#### indexOf() 
+This method returns the index within the calling String object of the first occurrence of the specified value, starting the search at index or -1 if the value is not found.
+
 Syntax: 
 ```ts 
 string.indexOf(searchValue[, fromIndex])
+```
+Example
+```ts
+const message = 'Welcome to CS4530!';
+const courseIndex = message.indexOf('CS4530'); // 11
 ```
 ### Arrays
 
@@ -232,9 +270,9 @@ For the few cases where you have a value whose type you really don’t know ahea
 
 Variables can be declared in Typescript using one of 3 keywords:
 
-*   _var_:  var declarations are accessible anywhere within their containing function, module, namespace, or global scope - all which we’ll go over later on - regardless of the containing block. Some people call this var-scoping or function-scoping. Parameters are also function scoped.
-*   _let_: When a variable is declared using let, it uses what some call lexical-scoping or block-scoping. Unlike variables declared with var whose scopes leak out to their containing function, block-scoped variables are not visible outside of their nearest containing block.
-*   _const_: They are like let declarations but, as their name implies, their value cannot be changed once they are bound. In other words, they have the same scoping rules as let, but you can’t re-assign to them.
+*   _var_:  `var`` declarations are accessible anywhere within their containing function, module, namespace, or global scope - all which we’ll go over later on - regardless of the containing block. Some people call this var-scoping or function-scoping. Parameters are also function scoped.
+*   _let_: When a variable is declared using `let`, it uses what some call lexical-scoping or block-scoping. Unlike variables declared with `var` whose scopes leak out to their containing function, block-scoped variables are not visible outside of their nearest containing block.
+*   _const_: They are like `let` declarations but, as their name implies, their value cannot be changed once they are bound. In other words, they have the same scoping rules as `let`, but you can’t re-assign to them.
 
 The syntax of declarations is as below:
 ```ts
@@ -374,23 +412,31 @@ Typescript contains the following loops:
 
 Examples:
 ```ts
-for(let i: number = 0; i < 10; i++) {
+for(let i: number = 0; i < 10; i++) { // iterates from 0 to 10 (exclusive)
 
 }
 
-while(condition) {
+for (let element of arr) { // iterates over each element of the array
+
+}
+
+for (let index in arr) { // iterates through the array, returning an index
+
+}
+
+while(condition) {  // iterates while the conditon is true
 
 }
 
 do {
 
-} while(condition)
+} while(condition)  // iterates while the condition is true; runs at-least once
 ``` 
 ## Array Functions
 
-ForEach, Map, reduce, and filter are all array methods in JavaScript. Each one will iterate over an array and perform a transformation or computation. Each will return a new array based on the result of the function.
+`forEach`, `map`, `reduce`, and `filter` are all array methods in JavaScript. Each one will iterate over an array and perform a transformation or computation.
 
-## ForEach
+## forEach
 
 forEach() method calls a function for each element in the array. It returns the resultant array.
 
@@ -402,13 +448,13 @@ array.forEach(callback[, thisObject]);
 Example
 ```ts
 let num = [7, 8, 9];
-num.forEach(function (value) {
+num.forEach((value) => {
   console.log(value);
-}); 
+}); // 7 8 9
 ```
 ## Map
 
-It is an array function that transforms the array according to the applied function and returns the updated array. It works on each element of an array.
+It is an array function that iterates over each element of the original array and applies the given transformations, resulting in a new array of the same size as the original array.
 
 Syntax
 ```ts  
@@ -423,7 +469,7 @@ Return Type - List
 Examples
 ```ts  
 //Calculate cube of each element with the help of map. 
-function cube(n){  
+const cube = (n: number): number => {  
    return n*n*n;  
 }  
 var arr=new Array(1,2,3,4)  
@@ -665,9 +711,9 @@ Examples:
 ```ts
 class Person {
 
-    private firstName: string = '';
-    protected middleName: string;
-    public lastName: string = '';
+    private _firstName: string = '';
+    protected _middleName: string;
+    public _lastName: string = '';
 
     private static final NeverGonnaGiveYouUp: any;
     protected static final NeverGonnaLetYouDown: any;
@@ -683,11 +729,11 @@ class Person {
         this.childClassesCanCallMe();
     }
 
-    protected childClassesCanCallMe(): void {
+    protected _childClassesCanCallMe(): void {
         this.onlyPersonCanCallMe();
     }
     
-    private onlyAccessibleInsidePerson(): void {
+    private _onlyAccessibleInsidePerson(): void {
         // I lied, anyone can call me if you know how.
         // Welcome to JavaScript :p
     }
@@ -727,19 +773,24 @@ Example:
 ```ts
 abstract class Person {
  abstract name: string;
+
  display(): void{
      console.log(this.name);
  }
 }
+
 class Employee extends Person {
  name: string;
+
  empCode: number;
+
   constructor(name: string, code: number) {
      super(); // must call super()
      this.empCode = code;
      this.name = name;
  }
 }
+
 let emp: Person = new Employee("James", 100);
 emp.display(); //James
 ```
@@ -918,29 +969,31 @@ Object Oriented Programming or OOP is a programming paradigm that has four princ
 
 TypeScript supports the concept of Inheritance. Inheritance is the ability of a program to create new classes from an existing class. The class that is extended to create newer classes is called the parent class/super class. The newly created classes are called the child/sub classes.
 
-A class inherits from another class using the ‘extends’ keyword. Child classes inherit all properties and methods except private members and constructors from the parent class. However, TypeScript doesn’t support multiple inheritance.
+A class inherits from another class using the `extends` keyword. Child classes inherit all properties and methods except private members and constructors from the parent class. However, TypeScript doesn’t support multiple inheritance.
 
 Syntax: 
 ```ts
-class child_class_name extends parent_class_name
+class ChildClass extends ParentClass
 ```
 
 Example:
 ```ts
 //Parent class Shape
 class Shape {
- Area:number
+ area:number
+
   constructor(a:number) {
-    this.Area = a
+    this.area = a
  }
 }
 
 //Child class Circle that inherits properties of Shape 
 class Circle extends Shape {
  disp():void {
-    console.log("Area of the circle:  "+this.Area)
+    console.log("Area of the circle:  "+this.area)
  }
 }
+
 var obj = new Circle(223);
 obj.disp()
 ```
@@ -948,7 +1001,7 @@ obj.disp()
 
 When multiple classes inherit from a parent and override the same functionality, the result is polymorphism. Each of those child classes now implements a property or method, but they each may have their own way of performing that implementation. 
 
-lternatively, one child class might override the parent’s members while another child doesn’t but just accepts the parent class’s implementation instead. This also demonstrates polymorphic behavior, since those behaviors are different between the siblings. 
+Alternatively, one child class might override the parent’s members while another child doesn’t but just accepts the parent class’s implementation instead. This also demonstrates polymorphic behavior, since those behaviors are different between the siblings. 
 
 ```ts
 class CheckingAccount {
@@ -976,13 +1029,11 @@ class PersonalCheckingAccount extends CheckingAccount {
 }
 ```
 
-In the above code sample shows, the two child classes have different business rules to implement when it comes to opening an account – mainly different opening balances. Because both children have a method to open the account but both children choose to do it differently means the behavior is polymorphic.
+In the above example, the two child classes have different business rules to implement when it comes to opening an account – mainly different opening balances. Because both children have a method to open the account but both children choose to do it differently means the behavior is polymorphic.
 
-To achieve polymorphism, inherit from a base class, then override methods and write implementation code in them. In addition to overriding methods, you can overload methods to achieve polymorphism.
+To achieve polymorphism, start by inheriting from a base class and then override methods while providing custom implementations. 
 
-Overloaded methods are methods that have different signatures (i.e., different data types or number of arguments) with the same name. However, in TypeScript, methods aren’t overloaded by simply modifying the types or number of arguments like in some other languages. 
- 
-To create an overload in TypeScript, you can either add optional arguments to a method, or overload function declarations in an interface and implement the interface.
+In addition to overriding funtions, you can use function overloading to achieve polymorphism. Overloaded functions are functions that have the same name but different signatures (i.e., different data types or number of arguments). However, in TypeScript, it is not possible to overload functions by simply modifying the types or number of arguments like in some other languages. To create an overload in TypeScript, you can either add optional arguments to a method, or overload function declarations in an interface and implement the interface.
 
 
 ## Abstraction
