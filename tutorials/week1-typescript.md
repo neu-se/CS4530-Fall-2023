@@ -116,9 +116,9 @@ String is the set of all strings and the things you can do with them like concat
 
 Example: 
 ```ts
-let a: any = 666            // any
-let b: any = ['danger']     // any
-let c = a + b               // any
+let a: string = 'hello'           // any
+let b: string = 'world'           // any
+let c: string = a + ' ' + b       // any
 ```
 
 *   _Usage_: 
@@ -795,7 +795,7 @@ interface IPerson {
     getFullName(): string;
 }
 
-//Class Person implements interface Iperson. Person class must contains ll the attributes and methods of interface. 
+//Class Person implements interface Iperson. Person class must contains all the attributes and methods of interface. 
 class Person implements IPerson {
 
     public firstName: string = '';
@@ -948,7 +948,7 @@ obj.disp()
 
 When multiple classes inherit from a parent and override the same functionality, the result is polymorphism. Each of those child classes now implements a property or method, but they each may have their own way of performing that implementation. 
 
-lternatively, one child class might override the parent’s members while another child doesn’t but just accepts the parent class’s implementation instead. This also demonstrates polymorphic behavior, since those behaviors are different between the siblings. 
+Alternatively, one child class might override the parent’s members while another child doesn’t but just accepts the parent class’s implementation instead. This also demonstrates polymorphic behavior, since those behaviors are different between the siblings. 
 
 ```ts
 class CheckingAccount {
