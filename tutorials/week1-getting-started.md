@@ -69,7 +69,7 @@ You should see something like the following As of 1/09/23 on Windows, the most c
 
 ## Installation Steps (Linux / Mac)
 
-1. Run either `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash` or `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash`.
+1. Run either `curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash` or If `wget` is installed then run `wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash`.
 2. Close and reopen a terminal.
 3. Verify nvm is working by entering `command -v nvm`. If your terminal prints
 out `nvm`, it should be working. If you see `nvm: command not found` or no
