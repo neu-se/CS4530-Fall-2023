@@ -14,8 +14,10 @@ All TA office hours will be held virtually. We will explore the option of holdin
 
 TA Office Hours are hosted on Microsoft Teams, using the [Khoury Office Hours](https://officehours.khoury.northeastern.edu/course/154/today) app. Please see the user guide for information on how to log in and ask questions.
 
-## Instructors
+## Schedule
+{% include officeHours.html %}
 
+## Instructors
 {% assign instructors = site.staffers | where: 'role', 'Instructor' %}
 {% for staffer in instructors %}
 {{ staffer }}
@@ -25,10 +27,10 @@ TA Office Hours are hosted on Microsoft Teams, using the [Khoury Office Hours](h
 {% assign num_teaching_assistants = teaching_assistants | size %}
 {% if num_teaching_assistants != 0 %}
 ## Teaching Assistants
-{% include officeHours.html %}
-
 {% for staffer in teaching_assistants %}
 {{ staffer }}
 {% endfor %}
 {% endif %}
+
+
 
