@@ -56,9 +56,7 @@ have previously installed Node.js.
    - `node -v`
    - `npm -v`
 
-You should see something like the following As of 1/09/23 on Windows, the most current versions were: 
-       - node: 18.13.0
-       - npm: 8.19.3
+You should see something like the following As of 1/09/23 on Windows, the most current versions were: `node: 18.13.0` and `npm: 8.19.3`
   
 - ![image](./assets/week1-getting-started/node/nvmw-use-18.png)
 
