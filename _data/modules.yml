@@ -5,44 +5,44 @@
   name: Orientation & Requirements
   page: /modules/1-requirements-testing
 1b:
-  name: Test Driven Development
+  name: Test Driven Development & Typescript
   page: /modules/2-requirements-to-code
 2a:
-  name: Code-Level Design Principles
-  page: /modules/3-code-level-design-principles
+  name: 5 Best Practices for Effective Programmers
+  page: 
 2b:
   name: Design Patterns
-  page: /modules/4-interaction-level-design-patterns
+  page: 
 3a:
   name: Concurrency Patterns
-  page: /modules/5-concurrency-patterns-in-typescript
+  page: 
 3b:
   name: Software Process
-  page: /modules/6-software-process
+  page: 
 4a:
-  name: Intro to React
-  page: /modules/7-react
+  name: React Part 1 (Introduction)
+  page: 
 4b:
-  name: Patterns of React
-  page: /modules/8-patterns-of-react
+  name: React Part 2 (Common Patterns)
+  page: 
 5a:
-  name: Distributed Systems (Part 1)
-  page: /modules/9-distributed-systems-1
+  name: Distributed System Architectures (Part 1)
+  page: 
 5b:
-  name: Distributed Systems (Part 2)
-  page: /modules/10-distributed-systems-2
+  name: Distributed System Architectures (Part 2)
+  page: 
 6a:
-  name: What Makes a Good Test Suite?
-  page: /modules/11-good-tests
-6b:
   name: Tests with Larger Scope
-  page: /modules/12-larger-tests
+  page: 
+6b:
+  name: What Makes a Good Test Suite?
+  page: 
 7a:
   name: Principles for Cloud Deployment
-  page: /modules/13-cloud-infrastructure
+  page: 
 7b:
   name: Continuous Development
-  page: /modules/14-continuous-development
+  page: 
 8a:
   name: Work on project (Discuss project plan revisions)
 8b:
@@ -51,22 +51,22 @@
   name: Midterm
 9b:
   name: Security
-  page: /modules/15-security
+  page: 
 10a:
   name: Work on project
 10b:
   name: Technical Debt
-  page: /modules/16-technical-debt
+  page: 
 11a:
   name: Work on Project
 11b:
   name: Open Source
-  page: /modules/17-open-source
+  page: 
 12a:
   name: Work on Project
 12b:
   name: Ethics
-  page: /modules/18-equitable-software
+  page: 
 12c:
   name: Work on Project / Mini-Demo
 13a:
@@ -82,26 +82,26 @@ advanced:
 ip1:
   name: Individual Project Deliverable 1
   type: deadline
-  page: /assignments/ip1
+  page: 
 ip2:
   name: Individual Project Deliverable 2 
   type: deadline
-  page: /assignments/ip2  
+  page: 
 tp1:
   name: Project Formation
   type: deadline
 tp2:
   name: Preliminary Project Plan
   type: deadline
-  page: /assignments/project-plan
+  page: 
 tp3:
   name: Revised Project Plan
   type: deadline
-  page: /assignments/revised-project-plan
+  page: 
 tp4:
   name: Project Final Deliverable
   type: deadline
-  page: /assignments/project-deliverable
+  page: 
 veteransday:
   name: Veteran's Day (No class)
   type: holiday
