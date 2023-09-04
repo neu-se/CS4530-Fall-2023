@@ -55,6 +55,7 @@ have previously installed Node.js.
 10. Now, NodeJS should be installed and ready for use. To verify the installation run the below commands:
    - `node -v`
    - `npm -v`
+
 You should see something like the following As of 1/09/23 on Windows, the most current versions were: 
        - node: 18.13.0
        - npm: 8.19.3
