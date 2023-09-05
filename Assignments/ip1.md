@@ -41,8 +41,8 @@ The objectives of this assignment are to:
 
 ## Getting started with this assignment
 
-Before you begin, be sure to check that you have NodeJS 18.x installed, along with VSCode. We have provided a [tutorial on setting up a development environment for this class]({{site.baseurl}}tutorials/week1-getting-started.md) **TODO ADD LINK**
-Start by [downloading the starter code]({{site.baseurl}}{% link /Assignments/ip1-handout.zip %}). Extract the archive and run `npm install` to fetch the dependencies. Avery has provided you with some very basic sanity tests that you can extend for testing your implementation as you go.
+Before you begin, be sure to check that you have NodeJS 18.x installed, along with VSCode. We have provided a [tutorial on setting up a development environment for this class]({{site.baseurl}}{% link tutorials/week1-getting-started.md %}) 
+Start by [downloading the starter code]({{site.baseurl}}{% link /Assignments/ip1-handout.zip %}). Extract the archive and run `npm install` to fetch the dependencies. Avery has provided you with some very basic sanity tests that you can extend for testing your implementation as you go. You can run these tests with the command `npm test TicTacToe` (note that many tests are *expected* to fail until you have begun to implement the assignment).
 
 ## Grading
 This submission will be scored out of 100 points, 90 of which will be automatically awarded by the grading script, with the remaining 10 manually awarded by the course staff.
@@ -161,7 +161,7 @@ export interface TicTacToeMove {
 export type TicTacToeGridPosition = 0 | 1 | 2;
 {% endhighlight %}
 
-As a gentle introduction to this abstraction, your first task is to implement the `_join` and `_leave` methods of `TicTacToeGame`. To implement these methods, you should not need to read any other parts of the codebase - you will not need to access other methods or properties in `Game`, aside from `this.state`.
+As a gentle introduction to this abstraction, your first task is to implement the `_join` and `_leave` methods of `TicTacToeGame`. To implement these methods, you should not need to read any other parts of the codebase besides `Game.ts`.
 
 {::options parse_block_html="true" /}
 <details><summary markdown="span">View the specification for these methods</summary>
@@ -177,15 +177,17 @@ As a gentle introduction to this abstraction, your first task is to implement th
    */
   public _join(player: Player): void
 
-   /**
-   * Removes a player from the game.
-   * Updates the game's state to reflect the player leaving.
-   * If the game has already started, updates the game's status to OVER and sets the winner to the other player.
-   * If the game has not started yet, updates the game's status to WAITING_TO_START.
-   *
-   * @param player The player to remove from the game
-   * @throws InvalidParametersError if the player is not in the game (PLAYER_NOT_IN_GAME_MESSAGE)
-   */
+ /**
+  * Removes a player from the game.
+  * Updates the game's state to reflect the player leaving.
+  * If the game has two players in it at the time of call to this method,
+  *   updates the game's status to OVER and sets the winner to the other player.
+  * If the game does not yet have two players in it at the time of call to this method,
+  *   updates the game's status to WAITING_TO_START.
+  *
+  * @param player The player to remove from the game
+  * @throws InvalidParametersError if the player is not in the game (PLAYER_NOT_IN_GAME_MESSAGE)
+  */
   protected _leave(player: Player): void
 {% endhighlight %}
 </details>
