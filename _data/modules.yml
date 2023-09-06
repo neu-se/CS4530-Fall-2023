@@ -82,7 +82,7 @@ advanced:
 ip1:
   name: Individual Project Deliverable 1
   type: deadline
-  page: 
+  page: /assignments/ip1
 ip2:
   name: Individual Project Deliverable 2 
   type: deadline
