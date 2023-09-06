@@ -5,7 +5,7 @@ permalink: /assignments/ip1
 parent: Assignments
 nav_order: 1
 due_date: "TBD"
-submission_notes: Submit via GradeScope
+submission_notes: Submit via Autograder.io at neu.autograder.io
 ---
 
 Welcome aboard to the Covey.Town team! We're glad that you're here and ready to join our development team as a new software engineer.
@@ -290,14 +290,15 @@ Grading for implementation tasks:
 * Handling invalid commands: 1 point
 
 ## Submission Instructions
-Submit your assignment in GradeScope. The easiest way to get into GradeScope the first time is to first
-[sign into Canvas](https://northeastern.instructure.com/courses/152706) and then click the link on our course for "GradeScope". 
-You should then also have the option to create an account on GradeScope (if you don't already have one) so that you can log in to GradeScope directly.
-Please contact the instructors immediately if you have difficulty accessing the course on GradeScope.
+Submit your assignment to the instance of Autograder.io running at [neu.autograder.io](https://neu.autograder.io).
+Navigate to [neu.autograder.io](https://neu.autograder.io) in your web browser, click the "Sign in" button, and log in with your Northeastern account.
+You should then see the course listed on the neu.autograder.io home page.
+Please contact the instructors immediately if you have difficulty accessing the course on Autograder.io.
+If you haven't been added to the course roster yet, you can access the assignment page at [this direct link](https://neu.autograder.io/web/project/10).
 
-To submit your assignment: run the command `npm run zip` in the top-level directory of the handout. This will produce a file called `covey-town-townService.zip`. Submit that zip file on GradeScope.
+To submit your assignment: run the command `npm run zip` in the top-level directory of the handout. This will produce a file called `covey-town-townService.zip`. Submit that zip file on Autograder.io.
 
-GradeScope will provide you with feedback on your submission, but note that it will *not* include any marks that will be assigned after we manually grade your submission for code style (it will show 0 for this until it is graded). It may take several minutes for the grading script to complete.
+Autograder.io will provide you with feedback on your submission, but note that it will *not* include any marks that will be assigned after we manually grade your submission for code style (these marks will remain hidden until it is graded). It may take several minutes for the grading script to complete.
 
-GradeScope is configured to only provide feedback on at most 5 submissions per-24-hours per-student (submissions that fail to run or receive a grade of 0 are not counted in that limit). We strongly encourage you to lint and test your submission on your local development machine, and *not* rely on GradeScope for providing grading feedback - relying on GradeScope is a very slow feedback loop.
+Autograder.io is configured to only provide feedback on at most 5 submissions per-24-hours per-student (submissions that fail to run or receive a grade of 0 are not counted in that limit). We strongly encourage you to lint and test your submission on your local development machine, and *not* rely on Autograder.io for providing grading feedback - relying on Autograder.io is a very slow feedback loop.
 To check for linter errors, run the command `npm run lint` from the terminal. The handout contains the same eslint configuration that is used by our grading script.
