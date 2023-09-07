@@ -2,6 +2,6 @@
 name: Sai Sriker Reddy Vootukuri 
 role: Teaching Assistant
 email: vootukuri.s@northeastern.edu
-photo: 
+photo: staff/saisriker.jpg
 
 ---
