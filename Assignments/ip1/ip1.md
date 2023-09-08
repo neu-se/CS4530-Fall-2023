@@ -4,7 +4,7 @@ title: "Individual Project 1"
 permalink: /assignments/ip1
 parent: Assignments
 nav_order: 1
-due_date: "Wednesday September 20, 11:00am ET"
+due_date: "Wednesday September 20, 11:00am EDT"
 submission_notes: Submit via Autograder.io at neu.autograder.io
 ---
 
