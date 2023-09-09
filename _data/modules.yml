@@ -3,10 +3,10 @@
 # Each key has a "name" attribute (rendered on the calendar), a "page" attribute (which contains a link to the lesson) and an optional "type" attribute, which is a key into the _data/config.yml "types" dictionary.
 1a:
   name: Orientation & Requirements
-  page: 
+  page: /modules/1-requirements-testing
 1b:
   name: Test Driven Development & Typescript
-  page: 
+  page: /modules/2-requirements-to-code
 2a:
   name: 5 Best Practices for Effective Programmers
   page: 
@@ -82,7 +82,7 @@ advanced:
 ip1:
   name: Individual Project Deliverable 1
   type: deadline
-  page: 
+  page: /assignments/ip1
 ip2:
   name: Individual Project Deliverable 2 
   type: deadline
