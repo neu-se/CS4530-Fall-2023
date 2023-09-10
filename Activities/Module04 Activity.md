@@ -1,6 +1,6 @@
 ---
 layout: page
-title: Weather Station Observer Pattern Example
+title: Weather Station Observer Pattern Activity Handout
 nav_exclude: true
 ---
 

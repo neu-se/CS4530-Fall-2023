@@ -1,3 +1,9 @@
+---
+layout: page
+title: Traffic Light Activity Handout
+nav_exclude: true
+---
+
 ## Overview
 In this activity, you will do a simple example to help you recognize failure of the five code-level design principles 
 
