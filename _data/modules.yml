@@ -15,7 +15,7 @@
   page: /modules/4-interaction-level-design-patterns
 3a:
   name: Concurrency Patterns
-  page: 
+  page: /modules/5-concurrency-patterns-in-typescript
 3b:
   name: Software Process
   page: 
