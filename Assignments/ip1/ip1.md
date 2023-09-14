@@ -175,7 +175,7 @@ As a gentle introduction to this abstraction, your first task is to implement th
    * @throws InvalidParametersError if the player is already in the game (PLAYER_ALREADY_IN_GAME_MESSAGE)
    *  or the game is full (GAME_FULL_MESSAGE)
    */
-  public _join(player: Player): void
+  protected _join(player: Player): void
 
  /**
   * Removes a player from the game.
