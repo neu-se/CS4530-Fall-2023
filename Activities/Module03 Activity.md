@@ -8,7 +8,7 @@ nav_exclude: true
 In this activity, you will do a simple example to help you recognize failure of the five code-level design principles 
 
 ### Step 0: Getting started
-Start by dounloading the [(Starter Code)]({{ site.baseurl }}{% link Activities/module03-traffic-light-activity.zip %}).
+Start by downloading the [(Starter Code)]({{ site.baseurl }}{% link Activities/module03-traffic-light-activity.zip %}).
 Run `npm install` to download the dependencies for this project, and then open it in your IDE of choice. 
 Run `npm run test` to run the tests of the existing code (or run the script in VSC).  You will see that the tests pass.
 
