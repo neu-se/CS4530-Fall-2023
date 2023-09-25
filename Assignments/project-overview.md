@@ -23,7 +23,7 @@ Select projects from Fall 2022 are hosted [in our project showcase](https://neu-
 | -----| ----------- | ----------- |
 | 09/27/23| Team Formation Survey | Specify preferences for teammates |
 | 10/02/23| Project Kick-off Meeting | Schedule a meeting with your Mentor TA during this week |
-| 10/11/23 | Preliminary Project Plan | Propose a new feature for Covey.Town that can be planned and implemented within 7 weeks |
+| 10/11/23 | [Preliminary Project Plan]({{ site.baseurl }}{% link Assignments/project-plan.md %}) | Propose a new feature for Covey.Town that can be planned and implemented within 7 weeks |
 | 10/25/23 | Revised Project Plan | Refine the scope of your feature based on staff feedback, define detailed requirements and project acceptance criteria. |
 | 11/29/23 | Project Delivery - Implementation and Documentation | Deliver your new feature, including design documentation and tests |
 
