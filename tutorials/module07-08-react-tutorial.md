@@ -465,16 +465,14 @@ Let's break down this code to understand what is happening:
 
 3.  Let's remove the second parameter into useEffect now:
 
--   If no second parameter is provided it runs first on mount and then on every re-render.
-
 ```ts
 useEffect(() => {
     console.log(`The current count is ${count}`);
 });
 ```
 
--   Additionally we can also pass the variable in the array to observe only changes related to a particular value (as below).
 -   Now we can see that the componenet will render everytime the value of count is changed.
+-   Additionally we can also pass the variable in the array to observe only changes related to a particular value:
 
 ```ts
 useEffect(() => {
