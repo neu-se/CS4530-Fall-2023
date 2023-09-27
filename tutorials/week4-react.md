@@ -370,6 +370,8 @@ export default HelloWorld;
 
 For the list of all the supported events refer https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/forms_and_events/#list-of-event-types
 
+Please check the list of commom events and instances in which they are used https://react.dev/reference/react-dom/components/common
+
 ## React Hooks
 
 React hooks are built-in functions which allows us to use state and other lifecycle features. The most basic hooks used by react are useState() which adds a state variable to a react component and useEffect() which is the lifecycle hook for a component. State of component referes to the data it is holding at a particular moment in time.
@@ -509,3 +511,6 @@ function Counter() {
 
 export default Counter;
 ```
+
+
+- Please check the following reference to the Next.Js boiler plate and getting started with framework https://nextjs.org/learn/foundations/about-nextjs 
