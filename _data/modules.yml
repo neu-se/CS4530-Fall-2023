@@ -21,10 +21,10 @@
   page: /modules/6-software-process
 4a:
   name: React Part 1 (Introduction)
-  page: modules/7-react
+  page: /modules/7-react
 4b:
   name: React Part 2 (Common Patterns)
-  page: modules/8-patterns-of-react
+  page: /modules/8-patterns-of-react
 5a:
   name: Distributed System Architectures (Part 1)
   page: 
