@@ -3,7 +3,7 @@ layout: assignment
 title: "Individual Project 2"
 permalink: /assignments/ip2
 parent: Assignments
-nav_order: 1
+nav_order: 2
 due_date: "Wednesday October 18, 11:00am EDT"
 submission_notes: Submit via Autograder.io at neu.autograder.io
 ---
@@ -67,7 +67,7 @@ This deliverable has four parts; each part will be graded on its own rubric. You
 
 You should not install any additional dependencies. The autograder will ignore any other files that you modify, and will not install any dependencies that you add to the project.
 
-### Task 1: The TicTacToeAreaController (24 points)
+### Task 1: The TicTacToeAreaController (30 points)
 The `TicTacToeAreaController` is a class that is responsible for managing the state of a single TicTacToe game. It is responsible for communicating with the TownService backend. Frontend components will interact with the `TicTacToeAreaController` to get the current state of the game, and to send commands to the backend to update the game state. The `TicTacToeAreaController` also will emit events when the state of the game changes, so that frontend components can update their state accordingly.
 
 `TicTacToeAreaController` extends the base `GameAreaController` class.
@@ -172,7 +172,7 @@ Grading for the testing tasks:
 * Tests for `_updateFrom`: 5 points
 * Tests for `makeMove`: 5 points
 
-### Task 2: Tic-Tac-Toe Area (50 points total)
+### Task 2: Tic-Tac-Toe Area (85 points total)
 The next task is to implement the React component that will render the Tic-Tac-Toe game area. This component will show information about the game area, and the current state of the game. It displays the `TicTacToeBoard`` (which you'll implement in the next task), and also the `Leaderboard` component (which you'll implement in the task after that).
 
 This component is located in the file `frontend/src/components/Town/interactables/TicTacToe/TicTacToeArea.tsx` - you should implement component class in this file.
@@ -231,7 +231,7 @@ All of the tests are provided in the handout. Run the tests for this task by run
 
 The grading script will assign full marks for each implementation task if all of the tests for that task pass.  There is no partial credit. 
 
-### Task 3: Implement the Tic-Tac-Toe Board (16 points total)
+### Task 3: Implement the Tic-Tac-Toe Board (40 points total)
 This task is to implement the `TicTacToeBoard` component, which will render the actual (interactive) board. It is located in the file `frontend/src/components/Town/interactables/TicTacToe/TicTacToeBoard.tsx`.
 
 <details><summary markdown="span">View the specification for this component</summary>
@@ -268,7 +268,7 @@ All of the tests are provided in the handout. Run the tests for this task by run
 
 The grading script will assign full marks for each implementation task if all of the tests for that task pass.  There is no partial credit. 
 
-### Task 4: Implement the Leaderboard (10 points total)
+### Task 4: Implement the Leaderboard (15 points total)
 
 This task is to implement the `Leaderboard` component, which will render a list of `GameResult`s as a leaderboard. It is located in the file `frontend/src/components/Town/interactables/Leaderboard.tsx`.
 
