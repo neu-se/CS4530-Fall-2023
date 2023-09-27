@@ -89,15 +89,14 @@ Your first task is to implement each of the properties and methods of the `TicTa
    */
   get board(): TicTacToeCell[][]
   /**
-   * Returns the player with the 'X' game piece, if there is one
-   */
+   * Returns the player with the 'X' game piece, if there is one, or undefined otherwise   */
   get x(): PlayerController | undefined
   /**
    * Returns the player with the 'O' game piece, if there is one
    */
   get o(): PlayerController | undefined 
   /**
-   * Returns the number of moves that have been made in the game
+   * Returns the player with the 'O' game piece, if there is one, or undefined otherwise
    */
   get moveCount(): number
   /**
@@ -126,6 +125,7 @@ Your first task is to implement each of the properties and methods of the `TicTa
   get gamePiece(): 'X' | 'O'
   /**
    * Returns the status of the game.
+   * Defaults to 'WAITING_TO_START' if the game is not in progress
    */
   get status(): GameStatus
   /**
@@ -138,9 +138,11 @@ Your first task is to implement each of the properties and methods of the `TicTa
    * Calls super._updateFrom, which updates the occupants of this game area and
    * other common properties (including this._model).
    *
-   * If the board has changed, emits a 'boardChanged' event with the new board.
+   * If the board has changed, emits a 'boardChanged' event with the new board. If the board has not changed,
+   *  does not emit the event.
    *
    * If the turn has changed, emits a 'turnChanged' event with true if it is our turn, and false otherwise.
+   * If the turn has not changed, does not emit the event.
    */
   protected _updateFrom(newModel: GameArea<TicTacToeGameState>): void
   /**
@@ -179,7 +181,9 @@ This component is located in the file `frontend/src/components/Town/interactable
 {% highlight typescript %}
 /**
  * The TicTacToeArea component renders the TicTacToe game area.
- * It renders the current state of the area, optionally allow the player to join the game.
+ * It renders the current state of the area, optionally allowing the player to join the game.
+ *
+ * It uses Chakra-UI components (does not use other GUI widgets)
  *
  * It uses the TicTacToeAreaController to get the current state of the game.
  * It listens for the 'gameUpdated' and 'gameEnd' events on the controller, and re-renders accordingly.
@@ -190,6 +194,7 @@ This component is located in the file `frontend/src/components/Town/interactable
  * - A list of observers' usernames (in a list with the aria-label 'list of observers in the game', one username per-listitem)
  * - A list of players' usernames (in a list with the aria-label 'list of players in the game', one item for X and one for O)
  *    - If there is no player in the game, the username is '(No player yet!)'
+ *    - List the players as (exactly) `X: ${username}` and `O: ${username}`
  * - A message indicating the current game status:
  *    - If the game is in progress, the message is 'Game in progress, {moveCount} moves in, currently {whoseTurn}'s turn'. If it is currently our player's turn, the message is 'Game in progress, {moveCount} moves in, currently your turn'
  *    - Otherwise the message is 'Game {not yet started | over}.'
@@ -197,6 +202,7 @@ This component is located in the file `frontend/src/components/Town/interactable
  *    - Clicking the button calls the joinGame method on the gameAreaController
  *    - Before calling joinGame method, the button is disabled and has the property isLoading set to true, and is re-enabled when the method call completes
  *    - If the method call fails, a toast is displayed with the error message as the description of the toast (and status 'error')
+ *    - Once the player joins the game, the button dissapears
  * - The TicTacToeBoard component, which is passed the current gameAreaController as a prop (@see TicTacToeBoard.tsx)
  *
  * - When the game ends, a toast is displayed with the result of the game:
@@ -275,7 +281,7 @@ This task is to implement the `Leaderboard` component, which will render a list 
  * - Wins: the number of games the player has won
  * - Losses: the number of games the player has lost
  * - Ties: the number of games the player has tied
- * Each column should have a header (Th) with the name of the column.
+ * Each column has a header (a table header `th` element) with the name of the column.
  *
  * The table is sorted by the number of wins, with the player with the most wins at the top.
  *
