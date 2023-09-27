@@ -10,7 +10,7 @@ nav_order: 5
 This tutorial covers the basic concepts of react. By the end of this tutorial, you will be able to create a new react app, understand the basic concepts of react such as states and props, understand React hooks and handling events.
 
 -   [React Basics](#react-basics)
--   [Creating a new React App](#creating-a-new-react-app)
+-   [Creating a new React App](#creating-a-new-next.js-app)
 -   [Understanding a React App](#react-component)
     -   [Components](#react-component)
     -   [Template For Structure of Function Component](#template-for-structure-of-function-component)
@@ -24,27 +24,27 @@ This tutorial covers the basic concepts of react. By the end of this tutorial, y
     -   [UseState](#usestate)
     -   [UseEffect](#useeffect)
 
-## Creating a New React App
+## Creating a New Next.Js App
 
-Let's use **npx** and **create-react-app** to create a new React project
+Let's use **npx** and **create-next-app** to create a new Next.Js project 
 
--   **npx** stands for Node Package Execute. It is a runner that can execute any package that you want from the npm registry without even installing that package. In this case npx tool temporarily installs the create-react-app npm package and uses it to create our project.
+-   **npx** stands for Node Package Execute. It is a runner that can execute any package that you want from the npm registry without even installing that package. In this case npx tool temporarily installs the create-next-app npm package and uses it to create our project.
 
 
 - Please check the following reference to the Next.Js boiler plate and getting started with framework 
 
 https://nextjs.org/learn/foundations/about-nextjs
 
-1. We use the create-react-app npx package to create an application that creates a fully-featured TS package.
+1. We use the create-next-app npx package to create an application that creates a fully-featured TS package.
 
     ```ts
-    npx create-react-app my-app
+    npx create-next-app my-app
     ```
 
     - Note 1: This will create a new project directory called my-app under the current directory.
     - Note 2: This will create a git repo in my-app, so you probably shouldn't do this inside a pre-existing git repository.
     - Note 3: Create the project with the following details after executing the command
-    ![image](./assets/week4-react/starter-details.png)
+    ![image](./assets/week4-react/start-details.png)
 
 2. Navigate to the project directory using the command:
     ```ts
@@ -59,7 +59,7 @@ https://nextjs.org/learn/foundations/about-nextjs
       ![image](./assets/week4-react/start.png)
 5. Chakra UI components can be reused and the library can be installed for Next.js with following command:
     ```ts
-    npm i -–save @chakra-ui/react @chakra-ui/next-js
+    npm i @chakra-ui/react @chakra-ui/next-js
     ```
     ![image](./assets/week4-react/chakra.png)
 
