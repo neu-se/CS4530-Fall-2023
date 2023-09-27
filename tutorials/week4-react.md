@@ -30,7 +30,42 @@ Let's use **npx** and **create-react-app** to create a new React project
 
 -   **npx** stands for Node Package Execute. It is a runner that can execute any package that you want from the npm registry without even installing that package. In this case npx tool temporarily installs the create-react-app npm package and uses it to create our project.
 
+
+- Please check the following reference to the Next.Js boiler plate and getting started with framework 
+
+https://nextjs.org/learn/foundations/about-nextjs
+
+1. We use the create-react-app npx package to create an application that creates a fully-featured TS package.
+
+    ```ts
+    npx create-react-app my-app
+    ```
+
+    - Note 1: This will create a new project directory called my-app under the current directory.
+    - Note 2: This will create a git repo in my-app, so you probably shouldn't do this inside a pre-existing git repository.
+    - Note 3: Create the project with the following details after executing the command
+    ![image](./assets/week4-react/starter-details.png)
+
+2. Navigate to the project directory using the command:
+    ```ts
+    cd my-app
+    ```
+3. To start the development server for React, run the command:
+    ```ts
+    npm run dev
+    ```
+4. Navigate to http://localhost:3000/ to see the default react page.
+    - After a few seconds, a browser window opens, with our app running:
+      ![image](./assets/week4-react/start.png)
+5. Chakra UI components can be reused and the library can be installed for Next.js with following command:
+    ```ts
+    npm i -–save @chakra-ui/react @chakra-ui/next-js
+    ```
+    ![image](./assets/week4-react/chakra.png)
+
+<!-- 
 -   **create-react-app** is a command-line tool that we can use to quickly create a React and TypeScript app with lots of useful pieces.
+
 
 1. We use the create-react-app npm package to create a React and TypeScript project by entering the following:
 
@@ -51,7 +86,7 @@ Let's use **npx** and **create-react-app** to create a new React project
     ```
 4. Navigate to http://localhost:3000/ to see the default react page.
     - After a few seconds, a browser window opens, with our app running:
-      ![image](./assets/week4-react/start-screen.png)
+      ![image](./assets/week4-react/start-screen.png) -->
 
 ## React Component
 React follows a Component based architecture. A component is a
@@ -512,5 +547,3 @@ function Counter() {
 export default Counter;
 ```
 
-
-- Please check the following reference to the Next.Js boiler plate and getting started with framework https://nextjs.org/learn/foundations/about-nextjs 
