@@ -10,7 +10,7 @@ nav_order: 5
 This tutorial covers the basic concepts of react. By the end of this tutorial, you will be able to create a new react app, understand the basic concepts of react such as states and props, understand React hooks and handling events.
 
 -   [React Basics](#react-basics)
--   [Creating a new React App](#creating-a-new-next.js-app)
+-   [Creating a new NextJs App](#creating-a-new-next-js-app)
 -   [Understanding a React App](#react-component)
     -   [Components](#react-component)
     -   [Template For Structure of Function Component](#template-for-structure-of-function-component)
@@ -24,7 +24,7 @@ This tutorial covers the basic concepts of react. By the end of this tutorial, y
     -   [UseState](#usestate)
     -   [UseEffect](#useeffect)
 
-## Creating a New Next.Js App
+## Creating a New Next Js App
 
 Let's use **npx** and **create-next-app** to create a new Next.Js project 
 
@@ -32,8 +32,7 @@ Let's use **npx** and **create-next-app** to create a new Next.Js project
 
 
 - Please check the following reference to the Next.Js boiler plate and getting started with framework 
-
-https://nextjs.org/learn/foundations/about-nextjs
+[Next.Js official documentation](https://nextjs.org/learn/foundations/about-nextjs)
 
 1. We use the create-next-app npx package to create an application that creates a fully-featured TS package.
 
@@ -59,7 +58,7 @@ https://nextjs.org/learn/foundations/about-nextjs
       ![image](./assets/week4-react/start.png)
 5. Chakra UI components can be reused and the library can be installed for Next.js with following command:
     ```ts
-    npm i @chakra-ui/react @chakra-ui/next-js
+    npm i --save @chakra-ui/react @chakra-ui/next-js
     ```
     ![image](./assets/week4-react/chakra.png)
 
