@@ -57,7 +57,7 @@ Let's use **npx** and **create-next-app** to create a new Next.Js project
     - After a few seconds, a browser window opens, with our app running:
       ![image](./assets/week4-react/start.png)
 5. Chakra UI components can be reused and the library can be installed for Next.js with following command:
-    ```ts
+    ```plaintext
     npm i --save @chakra-ui/react @chakra-ui/next-js
     ```
     ![image](./assets/week4-react/chakra.png)
