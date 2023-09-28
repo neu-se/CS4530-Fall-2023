@@ -10,7 +10,7 @@ This activity is designed to give you practice with React.  You will enhance the
 
 ### Steps
 
-To get started, download the [starter Code]({{ site.baseurl }}{% link Activities/module07-react-activity.zip %}). Run the command `npm install`, and then `npm run dev`. The development server should start, and If you open your browser it will start running the app in `pages/page.tsx` If your browser does not open up in the todo app, modify `pages/page.tsx` to point to `./Apps/ToDoApp`
+To get started, download the [starter Code]({{ site.baseurl }}{% link Activities/module07-react-activity.zip %}). Run the command `npm install`, and then `npm run dev`. The development server should start, and If you open your browser it will start running the app in `app/page.tsx` If your browser does not open up in the todo app, modify `app/page.tsx` to point to `./Apps/ToDoApp`
 
 In the ToDoApp, make the following three enhancements:
 
