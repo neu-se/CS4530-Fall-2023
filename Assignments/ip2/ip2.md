@@ -231,7 +231,7 @@ All of the tests are provided in the handout. Run the tests for this task by run
 
 The grading script will assign full marks for each implementation task if all of the tests for that task pass.  There is no partial credit. 
 
-### Task 3: Implement the Tic-Tac-Toe Board (16 points total)
+### Task 3: Implement the Tic-Tac-Toe Board (40 points total)
 This task is to implement the `TicTacToeBoard` component, which will render the actual (interactive) board. It is located in the file `frontend/src/components/Town/interactables/TicTacToe/TicTacToeBoard.tsx`.
 
 <details><summary markdown="span">View the specification for this component</summary>
