@@ -40,7 +40,7 @@ callouts:
 #    - 'https://kevinl.info'
 #  Just the Class on GitHub:
 #    - 'https://github.com/kevinlin1/just-the-class'
-footer_content: "&copy; 2023 Adeel Bhutta, Jan Vitek and Mitch Wand. Released under the <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA</a> license"
+footer_content: "&copy; 2023 Adeel Bhutta and Mitch Wand. Released under the <a href=\"https://creativecommons.org/licenses/by-sa/4.0/\">CC BY-SA</a> license"
 
 
 # Collections for website data
