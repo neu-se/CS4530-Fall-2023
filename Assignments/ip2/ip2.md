@@ -3,7 +3,7 @@ layout: assignment
 title: "Individual Project 2"
 permalink: /assignments/ip2
 parent: Assignments
-nav_order: 2
+nav_order: 1
 due_date: "Wednesday October 18, 11:00am EDT"
 submission_notes: Submit via Autograder.io at neu.autograder.io
 ---
@@ -172,7 +172,7 @@ Grading for the testing tasks:
 * Tests for `_updateFrom`: 5 points
 * Tests for `makeMove`: 5 points
 
-### Task 2: Tic-Tac-Toe Area (85 points total)
+### Task 2: Tic-Tac-Toe Area (95 points total)
 The next task is to implement the React component that will render the Tic-Tac-Toe game area. This component will show information about the game area, and the current state of the game. It displays the `TicTacToeBoard`` (which you'll implement in the next task), and also the `Leaderboard` component (which you'll implement in the task after that).
 
 This component is located in the file `frontend/src/components/Town/interactables/TicTacToe/TicTacToeArea.tsx` - you should implement component class in this file.
@@ -220,7 +220,7 @@ You can begin to implement these tasks in whatever order you see fit, but we wou
 There is significant ambiguity in the specification when it comes to exactly how this looks. We will not evaluate your submission on the basis of how closely it looks like our referencence implementation: it need only be functionally correct (as defined by the included test cases).
 
 Grading for implementation tasks:
-* Correctly registering the listeners: 10 points
+* Correctly registering the listeners: 20 points
 * Display the leaderboard component: 10 points
 * Join game button: 30 points
 * List of observers watching game: 15 points
@@ -231,7 +231,7 @@ All of the tests are provided in the handout. Run the tests for this task by run
 
 The grading script will assign full marks for each implementation task if all of the tests for that task pass.  There is no partial credit. 
 
-### Task 3: Implement the Tic-Tac-Toe Board (40 points total)
+### Task 3: Implement the Tic-Tac-Toe Board (16 points total)
 This task is to implement the `TicTacToeBoard` component, which will render the actual (interactive) board. It is located in the file `frontend/src/components/Town/interactables/TicTacToe/TicTacToeBoard.tsx`.
 
 <details><summary markdown="span">View the specification for this component</summary>
