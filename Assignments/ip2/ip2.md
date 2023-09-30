@@ -12,6 +12,14 @@ The objective for this semester's individual project is to implement this new `G
 The `TicTacToeArea` will implement the gameplay for the classic game, [Tic-Tac-Toe](https://en.wikipedia.org/wiki/Tic-tac-toe).
 This implementation effort will be split across two deliverables. In this second deliverable, you will implement and (partially) test the core frontend components. 
 
+## Change log
+* 9/30: Updated handout `TicTacToeAreaController.test.ts`, adding a mock implementation of `mockTownController.getPlayer`, which you might or might not choose to use in your implementation (and without which the tests would fail). If you run into this issue and would like to directly update your code, that mock implementation is added to the bottom of `ticTacToeAreaControllerWithProp`, and is:
+```
+      mockTownController.getPlayer.mockImplementation(playerID => {
+        const p = mockTownController.players.find(player => player.id === playerID);
+        assert(p);
+        return p;
+```
 
 ## Objectives of this assignment
 The objectives of this assignment are to:
