@@ -50,8 +50,8 @@ For example: Consider if you were proposing the "Viewing Area" project (the indi
 
 **Do not wait for your TA feedback to begin this work.** You probably know more about the details of your project then they do. It will be helpful for all concerned if your Project Plan lists the major unknowns or things that you expect to need help with-- this will help the TA provide more useful feedback for you
 
-Be realistic, and leave time for contingencies (including the time around the midterm exam on March 13-14).
-Remember that you will need to have a demo prepared of your feature by 4/12 - just 5 weeks from the due date of this assignment (not counting spring break).
+Be realistic, and leave time for contingencies (including the time around the midterm exam on Nov 1-3).
+Remember that you will need to have a demo prepared of your feature by 11/29 - just 5 weeks from the due date of this assignment.
 
 If you are uncertain that some tasks will be feasible, then be sure to include evaluation tasks earlier-on in the project that will allow for "go/no-go" decisions to move forward on a task or drop it.
 
@@ -78,6 +78,7 @@ Your work breakdown may take the format of a simple textual list.
 
 **Mandatory update for all teams:** Even if your work breakdown is entirely unchanged compared to the preliminary plan, please be certain to include updates on all "sprint -1" tasks (those which were scheduled to be completed before the due date of this revised plan). Many teams included research/learning tasks in the first week to help inform the rest of the work breakdown: you should be certain to revise your work breakdown based on what you have learned so far.
 
+**Please note that in order to receive full credit for the final delivered product, each team is expected to deliver Minimum Viable Product and additional features proposed in the project plan. Please plan your work accordingly.**
 
 ## Submission 
 Your revised project plan should be submitted as a single PDF on Canvas under the assignment "Revised Project Plan."
@@ -138,5 +139,3 @@ Receive full marks if each element on the work breakdown:
 * There are no "Large" tasks scheduled in sprint 0
 * Tasks scheduled to be completed before 3/1 have an update as to their status, and the work breakdown is updated to reflect the result of these tasks.
 * Any deficiencies or concerns noted by your TA mentor on your preliminary plan are addressed
-
-**Please note that in order to receive full credit for the final delivered product, each team is expected to deliver Minimum Viable Product and additional features proposed in the project plan. Please plan your work accordingly.**
