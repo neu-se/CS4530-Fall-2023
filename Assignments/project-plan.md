@@ -48,7 +48,7 @@ My conditions of satisfaction are < list of common cases and special cases that 
 
 Please make sure that your conditions of satification are complete (i.e., cover all common cases) and can be turned into testable behaviors.
 
-**EACH USER STORY OR CONDITION OF SATISFACTION MUST HAVE A PRIORITY (Essential, Desirable, or Optional)**.  The set of Essential items will constitute the "Minimum Viable Product".
+**EACH CONDITION OF SATISFACTION MUST HAVE A PRIORITY (Essential, Desirable, or Optional)**.  The set of Essential items will constitute the "Minimum Viable Product".
 
 You should include three different user stories to describe how users will interact with your feature.
 Your three user stories should cover the key behavior that your feature will provide.
@@ -117,7 +117,7 @@ Each of the three user stories will account for 5% of your grade on this assignm
   * The user story fits the problem statement
   * The user story satisfies the INVEST criteria for good user stories (construed quite broadly)
   * The user story includes conditions of satisfaction that cover the "normal" expected behavior of the feature, and any relevant error cases
-  * The user story or conditions of satisfaction include priority
+  * The conditions of satisfaction include priority
 
 ### Work breakdown (80 points):
 Your work breakdown will be evaluated holistically on the following rubric:

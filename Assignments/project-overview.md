@@ -37,7 +37,7 @@ Your overall project grade (which will account for 40% of your final grade in th
   * This also includes appropriate division of labor within the project (i.e., roughly equal). For full credit, each member of the team must have at least 4 commits in the final delivered code.
 * Product (40%)
   * 20% Successful delivery of your Minimum Viable Product as defined in your project plan
-  * 10% Additional delivered features
+  * 10% Desirable delivered features
   * 10% Test suite of your features.
 * Reports (20%)
   * 10% Final Report
@@ -70,7 +70,7 @@ Given that you will be up-to-speed on the Covey.Town codebase (and have been int
 and that you will have a team of three or four, we expect that the feature that you propose will be more complex than the feature implemented in the individual assignments.
 
 The project plan will focus on two sections:
-* User stories and conditions of satisfaction that describe the feature that you plan to implement. **EACH USER STORY OR CONDITION OF SATISFACTION MUST HAVE A PRIORITY (Essential, Desirable, or Optional)**.  The set of Essential items will constitute the "Minimum Viable Product" discussed above.
+* User stories and conditions of satisfaction that describe the feature that you plan to implement. **EACH CONDITION OF SATISFACTION MUST HAVE A PRIORITY (Essential, Desirable, or Optional)**.  The set of Essential items will constitute the "Minimum Viable Product" discussed above.
 * Work breakdown: Map your user stories to engineering tasks. Assign each task to a team member (or pair of team members), provide an estimate for how long each task will take, a rationale for that estimate, and schedule those stories into sprints.
 
 ### Creating a GitHub Repository
