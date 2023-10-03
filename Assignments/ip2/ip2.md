@@ -3,7 +3,7 @@ layout: assignment
 title: "Individual Project 2"
 permalink: /assignments/ip2
 parent: Assignments
-nav_order: 1
+nav_order: 2
 due_date: "Wednesday October 18, 11:00am EDT"
 submission_notes: Submit via Autograder.io at neu.autograder.io
 ---
