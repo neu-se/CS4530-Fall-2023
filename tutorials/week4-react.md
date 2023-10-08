@@ -22,7 +22,10 @@ This tutorial covers the basic concepts of react. By the end of this tutorial, y
     -   [Handling Events](#handling-events)
 -   [React Hooks](#react-hooks)
     -   [UseState](#usestate)
+        - [Updating Arrays in State](#updating-arrays-in-state)
     -   [UseEffect](#useeffect)
+        - [Object Dependencies in UseEffect](#object-dependencies-in-useEffect)
+
 
 ## Creating a New Next Js App
 
@@ -471,6 +474,23 @@ export default Counter;
 If we give this a try in the running app, we should find the count variable's value to keep incrementing by one every time the button is clicked.
 After we've got our heads around the code needed to define state, accessing and setting state is fairly simple and elegant.
 
+
+#### Updating Arrays in State
+Suppose we want to maintain an array in our state object.
+```ts
+const [list, setList] = useState([]);
+```
+Now suppose we want to add an element to this list and have the component re-render to reflect the changes. We might try pushing an item to the list like so:
+```ts
+list.push(element); // doesn't work
+```
+However, React will not re-render the component as it does not detect a change in the state. This is because the object referenced in the state is the same before and after pushing the element, and so to React, the object looks the same because the reference is the same. To get around this, we must invoke the `setList` function to create a new reference so that React will detect the change and re-render the component. The easiest way in this case would be to use the spread operator (`...`) to make a copy of the existing list and push a new element to the new list:
+```ts
+const newList = [...list]; // copy the current list
+newList.push(element);
+setList(newList)
+``` 
+
 ### useEffect():
 <a href="https://codesandbox.io/s/nervous-morse-o3pwqm?file=/src/tutorial/UseEffectExample.tsx" target="_blank">view in sandbox</a>
 
@@ -533,7 +553,63 @@ function Counter() {
 
     useEffect(() => {
         console.log(`The current count is ${count}`);
-    });
+    }, [count]);
+
+    return (
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={incrementCount}>Click me!</button>
+        </div>
+    );
+}
+
+export default Counter;
+```
+#### Object Dependencies in UseEffect
+Consider a case where useEffect depends on an object:
+```ts
+import { useState } from "react";
+import { useEffect } from "react";
+
+function Counter() {
+    const [counter, setCounter] = useState({ count: 0, increment: 1 });
+
+    function incrementCount() {
+        counter.count += counter.increment;
+        setCounter(counter); // will not cause component to rerender
+    }
+
+  // Will not get called when incrementCount is called
+    useEffect(() => {
+        console.log(`The current count is ${counter.count}`);
+    }, [counter]);
+
+    return (
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={incrementCount}>Click me!</button>
+        </div>
+    );
+}
+
+export default Counter;
+```
+In the example above, we've modified the counter to be an object containing both the current count and the amount to increment the counter by when the button is clicked.
+
+Similar to the list case for useState, updating an attribute of an object and setting the state variable to that same object reference will not cause a re-render, and useEffect will not detect a change in its dependencies, even though we have changed one of the attributes. To properly invoke a useEffect call, we must change the object reference itself:
+
+```ts
+function Counter() {
+    const [counter, setCounter] = useState({ count: 0, increment: 1 });
+
+    function incrementCount() {
+      // we use the spread operator (...) to make a copy of the object
+        setCounter({...counter, count: counter.count + counter.increment}); 
+    }
+
+    useEffect(() => {
+        console.log(`The current count is ${counter.count}`);
+    }, [counter]);
 
     return (
         <div>
@@ -546,3 +622,62 @@ function Counter() {
 export default Counter;
 ```
 
+The useEffect hook will now be invoked with each button click. However, our useEffect is dependent on the entire `counter` object, meaning that a change to any of its attributes will cause the useEffect hook to be called, which is not always a desired behavior. We can get around this by being more specific in our dependency list: 
+
+```ts
+function Counter() {
+    const [counter, setCounter] = useState({ count: 0, increment: 1 });
+
+    function incrementCount() {
+      // we use the spread operator (...) to make a copy of the object
+        setCounter({...counter, count: counter.count + counter.increment}); 
+    }
+
+    function incrementIncrement() {
+      // we use the spread operator (...) to make a copy of the object
+        setCounter({...counter, count: counter.increment + 1}); 
+    }
+
+    useEffect(() => {
+        console.log(`The current count is ${counter.count}`);
+    }, [counter.count]); // Now that we only depend on count, this function will not be called if the incrementIncrement function is called
+
+    return (
+        <div>
+            <h1>Count: {count}</h1>
+            <button onClick={incrementCount}>Click me to increment the count!</button>
+            <button onClick={incrementIncrement}>Click me to increase the increment amount!</button>
+        </div>
+    );
+}
+
+export default Counter;
+```
+
+# UI Testing
+Testing UIs can be very tricky, especially when we want to test features involving user interaction (e.g. a user clicking on a button). However, there are some useful tools that can help us. The [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) provides many helpful features that can help us.
+```ts
+import {render, screen} from '@testing-library/react'
+import Counter from './Counter'
+it('renders the Counter component correctly', async () => {
+  render(<Counter />);
+
+  // Will throw error if not found
+  screen.getByText("Count: 0" )
+  screen.getByText("Click me!" )
+})
+```
+Above is a very simple test to ensure that our Counter component renders as expected with out any user input. Suppose now that we wanted to test user interaction with the page:
+
+```ts
+import {render, fireEvent, screen} from '@testing-library/react'
+import Counter from './Counter'
+it('correctly renders the updated count after the user clicks the button', async () => {
+  render(<Counter />);
+  screen.getByText("Count: 0" )
+  fireEvent.click(screen.getByRole('button'))
+  screen.getByText("Count: 1" )
+})
+```
+
+A full list of testing functions from React Testing Library can be found [here](https://testing-library.com/docs/dom-testing-library/cheatsheet/).
