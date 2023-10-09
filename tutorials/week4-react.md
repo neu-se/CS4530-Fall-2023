@@ -653,31 +653,3 @@ function Counter() {
 
 export default Counter;
 ```
-
-# UI Testing
-Testing UIs can be very tricky, especially when we want to test features involving user interaction (e.g. a user clicking on a button). However, there are some useful tools that can help us. The [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) provides many helpful features that can help us.
-```ts
-import {render, screen} from '@testing-library/react'
-import Counter from './Counter'
-it('renders the Counter component correctly', async () => {
-  render(<Counter />);
-
-  // Will throw error if not found
-  screen.getByText("Count: 0" )
-  screen.getByText("Click me!" )
-})
-```
-Above is a very simple test to ensure that our Counter component renders as expected with out any user input. Suppose now that we wanted to test user interaction with the page:
-
-```ts
-import {render, fireEvent, screen} from '@testing-library/react'
-import Counter from './Counter'
-it('correctly renders the updated count after the user clicks the button', async () => {
-  render(<Counter />);
-  screen.getByText("Count: 0" )
-  fireEvent.click(screen.getByRole('button'))
-  screen.getByText("Count: 1" )
-})
-```
-
-A full list of testing functions from React Testing Library can be found [here](https://testing-library.com/docs/dom-testing-library/cheatsheet/).
