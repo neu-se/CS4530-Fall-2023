@@ -32,10 +32,10 @@
   name: Distributed System Architectures (Part 2)
   page: /modules/10-distributed-systems-2
 6a:
-  name: Tests with Larger Scope
+  name: What Makes a Good Test Suite?
   page: 
 6b:
-  name: What Makes a Good Test Suite?
+  name: Tests with Larger Scope
   page: 
 7a:
   name: Principles for Cloud Deployment
