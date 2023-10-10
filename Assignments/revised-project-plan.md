@@ -32,7 +32,7 @@ Do not provide more than three user stories. Your problem statement and descript
 This revised project plan should be a standalone document (it is OK to copy/paste from the preliminary plan in this case).
 
 ## Revised Work Breakdown (max 10 pages)
-Given the project concept that you have chosen and the functionality that you expect to implement to satisfy your user stories, define a breakdown of the work that will be necessary to complete the project.
+Given the project concept that you have chosen and the functionality that you expect to implement to satisfy your user stories, define a breakdown of the work that will be necessary to complete the project. This breakdown is required for all essential, desirable and optional tasks. 
 
 A work breakdown includes all of the tasks necessary to accomplish the project, and will be an artifact that we will refer back to throughout the project to evaluate whether you are making satisfactory progress.
 Consider all of the kinds of tasks that your team will need to perform, including knowledge acquisition, design, implementation, testing and documentation tasks.
@@ -78,7 +78,7 @@ Your work breakdown may take the format of a simple textual list.
 
 **Mandatory update for all teams:** Even if your work breakdown is entirely unchanged compared to the preliminary plan, please be certain to include updates on all "sprint -1" tasks (those which were scheduled to be completed before the due date of this revised plan). Many teams included research/learning tasks in the first week to help inform the rest of the work breakdown: you should be certain to revise your work breakdown based on what you have learned so far.
 
-**Please note that in order to receive full credit for the final delivered product, each team is expected to deliver Minimum Viable Product and additional features proposed in the project plan (marked as desirables). Please plan your work accordingly.**
+**Please note that in order to receive full credit for the final delivered product, each team is expected to deliver Minimum Viable Product (marked as essential) and additional features proposed in the project plan (marked as desirables). Please plan your work accordingly.**
 
 ## Submission 
 Your revised project plan should be submitted as a single PDF on Canvas under the assignment "Revised Project Plan."
