@@ -33,7 +33,7 @@
   page: /modules/10-distributed-systems-2
 6a:
   name: What Makes a Good Test Suite?
-  page: 
+  page: /modules/11-good-tests
 6b:
   name: Tests with Larger Scope
   page: 
