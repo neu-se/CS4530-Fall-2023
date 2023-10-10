@@ -27,15 +27,15 @@
   page: /modules/8-patterns-of-react
 5a:
   name: Distributed System Architectures (Part 1)
-  page: 
+  page: /modules/9-distributed-systems-1
 5b:
   name: Distributed System Architectures (Part 2)
-  page: 
+  page: /modules/10-distributed-systems-2
 6a:
-  name: Tests with Larger Scope
-  page: 
-6b:
   name: What Makes a Good Test Suite?
+  page: /modules/11-good-tests
+6b:
+  name: Tests with Larger Scope
   page: 
 7a:
   name: Principles for Cloud Deployment
@@ -75,6 +75,8 @@
   name: Presentations
 14a:
   name: Presentations
+pitch:
+  name: Elevator Pitch
 posters:
   name: Poster Presentations
 advanced:
