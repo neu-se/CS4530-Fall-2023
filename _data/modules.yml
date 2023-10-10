@@ -21,21 +21,21 @@
   page: /modules/6-software-process
 4a:
   name: React Part 1 (Introduction)
-  page: 
+  page: /modules/7-react
 4b:
   name: React Part 2 (Common Patterns)
-  page: 
+  page: /modules/8-patterns-of-react
 5a:
   name: Distributed System Architectures (Part 1)
-  page: 
+  page: /modules/9-distributed-systems-1
 5b:
   name: Distributed System Architectures (Part 2)
-  page: 
+  page: /modules/10-distributed-systems-2
 6a:
-  name: Tests with Larger Scope
-  page: 
-6b:
   name: What Makes a Good Test Suite?
+  page: /modules/11-good-tests
+6b:
+  name: Tests with Larger Scope
   page: 
 7a:
   name: Principles for Cloud Deployment
@@ -75,6 +75,8 @@
   name: Presentations
 14a:
   name: Presentations
+pitch:
+  name: Elevator Pitch
 posters:
   name: Poster Presentations
 advanced:
@@ -86,14 +88,14 @@ ip1:
 ip2:
   name: Individual Project Deliverable 2 
   type: deadline
-  page: 
+  page: /assignments/ip2
 tp1:
   name: Project Formation
   type: deadline
 tp2:
   name: Preliminary Project Plan
   type: deadline
-  page: 
+  page: /assignments/project-plan
 tp3:
   name: Revised Project Plan
   type: deadline

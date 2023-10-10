@@ -23,7 +23,7 @@ Select projects from Fall 2022 are hosted [in our project showcase](https://neu-
 | -----| ----------- | ----------- |
 | 09/27/23| Team Formation Survey | Specify preferences for teammates |
 | 10/02/23| Project Kick-off Meeting | Schedule a meeting with your Mentor TA during this week |
-| 10/09/23 | Preliminary Project Plan | Propose a new feature for Covey.Town that can be planned and implemented within 7 weeks |
+| 10/11/23 | [Preliminary Project Plan]({{ site.baseurl }}{% link Assignments/project-plan.md %}) | Propose a new feature for Covey.Town that can be planned and implemented within 7 weeks |
 | 10/25/23 | Revised Project Plan | Refine the scope of your feature based on staff feedback, define detailed requirements and project acceptance criteria. |
 | 11/29/23 | Project Delivery - Implementation and Documentation | Deliver your new feature, including design documentation and tests |
 
@@ -37,7 +37,7 @@ Your overall project grade (which will account for 40% of your final grade in th
   * This also includes appropriate division of labor within the project (i.e., roughly equal). For full credit, each member of the team must have at least 4 commits in the final delivered code.
 * Product (40%)
   * 20% Successful delivery of your Minimum Viable Product as defined in your project plan
-  * 10% Additional delivered features
+  * 10% Desirable delivered features
   * 10% Test suite of your features.
 * Reports (20%)
   * 10% Final Report
@@ -70,7 +70,7 @@ Given that you will be up-to-speed on the Covey.Town codebase (and have been int
 and that you will have a team of three or four, we expect that the feature that you propose will be more complex than the feature implemented in the individual assignments.
 
 The project plan will focus on two sections:
-* User stories and conditions of satisfaction that describe the feature that you plan to implement. **EACH USER STORY OR CONDITION OF SATISFACTION MUST HAVE A PRIORITY (Essential, Desirable, or Optional)**.  The set of Essential items will constitute the "Minimum Viable Product" discussed above.
+* User stories and conditions of satisfaction that describe the feature that you plan to implement. **EACH CONDITION OF SATISFACTION MUST HAVE A PRIORITY (Essential, Desirable, or Optional)**.  The set of Essential items will constitute the "Minimum Viable Product" discussed above.
 * Work breakdown: Map your user stories to engineering tasks. Assign each task to a team member (or pair of team members), provide an estimate for how long each task will take, a rationale for that estimate, and schedule those stories into sprints.
 
 ### Creating a GitHub Repository

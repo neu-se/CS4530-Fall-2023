@@ -28,6 +28,7 @@ Contents:
   - [Testing Asynchronous Code](#testing-asynchronous-code)
     - [Promise](#promise)
     - [Callbacks](#callbacks)
+  - [UI Testing](#ui-testing)
 - [Setting up testing using Jest in VSCode](#setting-up-testing-using-jest-in-vscode)
   - [Features](#features)
   - [Installation](#installation)
@@ -629,6 +630,33 @@ test('Check if I am a true husky', (done) => {
 
 Now, the program would wait for done to be invoked. This implementation would correctly test both the above scenarios.
 
+## UI Testing
+Testing UIs can be very tricky, especially when we want to test features involving user interaction (e.g. a user clicking on a button). However, there are some useful tools that can help us. The [React Testing Library](https://testing-library.com/docs/react-testing-library/intro/) provides many helpful features that can help us.
+```ts
+import {render, screen} from '@testing-library/react'
+import Counter from './Counter'
+it('renders the Counter component correctly', async () => {
+  render(<Counter />);
+
+  // Will throw error if not found
+  screen.getByText("Count: 0" )
+  screen.getByText("Click me!" )
+})
+```
+Above is a very simple test to ensure that our Counter component renders as expected with out any user input. Suppose now that we wanted to test user interaction with the page:
+
+```ts
+import {render, fireEvent, screen} from '@testing-library/react'
+import Counter from './Counter'
+it('correctly renders the updated count after the user clicks the button', async () => {
+  render(<Counter />);
+  screen.getByText("Count: 0" )
+  fireEvent.click(screen.getByRole('button'))
+  screen.getByText("Count: 1" )
+})
+```
+
+A full list of testing functions from React Testing Library can be found [here](https://testing-library.com/docs/dom-testing-library/cheatsheet/).
 # Setting up testing using Jest in VSCode
 
 Testing can sometimes get cumbersome as the user is expected to remember all the options provided by Jest to run a specific set of tests, or otherwise the user will have to run the entire test suite just to verify the result of a single test case. Not anymore!
