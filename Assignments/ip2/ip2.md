@@ -13,6 +13,7 @@ The `TicTacToeArea` will implement the gameplay for the classic game, [Tic-Tac-T
 This implementation effort will be split across two deliverables. In this second deliverable, you will implement and (partially) test the core frontend components. 
 
 ## Change log
+* 10/11 Updated handout `TicTacToeArea.test.tsx` to correctly update `gameAreaController.mockIsOurTurn` in each relevant test.
 * 10/3: Updated handout `TicTacToeArea.test.tsx` to add the line `gameAreaController.mockIsOurTurn = true;`, which may be required to be set for your implementation of `TicTacToeArea`
 * 9/30: Updated handout `TicTacToeBoard.test.tsx` to add missing `await` calls on lines 234 and 243 (if missing, could cause the test runner to crash if the assertions failed)
 * 9/30: UpdatedUpdated handout `TicTacToeAreaController.test.ts`, adding a mock implementation of `mockTownController.getPlayer`, which you might or might not choose to use in your implementation (and without which the tests would fail). If you run into this issue and would like to directly update your code, that mock implementation is added to the bottom of `ticTacToeAreaControllerWithProp`, and is:
