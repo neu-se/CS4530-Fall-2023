@@ -13,9 +13,7 @@ The `TicTacToeArea` will implement the gameplay for the classic game, [Tic-Tac-T
 This implementation effort will be split across two deliverables. In this second deliverable, you will implement and (partially) test the core frontend components. 
 
 ## Change log
-* 10/11 Updated handout `TicTacToeArea.test.tsx` to correctly update `gameAreaController.mockIsOurTurn` in each relevant test. 
-
-To update your code without downloading the entire zip file, simply add the line below to the 'Updates whose turn it is when the game is updated' and 'Displays a message "Game in progress, {numMoves} moves in" and indicates whose turn it is when it is the other player\'s turn' tests in `TicTacToeArea.test.tsx`.
+* 10/11 Updated handout `TicTacToeArea.test.tsx` to correctly update `gameAreaController.mockIsOurTurn` in each relevant test. To update your code without downloading the entire zip file, simply add the line below to the 'Updates whose turn it is when the game is updated' and 'Displays a message "Game in progress, {numMoves} moves in" and indicates whose turn it is when it is the other player\'s turn' tests in `TicTacToeArea.test.tsx`.
 ```ts
 gameAreaController.mockIsOurTurn = false;
 ```
