@@ -13,6 +13,14 @@ The `TicTacToeArea` will implement the gameplay for the classic game, [Tic-Tac-T
 This implementation effort will be split across two deliverables. In this second deliverable, you will implement and (partially) test the core frontend components. 
 
 ## Change log
+* 10/13 Updated handout `TicTacToeAreaController.test.ts` to create the mock implementation of `mockTownController.getPlayer` method _before_ `TicTacToeAreaController`'s constructor is called. To update your code without downloading the zip file, move the following piece of code from line 87 to line 36.
+```ts
+mockTownController.getPlayer.mockImplementation(playerID => {
+  const p = mockTownController.players.find(player => player.id === playerID);
+  assert(p);
+  return p;
+});
+```
 * 10/11 Updated handout `TicTacToeArea.test.tsx` to correctly update `gameAreaController.mockIsOurTurn` in each relevant test. To update your code without downloading the entire zip file, simply add the line below to the 'Updates whose turn it is when the game is updated' and 'Displays a message "Game in progress, {numMoves} moves in" and indicates whose turn it is when it is the other player\'s turn' tests in `TicTacToeArea.test.tsx`.
 ```ts
 gameAreaController.mockIsOurTurn = false;
@@ -25,6 +33,7 @@ gameAreaController.mockIsOurTurn = false;
         const p = mockTownController.players.find(player => player.id === playerID);
         assert(p);
         return p;
+    });
 ```
 
 ## Objectives of this assignment
