@@ -1,124 +1,216 @@
 ---
 layout: page
 title: Sockets
-permalink: /tutorials/sockets
+permalink: /tutorials/emitters
 parent: Tutorials
 nav_order: 4
 ---
 
 This tutorial covers the basics of Socket architecture. By the end of this tutorial, you will have an understanding of how sockets work and how they are applied in real-world examples, such as Covey.Town.
+*Note: this tutorial assumes you have an understanding of the emitter pattern. If you need a review, please see the Emitters Tutorial on the course site.
 
 Contents:
 
 - [Understanding Sockets](#understanding-sockets)
 - [Implementing sockets](#implementing-sockets)
-  - [Events](#events)
-  - [Emitting Events](#emitting-events)
-  - [Handling Events](#event-handlers)
+  - [Writing a Socket Client](#events)
+  - [Writing a Socket Server](#emitting-events)
+  - [Putting it All Together](#event-handlers)
 - [Sockets in Covey.Town](#sockets-in-coveytown)
-- [What's Next?](#whats-next)
+- [What's Next?](#whats-next) 
+
 
 # Understanding Sockets
-Sockets are powerful networking tools that are used to establish two-way communication between two programs. The relationship between those programs ultimately varies across applications, but oftentimes you'll see sockets utilized in a client-server architecture. 
+Sockets are a powerful networking tool that allows for bidirectional communication between a client and server. They are used widely throughout various applications, such as chat apps and online games. Whereas a traditional server-client relationship for a chat server may require clients to constantly check with the server if any new messages have been posted, sockets allow a client to push a message to the server, then have the server push that message to all connected clients, hence taking advantage of the bidirectionality of a socket.
 
-# Implementing sockets
-Sockets can take on many forms, but at a minimum, they must allow for asynchronous communication between two independent program instances. Consider the following example:
+In this tutorial, we will discuss how sockets are used in Covey.Town.
+
+# Implementing Sockets
+For this tutorial, we will look at example implementations of sockets in Covey.Town:
+
+
+## Socket Message Structure
+
+Socket messages (i.e. the actual data being passed through the socket) have a structure that is defined by the developer to suit the application's needs. While this structure may vary from application to application, there are a few key items to consider:
+- Messages should have a unique identifier so that they can be acknowledged (if necessary)
+- Messages should have a "type" associated with them
+- Events should be clearly defined so that we know what message type to send with each event
+
+To emphasize this point, we'll take a look at how Covey.Town implements sockets on both the client and server.
+
+## Writing a Socket Client
+
+This is a simple definition of a Socket from `socket.io-client`. From the Socket.IO docs, 
+```ts
+import { Socket } from 'socket.io-client';
+/* eslint-disable import/no-relative-packages */
+import { ClientToServerEvents, ServerToClientEvents } from '../../../shared/types/CoveyTownSocket';
+/* eslint-disable import/no-relative-packages */
+export * from '../../../shared/types/CoveyTownSocket';
+
+export type CoveyTownSocket = Socket<ServerToClientEvents, ClientToServerEvents>;
+```
+As we can see above, `CoveyTownSocket` uses the socket import from `socket.io-client`. The type parameters for a Socket.IO socket are \<ListenEvents, EmittedEvents\>, and as such, this socket has been parameterized with `ServerToClientEvents` (the events the client is listening to) and `ClientToServerEvents` (the events the client is emitting). Below we have the definition of these events:
 
 ```ts
-import { EventEmitter } from "events"
-import TypedEmitter from "typed-emitter"
-type ClockEvents = {
-    reset: () => void
-    tick: (time: number) => void, // carries the current time
+export interface ServerToClientEvents {
+  playerMoved: (movedPlayer: Player) => void;
+  playerDisconnect: (disconnectedPlayer: Player) => void;
+  playerJoined: (newPlayer: Player) => void;
+  initialize: (initialData: TownJoinResponse) => void;
+  townSettingsUpdated: (update: TownSettingsUpdate) => void;
+  townClosing: () => void;
+  chatMessage: (message: ChatMessage) => void;
+  interactableUpdate: (interactable: Interactable) => void;
+  commandResponse: (response: InteractableCommandResponse) => void;
 }
 
-class SampleEmitterServer {
-    private emitter = new EventEmitter as TypedEmitter<ClockEvents>
-    public getEmitter():TypedEmitter<ClockEvents> {return this.emitter}
-    public demo() {
-        this.emitter.emit('tick', 1); this.emitter.emit('reset')
-    }
-}
-class SampleEmitterClient {
-    constructor (server:SampleEmitterServer) {
-    const emitter = server.getEmitter()
-        emitter.on('tick', (t:number) => {console.log(t)})
-        emitter.on('reset', () => {console.log('reset')})
-    }
+export interface ClientToServerEvents {
+  chatMessage: (message: ChatMessage) => void;
+  playerMovement: (movementData: PlayerLocation) => void;
+  interactableUpdate: (update: Interactable) => void;
+  interactableCommand: (command: InteractableCommand & InteractableCommandBase) => void;
 }
 ```
 
-There's a lot of moving parts here, so let's break it down step by step.
-
-## Events
-Events serve a key role in allowing sockets to be versatile; they allow sockets to emit/listen to specific events at the developer's discretion, allowing for more control over their application's interactions. Let's again consider the previous example.
-
+By creating these interfaces, our socket supports a fixed set of events that each have their own meaning and data types associated with them. Keeping in line with the message structure guidelines mentioned above, all of these events specify the type of data that is being passed through the socket, and the events that require acknowledgement have a unique identifier embedded into the type definition. For example, the `interactableCommand` event expects a response after , so we add an `commandID` attribute to the `InteractableCommandBase` type to accommodate this:
 ```ts
-type ClockEvents = {
-    reset: () => void
-    tick: (time: number) => void, // carries the current time
+interface InteractableCommandBase {
+  /**
+   * A unique ID for this command. This ID is used to match a command against a response
+   */
+  commandID: CommandID;
+  /**
+   * The ID of the interactable that this command is being sent to
+   */
+  interactableID: InteractableID;
+  /**
+   * The type of this command
+   */
+  type: string;
 }
 ```
 
-The above `ClockEvents` type defines 2 events for any socket that decides to use them. The function signature following the event name refers to the type of data that is passed when the event is emitted. For example, when a `tick` event is emitted, a number representing the time is emitted along with it, and event handlers can use this time however they please. This concept will make more sense when we talk about emitting and handling events below.
-
-## Emitting an Event
-Now that we understand what events are, let's see how our programs emit and handlers, starting with emitting. 
+## Writing a Socket Server
+After setting up the
 
 ```ts
-class SampleEmitterServer {
-    private emitter = new EventEmitter as TypedEmitter<ClockEvents>
-    public getEmitter():TypedEmitter<ClockEvents> {return this.emitter}
-    public demo() {
-        this.emitter.emit('tick', 1); 
-        this.emitter.emit('reset')
-    }
-}
+// Create the server instances
+const app = Express();
+app.use(CORS());
+const server = http.createServer(app);
+const socketServer = new SocketServer<ClientToServerEvents, ServerToClientEvents>(server, {
+  cors: { origin: '*' },
+});
 ```
 
-In this class, an emitter is defined with the events discussed in the previous section (`TypedEmitter` is an interface that allows for socket connections using TypeScript). Following this, the `getEmitter()` method provides the emitter object to any clients that wish to listen to events from the server. When the `demo` method is invoked, any clients that are listening to the `tick` and `reset` events will be notified, and those clients can handle those however they please. In this specific example, the `tick` event is being emitted with `time = 1`, and the `reset` event is not emitted with any additional data as per the `ClockEvents` definition.
-
-## Event Handlers
-But how do the clients handle the events?
-
+As seen above, the socket server sets up the same events as the client-side socket does, but the type parameters are reversed, as the server is listening for `ClientToServerEvents` and emitting `ServerToClientEvents`. Note that the socket defined above is a different import than the one used for the client:
 ```ts
-class SampleEmitterClient {
-    constructor (server:SampleEmitterServer) {
-    const emitter = server.getEmitter()
-    emitter.on('tick', (t:number) => {console.log(t)})
-    emitter.on('reset', () => {console.log('reset')})
-    }
-}
+import { Server as SocketServer } from 'socket.io';
 ```
-As previously discussed, this client accesses the emitter object using the `getEmitter` function provided by the server. Following this, the client sets up event handlers; for `tick`, we simply `console.log` the `time` that was emitted by the server, and for `reset`, we just `console.log` the word 'reset' as there is no additional data emitted with this event.
 
-**Note: This specific example is a simple one-way communication between the server and the client. However, we can create a two-way communication by additionally emitting from the client and having event handlers in the server class.
-
-# Sockets in Covey.Town
-As you may have noticed, there are numerous instances within the Covey.Town application that take advantage of the socket architecture. One of the most significant examples of this is the `interactableUpdate` event, which is used numerous times throughout the application. Consider this socket event handler from `TownController.ts`.
-
+## Putting it All Together
+Now that we know how to define our sockets for both the client and server, let's look at an example of these sockets communicating. Below we have the `sendInteractableCommand` from the `townController` on the frontend, meaning the socket being used here refers to the client-side socket.
 ```ts
-this._socket.on('interactableUpdate', interactable => {
-      try {
-        const controller = this._interactableControllers.find(c => c.id === interactable.id);
-        if (controller) {
-          const activeBefore = controller.isActive();
-          controller.updateFrom(interactable, this._playersByIDs(interactable.occupants));
-          const activeNow = controller.isActive();
-          if (activeBefore !== activeNow) {
-            this.emit('interactableAreasChanged');
+/**
+   * Sends an InteractableArea command to the townService. Returns a promise that resolves
+   * when the command is acknowledged by the server.
+   *
+   * If the command is not acknowledged within SOCKET_COMMAND_TIMEOUT_MS, the promise will reject.
+   *
+   * If the command is acknowledged successfully, the promise will resolve with the payload of the response.
+   *
+   * If the command is acknowledged with an error, the promise will reject with the error.
+   *
+   * @param interactableID ID of the interactable area to send the command to
+   * @param command The command to send @see InteractableCommand
+   * @returns A promise for the InteractableResponse corresponding to the command
+   *
+   **/
+  public async sendInteractableCommand<CommandType extends InteractableCommand>(
+    interactableID: InteractableID,
+    command: CommandType,
+  ): Promise<InteractableCommandResponse<CommandType>['payload']> {
+    const commandMessage: InteractableCommand & InteractableCommandBase = {
+      ...command,
+      commandID: nanoid(),
+      interactableID: interactableID,
+    };
+    return new Promise((resolve, reject) => {
+      const watchdog = setTimeout(() => {
+        reject('Command timed out');
+      }, SOCKET_COMMAND_TIMEOUT_MS);
+
+      const ackListener = (response: InteractableCommandResponse<CommandType>) => {
+        if (response.commandID === commandMessage.commandID) {
+          clearTimeout(watchdog);
+          this._socket.off('commandResponse', ackListener);
+          if (response.error) {
+            reject(response.error);
+          } else {
+            resolve(response.payload);
           }
         }
-      } catch (err) {
-        console.error('Error updating interactable', interactable);
-        console.trace(err);
+      };
+      this._socket.on('commandResponse', ackListener);
+      this._socket.emit('interactableCommand', commandMessage);
+    });
+  }
+```
+The above function may seem complex, but it
+- Create a message to send to the server
+- Set up a timer in the event that the server takes too long to respond (i.e. the command times out)
+- Set up a listener 
+- Add the listener as , and emit the command to the server
+
+This timer step is critical to the smooth operation of these sockets. Acknowledgement is a common networking problem, and so the client needs safeguards in place in the event that the server takes too long to respond. As previously mentioned, the `commandID` attribute is added to this message type so that the server can "acknowledge" this specific command.
+
+Now let's see how the server-side socket handles these events:
+```ts
+socket.on('interactableCommand', (command: InteractableCommand & InteractableCommandBase) => {
+      const interactable = this._interactables.find(
+        eachInteractable => eachInteractable.id === command.interactableID,
+      );
+      if (interactable) {
+        try {
+          const payload = interactable.handleCommand(command, newPlayer);
+          socket.emit('commandResponse', {
+            commandID: command.commandID,
+            interactableID: command.interactableID,
+            isOK: true,
+            payload,
+          });
+        } catch (err) {
+          if (err instanceof InvalidParametersError) {
+            socket.emit('commandResponse', {
+              commandID: command.commandID,
+              interactableID: command.interactableID,
+              isOK: false,
+              error: err.message,
+            });
+          } else {
+            logError(err);
+            socket.emit('commandResponse', {
+              commandID: command.commandID,
+              interactableID: command.interactableID,
+              isOK: false,
+              error: 'Unknown error',
+            });
+          }
+        }
+      } else {
+        socket.emit('commandResponse', {
+          commandID: command.commandID,
+          interactableID: command.interactableID,
+          isOK: false,
+          error: `No such interactable ${command.interactableID}`,
+        });
       }
     });
+    return newPlayer;
+  }
 ```
+Again, this function may seem complicated, but the key takeaway is that when this socket receives the `interactableCommand` event, it dispatches the events necessary (in this case, we find the interactable associated with the `interactableCommand` and let that interactable handle the command) and sends a `commandResponse` event back to the client to signify that the `interactableCommand` has been acknowledged.
 
-In this event handler, the `TownController` is responsible for updating the state of an interactable. An interactable will notify the `TownController` that there is a change to be made to the given interactable, and this controller will make those changes and notify other parts of the app as necessary by emitting more events. There are plenty of other events that are defined for use throughout the Covey.Town application, and each event will have its own listeners to update the state of the town as necessary.
-
-
-
-## What's Next?
+# Next Steps
 This covers everything you need to know about sockets within the scope of the course. If you are interested in more real world applications of sockets or learning how you might use a socket in your own applications, you are strongly encouraged to check out the [Socket.IO docs](https://socket.io/docs/v4/), as Socket.IO is one of the most popular libraries for integrating sockets into various web applications, and it is the library that Covey.Town uses for its socket handlers.
