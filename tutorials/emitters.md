@@ -6,23 +6,23 @@ parent: Tutorials
 nav_order: 4
 ---
 
-This tutorial covers the basics of Socket architecture. By the end of this tutorial, you will have an understanding of how sockets work and how they are applied in real-world examples, such as Covey.Town.
+This tutorial covers the basics of the emitter design pattern. By the end of this tutorial, you will have an understanding of the fundamentals of emitters, serving as a foundation for more advanced topics such as sockets.
 
 Contents:
 
-- [Understanding Sockets](#understanding-sockets)
-- [Implementing sockets](#implementing-sockets)
+- [Understanding Emitters](#understanding-emitters)
+- [Implementing Emitters](#implementing-emitters)
   - [Events](#events)
   - [Emitting Events](#emitting-events)
   - [Handling Events](#event-handlers)
-- [Sockets in Covey.Town](#sockets-in-coveytown)
+- [Emitters in Covey.Town](#emitters-in-coveytown)
 - [What's Next?](#whats-next)
 
-# Understanding Sockets
-Sockets are powerful networking tools that are used to establish two-way communication between two programs. The relationship between those programs ultimately varies across applications, but oftentimes you'll see sockets utilized in a client-server architecture. 
+# Understanding Emitters
+Emitters use a "publisher-subscriber" relationship to facilitate asynchronous communication between two programs.One program acts as the emitter (the publisher), and other programs can listen to the events emitted by the emitter (i.e. these programs subscribe to the publisher)
 
-# Implementing sockets
-Sockets can take on many forms, but at a minimum, they must allow for asynchronous communication between two independent program instances. Consider the following example:
+# Implementing Emitters
+Consider the following example:
 
 ```ts
 import { EventEmitter } from "events"
@@ -51,7 +51,7 @@ class SampleEmitterClient {
 There's a lot of moving parts here, so let's break it down step by step.
 
 ## Events
-Events serve a key role in allowing sockets to be versatile; they allow sockets to emit/listen to specific events at the developer's discretion, allowing for more control over their application's interactions. Let's again consider the previous example.
+Events allow emitters to emit/listen to specific events at the developer's discretion, allowing for more control over their application's interactions. Let's again consider the previous example.
 
 ```ts
 type ClockEvents = {
@@ -60,7 +60,7 @@ type ClockEvents = {
 }
 ```
 
-The above `ClockEvents` type defines 2 events for any socket that decides to use them. The function signature following the event name refers to the type of data that is passed when the event is emitted. For example, when a `tick` event is emitted, a number representing the time is emitted along with it, and event handlers can use this time however they please. This concept will make more sense when we talk about emitting and handling events below.
+The above `ClockEvents` type defines 2 events for any emitter that decides to use them. The function signature following the event name refers to the type of data that is passed when the event is emitted. For example, when a `tick` event is emitted, a number representing the time is emitted along with it, and event handlers can use this time however they please. This concept will make more sense when we talk about emitting and handling events below.
 
 ## Emitting an Event
 Now that we understand what events are, let's see how our programs emit and handlers, starting with emitting. 
@@ -76,10 +76,10 @@ class SampleEmitterServer {
 }
 ```
 
-In this class, an emitter is defined with the events discussed in the previous section (`TypedEmitter` is an interface that allows for socket connections using TypeScript). Following this, the `getEmitter()` method provides the emitter object to any clients that wish to listen to events from the server. When the `demo` method is invoked, any clients that are listening to the `tick` and `reset` events will be notified, and those clients can handle those however they please. In this specific example, the `tick` event is being emitted with `time = 1`, and the `reset` event is not emitted with any additional data as per the `ClockEvents` definition.
+In this class, an emitter is defined with the events discussed in the previous section (`TypedEmitter` is an interface that allows for emitter implementations using TypeScript). Following this, the `getEmitter()` method provides the emitter object to any listeners that wish to listen to events from the server. When the `demo` method is invoked, any listeners that are listening to the `tick` and `reset` events will be notified, and those listeners can handle those however they please. In this specific example, the `tick` event is being emitted with `time = 1`, and the `reset` event is not emitted with any additional data as per the `ClockEvents` definition.
 
 ## Event Handlers
-But how do the clients handle the events?
+But how do the listeners handle the events?
 
 ```ts
 class SampleEmitterClient {
@@ -92,31 +92,31 @@ class SampleEmitterClient {
 ```
 As previously discussed, this client accesses the emitter object using the `getEmitter` function provided by the server. Following this, the client sets up event handlers; for `tick`, we simply `console.log` the `time` that was emitted by the server, and for `reset`, we just `console.log` the word 'reset' as there is no additional data emitted with this event.
 
-**Note: This specific example is a simple one-way communication between the server and the client. However, we can create a two-way communication by additionally emitting from the client and having event handlers in the server class.
-
-# Sockets in Covey.Town
-As you may have noticed, there are numerous instances within the Covey.Town application that take advantage of the socket architecture. One of the most significant examples of this is the `interactableUpdate` event, which is used numerous times throughout the application. Consider this socket event handler from `TownController.ts`.
+# Emitters in Covey.Town
+As you may have noticed, there are numerous instances within the Covey.Town application that take advantage of the socket architecture. One of the most significant examples of this is the `interactableUpdate` event, which is used numerous times throughout the application. Consider this event handler from `TownController.ts`.
 
 ```ts
-this._socket.on('interactableUpdate', interactable => {
-      try {
-        const controller = this._interactableControllers.find(c => c.id === interactable.id);
-        if (controller) {
-          const activeBefore = controller.isActive();
-          controller.updateFrom(interactable, this._playersByIDs(interactable.occupants));
-          const activeNow = controller.isActive();
-          if (activeBefore !== activeNow) {
-            this.emit('interactableAreasChanged');
-          }
-        }
-      } catch (err) {
-        console.error('Error updating interactable', interactable);
-        console.trace(err);
-      }
-    });
+ private set _players(newPlayers: PlayerController[]) {
+    this.emit('playersChanged', newPlayers);
+    this._playersInternal = newPlayers;
+  }
 ```
+This function emits a `playersChanged` event whenever the players in the Town have been updated. Now we consider one of the listeners to this event:
 
-In this event handler, the `TownController` is responsible for updating the state of an interactable. An interactable will notify the `TownController` that there is a change to be made to the given interactable, and this controller will make those changes and notify other parts of the app as necessary by emitting more events. There are plenty of other events that are defined for use throughout the Covey.Town application, and each event will have its own listeners to update the state of the town as necessary.
+```ts
+export function usePlayers(): PlayerController[] {
+  const townController = useTownController();
+  const [players, setPlayers] = useState<PlayerController[]>(townController.players);
+  useEffect(() => {
+    townController.addListener('playersChanged', setPlayers);
+    return () => {
+      townController.removeListener('playersChanged', setPlayers);
+    };
+  }, [townController, setPlayers]);
+  return players;
+}
+```
+When the `playersChanged` event is invoked, this custom hook sets the players using `setPlayers`, allowing any components that use this hook to maintain an updated list of the players.
 
 
 
