@@ -13,7 +13,14 @@ In this activity, you will configure a continuous development pipeline using [Gi
 Only one member of each team needs to do these steps - the resulting deployment will be shared by the whole team.
 
 ## Pre-requisites
-There are two pre-requisites for this activity: you must have a GitHub.com repository generated following our [project forking instructions]({{ site.baseurl }}{% link Assignments/project-overview.md %}), and you must have a Twilio account. 
+There are two pre-requisites for this activity: you must have a GitHub.com repository generated and you must have a Twilio account. 
+
+### Creating a GitHub Repository
+Your team's development must take place within a private GitHub repository in our GitHub Classroom. To create your repository, each member of your team should follow these instructions:
+1. Sign in to [GitHub.com](https://www.github.com/), and then [use our invitation to create a repository with the covey.town codebase](https://classroom.github.com/a/7Ax0k2SR). Check to see if one of your groupmates has created a group already - if so, select it to join it. Otherwise, you should enter your group number (e.g. "Group XYY") as the team name where X is your section number and YY is your group number. 
+2. Refresh the page, and it will show a link to your new repository, for example: `https://github.com/neu-cs4530/fall23-team-project-group-xyy`. Click the link to navigate to your new repository. This is the repository you will use for the project.
+
+This repository will be private, and visible only to your team and the course staff. After the semester ends, you are welcome to make it public - you have complete administrative control of the repository. 
 
 If you run into the error "refusing to allow an OAuth App to create or update workflow" when trying to push to GitHub, the fix is to [update your saved authentication credentials for GitHub](https://stackoverflow.com/questions/64059610/how-to-resolve-refusing-to-allow-an-oauth-app-to-create-or-update-workflow-on). For instance, you can follow [these instructions to update your credentials in the MacOS Keychain](https://docs.github.com/en/github/using-git/updating-credentials-from-the-macos-keychain). If all else fails, you can [connect to GitHub with SSH](https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh) instead of HTTPS, which will also solve this problem. This error seems to only occur when pushing a change to the GitHub Actions configuration file, so you could also side-step the problem by having a team mate push this change to GitHub instead (who may not run into this issue).
 
