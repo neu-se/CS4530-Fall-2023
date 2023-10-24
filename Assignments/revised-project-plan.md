@@ -23,7 +23,7 @@ Given the problem statement, develop three user stories that show how a user wou
 "As a < type of user >, I want < some goal > so that < some reason >."
 My conditions of satisfaction are < list of common cases and special cases that must work >. Please make sure that your conditions of satification are complete (i.e., cover all common cases) and can be turned into testable behaviors.
 
-**EACH CONDITION OF SATISFACTION MUST HAVE A PRIORITY (Essential, Desirable, or Optional)**.  The set of essential items will constitute the "Minimum Viable Product".
+**EACH CONDITION OF SATISFACTION MUST HAVE A PRIORITY (Essential, Desirable, or Optional). EACH USER STORY MUST HAVE SOME ESSENTIAL AND/OR DESIRABLE CONDITIONS OF SATISFACTION**.  The set of essential items will constitute the "Minimum Viable Product".
 
 You should include three different user stories to describe how users will interact with your feature.
 Your three user stories should cover the key behavior that your feature will provide.
