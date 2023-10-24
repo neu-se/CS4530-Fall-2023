@@ -1,9 +1,9 @@
 ---
 layout: page
 title: CI/CD for Covey.Town
-permalink: /activities/continuous-development
+permalink: /tutorials/continuous-development
 parent: Tutorials
-nav_order: 6
+nav_exclude: true
 ---
 
 # Continuous Development Pipelines for Covey.Town
