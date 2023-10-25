@@ -2,7 +2,6 @@
 layout: page
 title: CI/CD for Covey.Town
 permalink: /activities/continuous-development
-parent: Tutorials
 nav_exclude: true
 ---
 
