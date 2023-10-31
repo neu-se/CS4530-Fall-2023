@@ -16,7 +16,7 @@ There are two pre-requisites for this activity: you must have a GitHub.com repos
 
 ### Creating a GitHub Repository
 Your team's development must take place within a private GitHub repository in our GitHub Classroom. To create your repository, each member of your team should follow these instructions:
-1. Sign in to [GitHub.com](https://www.github.com/), and then [use our invitation to create a repository with the covey.town codebase](https://classroom.github.com/a/7Ax0k2SR). Check to see if one of your groupmates has created a group already - if so, select it to join it. Otherwise, you should enter your group number (e.g. "Group XYY") as the team name where X is your section number and YY is your group number. 
+1. Sign in to [GitHub.com](https://www.github.com/), and then [use our invitation to create a repository with the covey.town codebase](https://classroom.github.com/a/7Ax0k2SR). Check to see if one of your groupmates has created a group already - if so, select it to join it. Otherwise, create a repo using the following format fall23-team-project-group-xyy where you should enter your group number (e.g. "Group-XYY") as the team name where X is your section number and YY is your group number.  
 2. Check your email for the invitation to join the repo. After that, refresh the page, and it will show a link to your new repository, for example: `https://github.com/neu-cs4530/fall23-team-project-group-xyy`. Click the link to navigate to your new repository. This is the repository you will use for the project.
 
 This repository will be private, and visible only to your team and the course staff. After the semester ends, you are welcome to make it public - you have complete administrative control of the repository. 
