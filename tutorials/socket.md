@@ -1,7 +1,7 @@
 ---
 layout: page
 title: Sockets
-permalink: /tutorials/emitters
+permalink: /tutorials/sockets
 parent: Tutorials
 nav_order: 4
 ---
@@ -40,7 +40,7 @@ To emphasize this point, we'll take a look at how Covey.Town implements sockets 
 
 ## Writing a Socket Client
 
-This is a simple definition of a Socket from `socket.io-client`. From the Socket.IO docs, 
+This is a simple definition of a Socket from `socket.io-client`. The snippet below
 ```ts
 import { Socket } from 'socket.io-client';
 /* eslint-disable import/no-relative-packages */
@@ -212,5 +212,7 @@ socket.on('interactableCommand', (command: InteractableCommand & InteractableCom
 ```
 Again, this function may seem complicated, but the key takeaway is that when this socket receives the `interactableCommand` event, it dispatches the events necessary (in this case, we find the interactable associated with the `interactableCommand` and let that interactable handle the command) and sends a `commandResponse` event back to the client to signify that the `interactableCommand` has been acknowledged.
 
+*Note: Covey.Town uses TypedEmitters (discussed in the Emitters tutorial on the course page) as an abstraction for socket communication. An example of this is that `TownController` extends `TypedEmitter` but has-a `CoveyTownSocket` (a SocketIO socket) as a private field.
+ 
 # Next Steps
 This covers everything you need to know about sockets within the scope of the course. If you are interested in more real world applications of sockets or learning how you might use a socket in your own applications, you are strongly encouraged to check out the [Socket.IO docs](https://socket.io/docs/v4/), as Socket.IO is one of the most popular libraries for integrating sockets into various web applications, and it is the library that Covey.Town uses for its socket handlers.
