@@ -102,7 +102,7 @@ The allocation of the 10% credit will be as follows: Overview and manual will be
 * The documentation covers all steps that the user would need to take to exercise all of your user stories.
 * Screenshots are included that capture the key interactions between a user and your new feature.
 * Course staff were able to follow these instructions to successfully interact with your project implementation.
-
+* URL of the deployed app.
 * The section is at most 4 pages (roughly 2,000 words maximum), NOT including figures. Fewer pages are absolutely acceptable; consider this a rough limit
 
 #### Meets minimum requirements:
