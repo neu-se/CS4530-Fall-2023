@@ -9,10 +9,10 @@ nav_order: 7
 Each project will be graded by the team's assigned TA mentor and the instructor. For most of the submission components below, we provide two benchmark rubrics: one for a submission that is satisfactory (full marks), and one that would be meeting our minimum expectations (a pass). In practice, when grading projects we will usually assign numeric grades and provide partial credit, using these rubrics as guidelines for those two extremes. Rubric for remaining components will be provided by individual instructors. 
 
 ### Adjustments in project scope
-We are hopeful that all teams will deliver all essential and desired features proposed in their revised project plans. However, it is possible that there might be some minor deviations from the origional plan - in the five-week implementation period, there are sure to be some teams that encounter unexpected technical hurdles. As described in greater detail in the rubrics below, teams that have regular communication with their TA regarding their project status may have the opportunity to request variances to their project scope. 
+We are hopeful that all teams will deliver all essential AND desired features proposed in their revised project plans. However, it is possible that there might be some minor deviations from the origional plan - in the five-week implementation period, there are sure to be some teams that encounter unexpected technical hurdles. As described in greater detail in the rubrics below, teams that have regular communication with their TA regarding their project status may have the opportunity to request variances to their project scope. 
 
 ### Individual Contributions to the project
-In cases where team members do not equally contribute to the project, we may assign different grades to different individuals, up to an extreme of deducting 50% of the marks from a student. In the event that a group member does not contribute at all to the project, student might receive 0. We will evaluate each individual's contribution on the basis of a variety of factors, including progress reports at weekly meetings, through inspecting version control history, through each student's self-reflection, and through each team's (or student's) peer evaluations during and/or at the end of the project. We will make regular efforts to collect and distribute this feedback throughout the project. Our ultimate goal is for all students to participate and receive full marks.
+In cases where team members do not equally contribute to the project, we may assign different grades to different individuals, up to an extreme of deducting 50% of the marks from a student. In the event that a group member does not contribute at all to the project, student might receive 0. We will evaluate each individual's contribution on the basis of a variety of factors, including progress reports at weekly meetings, through inspecting version control history, through each team's (or student's) peer evaluations during and/or at the end of the project, and through each student's self-reflection. We will make regular efforts to collect and distribute this feedback throughout the project. Our ultimate goal is for all students to participate and receive full marks.
 
 ## Summary of grading 
 
@@ -47,7 +47,7 @@ We will grade each of these using the following rubric:
 
 #### Meets minimum requirements:
 * Implemented feature largely satisfies acceptance criteria as proposed by the team, but may not meet the course staff’s interpretation of those criteria.
-* Implemented feature is deployed to a publicly-accessible URL, uusing Netlify and Heroku for hosting (or as per deployement instructions provided).
+* Implemented feature is deployed to a publicly-accessible URL, using Netlify and Heroku /Render for hosting (or as per deployement instructions provided).
 * The implementation may have some obvious flaws, but largely works without crashing.
 * Implemented feature does not include any eslint-disable or ts-ignore flag
 
@@ -63,7 +63,7 @@ The project must include evidence of testing. Ideally, all new features will be 
 * Tests may contain ESlint warnings (but no errors); does not include any eslint-disable or ts-ignore flags
 
 ### Process (20%)
-The Process grade includes: use of a structured development process, including code reviews, timely completion of sprint progress reports/retrospectives, individual/team surveys, peer evaluations and weekly meetings with TA Mentor (for Week 6, 8, 10-14). It also includes appropriate division of labor within the project. For full credit, each member of the team must have at least 4 commits in the final delivered code. 
+The Process grade includes: use of a structured development process, including code reviews, timely completion of sprint progress reports/retrospectives, individual/team surveys, peer evaluations and weekly meetings with TA Mentor (for Week 6, 8-13). It also includes appropriate division of labor within the project. For full credit, each member of the team must have at least 4 commits in the final delivered code. 
 * Ongoing development progress including code reviews, github commits, etc. count 10% of the grade
 * Peer evaluations, TA meeting, submission of surveys/reports counts 10% of the project grade. 
 These items will be evaluated using the rubrics below. 
@@ -91,7 +91,7 @@ The final report should consist of three sections:
 * Technical Overview
 * Process Overview
 
-The allocation of the 10% credit will be announced later.
+The allocation of the 10% credit will be as follows: Overview and manual will be worth 4%, technical and process overviews will be worth 3% each.
 
 ### * Feature Overview and User Manual
 
@@ -102,12 +102,14 @@ The allocation of the 10% credit will be announced later.
 * The documentation covers all steps that the user would need to take to exercise all of your user stories.
 * Screenshots are included that capture the key interactions between a user and your new feature.
 * Course staff were able to follow these instructions to successfully interact with your project implementation.
+
 * The section is at most 4 pages (roughly 2,000 words maximum), NOT including figures. Fewer pages are absolutely acceptable; consider this a rough limit
 
 #### Meets minimum requirements:
 * The Feature contains documentation for a user to interact with your updated version of Covey.Town, but perhaps does not fully describe how.
 * The documentation includes at least one or two screenshots, but screenshots do not capture interactions with all of the user stories.
 * The course staff were able to figure out how to use it through trial and error.
+* URL of the deployed app.
 * The section is at most 4 pages, NOT including figures. Fewer pages are absolutely acceptable; consider this a rough limit
 
 ### * Technical Overview
