@@ -6,7 +6,7 @@ parent: Final Project Grading
 nav_order: 8
 ---
 
-# Specifications for Fall 2023 Live Demos / Presentations (Sections 2, 4, 7 - Prof. Bhutta)
+# Specifications for Fall 2023 Live Demos / Presentations (Sections 2, 4, & 7 - Prof. Bhutta)
 
 Each group will present a live demo to show the feature that they have added to Covey.Town for the final project (the demo MUSt be from hosted website, NOT from localhost). The schedule of these demos will be discussed/finalized during the lecture. You will have 9 minutes maximum (8 minutes to setup and present. 1 minute for questions and everything else). You will lose points if your demo goes over 8 minutes. Please rehearse it and time yourself (best to keep it to 7 minutes or less). Attendance is REQUIRED for these demos.
 

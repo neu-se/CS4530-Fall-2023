@@ -3,7 +3,7 @@ layout: page
 title: Sec 6 Demos
 permalink: /assignments/sec-6-demos
 parent: Final Project Grading
-nav_order: 7
+nav_order: 9
 ---
 
 # Specifications for Fall 2023 Live Presentations (Sec 6, Prof. Wand)
