@@ -78,10 +78,12 @@ The last step to our continuous development pipeline will be to automatically de
 	* Click "Create static site" to create the site.
 3. Render.com will take several minutes to build your site. Once it is deployed, visit the site and confirm that it's working. If you see an error in the JavaScript log like `process is not defined`, this indicates that the site was not built with the `NEXT_PUBLIC_TOWNS_SERVICE_URL` variable set - confirm that it is correctly set, and then rebuild the site on Render.com.
 
+## Alternative to render.com
+If you run into any problems with render.com, you are welcome to use the instructions below as alternative. Please note that these will require you to enter your credit card info even for free student usage.
 
-**If you run into any problems with render.com, you are welcome to use the instructions below as alternative. Please note that these will require you to enter your credit card info even for free student usage. **{: .label .label-red }
+For this, you will be working with Heroku and Netlify.
 
-## Set up Heroku
+### Set up Heroku
 We will configure GitHub Actions to automatically deploy the backend rooms service to Heroku, after the tests have passed. This way, you can have a publicly available version of your backend service, which will automatically update with any changes that you push to Git.
 Note that it is possible to set up Heroku to automatically deploy every new change that you push to GitHub (without setting up GitHub Actions). Instead, we'll configure our GitHub Actions pipeline to deploy to Heroku *only* if our test suite passes.
  
@@ -119,7 +121,7 @@ Scroll down to "API Key" and click "Reveal". Copy this key, you'll use it in the
 
  11. To confirm that your service is successfully deployed, try to visit it in your browser. Use the URL that you noted in step 5 ("Your app can be found at https://covey-deployment-example.herokuapp.com/"). Append `towns` to the URl, and visit it in your browser (e.g. `https://covey-deployment-example.herokuapp.com/towns`). After a short delay, you should see the response `[]`.
 
-## Set up Netlify
+### Set up Netlify
 **Note:** Students will need to work with their assigned TA to create the project and receive invitations for all team members. Be sure to create your account using your @northeastern.edu email (which might require you to "signup" for a Netlify account with that email instead of sign in with GitHub).
 
 The last step to our continuous development pipeline will be to automatically deploy our frontend to Netlify. Netlify will create an optimized production build of your frontend (by running `npm run build`) and host it in their globally-distributed content delivery network. Netlify will also automatically build an deploy previews of pull requests on your repository. 
