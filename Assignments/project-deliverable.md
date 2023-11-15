@@ -38,11 +38,10 @@ Each team will submit a poster. Your poster will be a single-page document, that
 
 We've created a [sample poster for the "Conversation Areas" feature]({{ site.baseurl }}{% link Examples/conversation-areas-poster.pdf %}), which you might find useful in deciding how to format your poster. It's fine to use a different aspect ratio (e.g. portrait instead of landscape), and there are no specific requirements for font size or amount of text. Please try to create a document that you feel represents your project, imagine your target audience as a recruiter for a software engineering role: your goal is to demonstrate that you have some experience working on some non-trivial software engineering project.
 
-In addition, some sections will have live (in-person) demos and others may ask you to record a demo video. Details for project demos and/presentations will be provided during class by each instructor (and may vary from section to section). **Posters and/or demo videos and/or presentations will be submitted on Canvas**, under the assignment "Project: Poster / Demo".
+In addition, some sections will have live (in-person) demos and others may ask you to record a demo video. Details for project demos and/or presentations will be provided during class by each instructor (and may vary from section to section). **Posters and/or demo videos and/or presentations will be submitted on Canvas**, under the assignment "Project: Poster / Demo".
  
 #### Individual Reflection
 Create a PDF of your reflection, and submit it to Canvas, under the assignment "Project: Individual Reflection". 
 
 ## Grading
-
 Details on grading may be found at [Project Grading]({{ site.baseurl }}{% link Assignments/project-grading.md %})
