@@ -76,4 +76,53 @@ The last step to our continuous development pipeline will be to automatically de
 	* Click "Advanced" to expand the advanced settings
 	* Click "Add environmental variable" and add a variable with the key `NEXT_PUBLIC_TOWNS_SERVICE_URL`, setting the value to be the URL of your townService (e.g. `https://covey-deployment-example.onrender.com`)
 	* Click "Create static site" to create the site.
-3. Render.com will take several minutes to build your site. Once it is deployed, visit the site and confirm that it's working. If you see an error in the JavaScript log like `process is not defined`, this indicates that the site was not built with the `NEXT_PUBLIC_TOWNS_SERVICE_URL` variable set - confirm that it is correctly set, and then rebuild the site on Render.com. 
+3. Render.com will take several minutes to build your site. Once it is deployed, visit the site and confirm that it's working. If you see an error in the JavaScript log like `process is not defined`, this indicates that the site was not built with the `NEXT_PUBLIC_TOWNS_SERVICE_URL` variable set - confirm that it is correctly set, and then rebuild the site on Render.com.
+
+## Set up Heroku
+We will configure GitHub Actions to automatically deploy the backend rooms service to Heroku, after the tests have passed. This way, you can have a publicly available version of your backend service, which will automatically update with any changes that you push to Git.
+Note that it is possible to set up Heroku to automatically deploy every new change that you push to GitHub (without setting up GitHub Actions). Instead, we'll configure our GitHub Actions pipeline to deploy to Heroku *only* if our test suite passes.
+ 
+1. Enroll for the [Student Github developer pack](https://education.github.com/benefits?type=student) and choose "Get student benefits". Follow the steps as asked after doing this. It generally takes upto 2 business days or more to get the enrollment confirmation from Github.
+2. Go to [Heroku.com](https://www.heroku.com) and create an account, or sign in if you already have one using the email id same as the one used for Github account.
+3. Enroll in the [Heroku for students](https://www.heroku.com/github-students/signup) offer, if you have not already. This would require you to have already enrolled in the Github student developer pack. You will need to complete 3 steps which involves adding a credit card for receiving the platform credits which then can be used for creating apps.
+4. After receiving the confirmation of the enrollment in you mail box, the platform credits will be reflected in your billing section in your Heroku account in a few hours. Do not create an app before this.
+5. After signing in, create a new app. Choose a name for your app that is somewhat descriptive - it will become part of the URL that you'll use to access the service. Click "Create app" (no need to go through "Add to pipeline...").
+6. After creating your app on Heroku, open the app's settings page, revealing a page that looks like this:
+![Heroku App Settings]({{site.baseurl}}{% link tutorials/assets/continuous_dev/heroku-settings.png %})
+7. Click "Reveal Config Vars", and enter the 4 twilio configuration variables from your `.env` file (the same 4 that you set up on GitHub Actions). Heroku's "Config Vars" are the way that we tell Heroku what variables to use for `.env` without having to commit that file into the (publicly viewable) repository. Your configuration settings on Heroku should look like this now:
+![Heroku App Settings]({{site.baseurl}}{% link tutorials/assets/continuous_dev/heroku-settings-expanded.png %})
+8. Before navigating away from this settings page, scroll down to "Domains", and take note of the address that Heroku has provided for your app. This should say something like "Your app can be found at https://covey-deployment-example.herokuapp.com/".
+9. Retrieve your personal Heroku API key. From Heroku go to "Manage Account" (click on the profile menu on  the top right of the page and then click "Account Settings". 
+![Heroku Profile Menu]({{site.baseurl}}{% link tutorials/assets/continuous_dev/heroku-account-settings-menu.png %})
+Scroll down to "API Key" and click "Reveal". Copy this key, you'll use it in the next step.
+10. Return to the GitHub Settings -> Secrets -> Actions pane, and add a new repository secret: `HEROKU_API_KEY`, setting the value to the exact string that you copied from "API Key" in the last step. Add the secret `HEROKU_APP_NAME` (in this example, our app name is `covey-deployment-example`), set to the name that you choose for your Heroku app in step 2. Add the secret `HEROKU_EMAIL`, set to the email address that you used when you created your Heroku account. Even though these last two values aren't *secret* per-say, configuring them in this way keeps them out of the config files, so you won't run into merge conflicts with our upstream branch (which would have a [`main.yml`]({{site.baseurl}}{% link tutorials/assets/continuous_dev/main.yml %}) file with our own settings in it). 
+11. Update the CI workflow (the file `.github/workflows/main.yml`). The starter code has the Heroku deploy commented out: uncomment it. If you see the line `if: github.ref == 'refs/heads/master'` in the file, update it to match as below (`refs/heads/main`). 
+12. Return to your GitHub Actions page, and the detail view for the most recent build - retrigger it, so that it runs again. Now that we have the Heroku secrets installed, we expect the "Deploy to Heroku" aspect of the deployment job to pass, although the "deploy to netlify" task will still fail. Here is the segment of the GitHub Actions configuration file that deploys our app to Heroku:
+
+	```yaml
+	  deploy:
+		if: github.ref == 'refs/heads/main'
+	    needs: build-and-test
+		runs-on: ubuntu-latest
+		steps:
+		  - uses: actions/checkout@v2
+		  - uses: akhileshns/heroku-deploy@v3.12.12 # Deploy to Heroku action
+			with:
+              heroku_api_key: {% raw %}${{secrets.HEROKU_API_KEY}}
+              heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+              heroku_email: ${{secrets.HEROKU_EMAIL}}
+ {% endraw %}
+	```
+
+ 11. To confirm that your service is successfully deployed, try to visit it in your browser. Use the URL that you noted in step 5 ("Your app can be found at https://covey-deployment-example.herokuapp.com/"). Append `towns` to the URl, and visit it in your browser (e.g. `https://covey-deployment-example.herokuapp.com/towns`). After a short delay, you should see the response `[]`.
+
+## Set up Netlify
+**Note:** Students should work with their assigned TA to create the projects and send the invitations to all the team members. Be sure to create your account using your @northeastern.edu email (which might require you to "signup" for a Netlify account with that email instead of sign in with GitHub).
+
+The last step to our continuous development pipeline will be to automatically deploy our frontend to Netlify. Netlify will create an optimized production build of your frontend (by running `npm run build`) and host it in their globally-distributed content delivery network. Netlify will also automatically build an deploy previews of pull requests on your repository. 
+ 
+1. Use the invitation that you received to your @northeastern.edu account to create an account on Netlify and join our organization. Netlify no longer offers a free product for private repositories - you will need to use our organization to create your site
+2. After logging in, select the site that corresponds to your team name, and then click "Deploy your site" followed by "Deploy Settings." Select "Link repository" and follow the prompts to connect Netlify with GitHub. Choose the "neu-cs4530" organization (you might need to click "Add another organization" in the dropdown to find it, and then select your repository. Leave "branch to deploy" as "main". Leave the base directory unset, and set the build command to `CI= npm install && cd frontend && npm run-script build`, and the publish directory to `frontend/build`. Click deploy site.
+4. Click on "Site Settings" and scroll down to "Environment". This is where we define the `.env` variables that Netlify should use (without needing to put `.env` in a publicly viewable place). Click "Edit variables" and add a single variable: `REACT_APP_TOWNS_SERVICE_URL` should be set to your heroku server name (https://yourapp-name.herokuapp.com, find in heroku "settings" page for your app). Click save. 
+5. The very first deploy that was triggered will not have this environmental variable set, and hence the resulting build won't actually be functional. Cancel the build if it is still in progress, and then click "trigger build" to trigger a new build. Once you confirm that it builds correctly, it will always auto-build and deploy without needing this intervention.
+6. Netlify will take several minutes to build your site. From the "Deploys" view of Netlify's control panel, you can see the status of each build. Once you have a successful build, it will show a URL where your site is published (something like https://fall-23-team-project-group-999.netlify.app). Visit the site and confirm that it's working. If you see an error in the JavaScript log like `process is not defined`, this indicates that the site was not built with the `REACT_APP_TOWNS_SERVICE_URL` variable set - confirm that it is correctly set, and then rebuild the site on Netlify. 
