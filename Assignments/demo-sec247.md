@@ -20,7 +20,7 @@ Your presentation needs to include the following:
 
 During your presentation, you might consider following this order: introduction of project idea/user stories follow by live demo, then talk about above items in an appropriate order.
 
-You may also include your email address and any other related info (i.e., github repo link, hosted site link, etc). You will also submit a copy of your presentation (pptx/pdf file, not link) on Canvas.
+You should include your email address and any other related info (i.e., github repo link, hosted site link, etc). You will also submit a copy of your presentation (pptx/pdf file, not link) on Canvas.
 
 # Grading Rubric:
-Your final Poster and Demos are worth 4% of the overall course. Poster will be worth 1% and will be graded based on whether you submitted it on time or not. Demos will be worth 3% and will be graded using the following criteria: Each group will evaluate each others' demos and will assign scores (Instructor and TAs will do the same). Your final demo score will be calculated by combining all of these scores (equally weighted).
+Your final Poster and Demos are worth 4% of the overall course. Poster will be worth 1% and will be graded based on whether you submitted it on time or not. Demos will be worth 3% and will be graded using the following criteria: Each group will evaluate each others' demos and will assign scores (Instructor and TAs will do the same). Your final demo score will be calculated by combining all of these scores (equally weighted). Moreover, your will not receive points for demo is your group fails to submit copy of presentation on Canvas or if you are not present for all presentations/demos during class.
