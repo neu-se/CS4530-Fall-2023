@@ -7,10 +7,10 @@ nav_order: 8
 ---
 
 Posters and Demos from this semester can be found below:
-* [Section 2](# Section 2 - Bhutta) 
-* [Section 4](# Section 4 - Bhutta) 
-* [Section 6](# Section 6 - Wand) 
-* [Section 7](# Section 7 - Bhutta) 
+* [Section 2](#Section-2---Bhutta) 
+* [Section 4](#Section-4---Bhutta)
+* [Section 6](#Section-6---Wand)
+* [Section 7](#Section-7---Bhutta)
 
 The following group projects were chosen as best projects by their peers: 203, 401 and 707
 
