@@ -14,7 +14,7 @@ Covey.Town provides a virtual meeting space where different groups of people can
 Covey.Town is inspired by existing products like [Gather.Town](https://gather.town), [Sococo](https://www.sococo.com), and [Gatherly.IO](https://www.gatherly.io) --- but it is an open source effort, and the features will be proposed and implemented by you!
 All implementation will take place in the TypeScript programming language, using React for the user interface.
 
-Select projects from Fall 2022 are hosted [in our project showcase](https://neu-se.github.io/CS4530-Fall-2022/assignments/project-showcase).
+Select projects from Fall 2023 are hosted [in our project showcase](https://neu-se.github.io/CS4530-Fall-2023/assignments/project-showcase).
 
 
 ### Overview of Project Deliverables
@@ -24,8 +24,8 @@ Select projects from Fall 2022 are hosted [in our project showcase](https://neu-
 | 09/27/23| Team Formation Survey | Specify preferences for teammates |
 | 10/02/23| Project Kick-off Meeting | Schedule a meeting with your Mentor TA during this week |
 | 10/11/23 | [Preliminary Project Plan]({{ site.baseurl }}{% link Assignments/project-plan.md %}) | Propose a new feature for Covey.Town that can be planned and implemented within 7 weeks |
-| 10/25/23 | Revised Project Plan | Refine the scope of your feature based on staff feedback, define detailed requirements and project acceptance criteria. |
-| 11/29/23 | Project Delivery - Implementation and Documentation | Deliver your new feature, including design documentation and tests |
+| 10/25/23 | [Revised Project Plan]({{ site.baseurl }}{% link Assignments/revised-project-plan.md %}) | Refine the scope of your feature based on staff feedback, define detailed requirements and project acceptance criteria. |
+| 11/29/23 | [Project Delivery - Implementation and Documentation]({{ site.baseurl }}{% link Assignments/project-deliverable.md %}) | Deliver your new feature, including design documentation and tests |
 
 ### Summary of Project Grading
 Your overall project grade (which will account for 40% of your final grade in this course) will be the weighted average of each of the deliverables.
