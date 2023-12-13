@@ -7,10 +7,10 @@ nav_order: 8
 ---
 
 Posters and Demos from this semester can be found below:
-* [Section 2](#Section-2) 
-* [Section 4](#Section-4)
-* [Section 6](#Section-6)
-* [Section 7](#Section-7)
+* [Section 2](#section-2) 
+* [Section 4](#section-4)
+* [Section 6](#section-6)
+* [Section 7](#section-7)
 
 The following group projects were chosen as best projects by their peers: 203, 401 and 707
 
