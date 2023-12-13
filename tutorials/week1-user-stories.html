@@ -1,0 +1,435 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/CS4530-Fall-2023/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/CS4530-Fall-2023/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+.site-nav > ul.nav-list:first-child > li > a,
+.site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(3)) > a,
+.site-nav > ul.nav-list:first-child > li > ul > li > ul > li > a {
+  background-image: none;
+}
+
+.site-nav > ul.nav-list:not(:first-child) a,
+.site-nav li.external a {
+  background-image: none;
+}
+
+.site-nav > ul.nav-list:first-child > li:nth-child(4) > ul > li:nth-child(3) > a {
+  font-weight: 600;
+  text-decoration: none;
+}.site-nav > ul.nav-list:first-child > li:nth-child(4) > button svg,
+.site-nav > ul.nav-list:first-child > li:nth-child(4) > ul > li:nth-child(3) > button svg {
+  transform: rotate(-90deg);
+}.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(4) > ul.nav-list,
+.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(4) > ul.nav-list > li.nav-list-item:nth-child(3) > ul.nav-list {
+  display: block;
+}
+  </style>
+
+  
+
+  
+    <script src="/CS4530-Fall-2023/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/CS4530-Fall-2023/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>User Stories and Conditions of Satisfaction | CS4530, Fall 2023</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="User Stories and Conditions of Satisfaction" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Fall 2023. Professors Adeel Bhutta and Mitch Wand." />
+<meta property="og:description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Fall 2023. Professors Adeel Bhutta and Mitch Wand." />
+<link rel="canonical" href="https://neu-se.github.io/CS4530-Fall-2023/tutorials/week1-user-stories" />
+<meta property="og:url" content="https://neu-se.github.io/CS4530-Fall-2023/tutorials/week1-user-stories" />
+<meta property="og:site_name" content="CS4530, Fall 2023" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="User Stories and Conditions of Satisfaction" />
+<script type="application/ld+json">
+{"description":"Northeastern University CS 4530 “Fundamentals of Software Engineering”, Fall 2023. Professors Adeel Bhutta and Mitch Wand.","url":"https://neu-se.github.io/CS4530-Fall-2023/tutorials/week1-user-stories","@type":"WebPage","headline":"User Stories and Conditions of Satisfaction","dateModified":"2023-12-13T17:42:48+00:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/CS4530-Fall-2023/" class="site-title lh-tight">
+  CS4530, Fall 2023
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Calendar category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/CS4530-Fall-2023/calendar/" class="nav-list-link">Calendar</a><ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Fall-2023/calendar/s2" class="nav-list-link">Section 2 - Calendar</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/calendar/s4" class="nav-list-link">Section 4 - Calendar</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/calendar/s6" class="nav-list-link">Section 6 - Calendar</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/calendar/s7" class="nav-list-link">Section 7 - Calendar</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Modules category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/CS4530-Fall-2023/modules/" class="nav-list-link">Modules</a><ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/1-requirements-testing" class="nav-list-link">1 - Orientation & Requirements</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/2-requirements-to-code" class="nav-list-link">2 - From Requirements to Code</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/3-best-practices-for-effective-programmers" class="nav-list-link">3 - Best Practices for Effective Programmers</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/4-interaction-level-design-patterns" class="nav-list-link">4 - Interaction-Level Design Patterns</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/5-concurrency-patterns-in-typescript" class="nav-list-link">5 - Concurrency Patterns in Typescript</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/6-software-process" class="nav-list-link">6 - Software Process</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/7-react" class="nav-list-link">7 - React</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/8-patterns-of-react" class="nav-list-link">8 - React Hooks</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/9-distributed-systems-1" class="nav-list-link">9 - Distributed Systems (Part 1)</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/10-distributed-systems-2" class="nav-list-link">10 - Distributed Systems (Part 2)</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/11-good-tests" class="nav-list-link">11 - Test Adequacy</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/12-larger-tests" class="nav-list-link">12 - Larger Tests</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/13-cloud-infrastructure" class="nav-list-link">13 - Cloud Infrastructure</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/14-continuous-development" class="nav-list-link">14 - Continuous Development</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/15-security" class="nav-list-link">15 - Security</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/16-technical-debt" class="nav-list-link">16 - Technical Debt</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/17-ethics" class="nav-list-link">17 - Ethics</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Assignments category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/CS4530-Fall-2023/assignments/" class="nav-list-link">Assignments</a><ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/ip1" class="nav-list-link">Individual Project 1</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/ip2" class="nav-list-link">Individual Project 2</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/project-overview" class="nav-list-link">Project Overview</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/project-plan" class="nav-list-link">Preliminary Project Plan</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/revised-project-plan" class="nav-list-link">Revised Project Plan</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/project-deliverable" class="nav-list-link">Project Final Deliverable</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/project-grading" class="nav-list-link">Final Project Grading</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/project-showcase" class="nav-list-link">Project Showcase</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Tutorials category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/CS4530-Fall-2023/tutorials/" class="nav-list-link">Tutorials</a><ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Fall-2023/tutorials/week1-getting-started" class="nav-list-link">Installing a Development Environment</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/tutorials/week1-typescript-basics" class="nav-list-link">Typescript Basics</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/tutorials/week1-user-stories" class="nav-list-link">User Stories and Conditions of Satisfaction</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/tutorials/week1-unit-testing" class="nav-list-link">Unit Testing with Jest</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/tutorials/week4-react-basics" class="nav-list-link">React Tutorial</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/textbooks/" class="nav-list-link">Textbooks</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/staff/" class="nav-list-link">Staff</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Policies category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/CS4530-Fall-2023/policies/" class="nav-list-link">Policies</a><ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Fall-2023/policies/style/" class="nav-list-link">Code Style</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/resources/" class="nav-list-link">Other Resources</a></li></ul>
+
+  
+</nav>
+
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search CS4530, Fall 2023" aria-label="Search CS4530, Fall 2023" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+  
+    <li class="breadcrumb-nav-list-item"><a href="/CS4530-Fall-2023/tutorials/">Tutorials</a></li>
+  <li class="breadcrumb-nav-list-item"><span>User Stories and Conditions of Satisfaction</span></li>
+  </ol>
+</nav>
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <div class="fs-1 text-right fw-300">Last updated: Dec 13, 23 17:42 UTC | <a href="/CS4530-Fall-2023/tutorials/week1-user-stories">Permalink</a></div>
+
+<p>This tutorial provides examples for user stories, consitions of satisafation and how a minimum viable product can be defined.</p>
+
+<p>Contents:</p>
+<ul>
+  <li><a href="#user-stories-and-conditions-of-satisfaction">User Stories and Conditions of Satisfaction</a></li>
+  <li><a href="#user-stories-and-project-planning">User Stories and Project Planning</a></li>
+  <li><a href="#user-stories-and-test-driven-development">User Stories and Test-Driven Development</a></li>
+  <li><a href="#examples">Examples</a></li>
+</ul>
+<h1 id="user-stories-and-conditions-of-satisfaction">
+  
+  
+    <a href="#user-stories-and-conditions-of-satisfaction" class="anchor-heading" aria-labelledby="user-stories-and-conditions-of-satisfaction"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> User Stories and Conditions of Satisfaction
+  
+  
+</h1>
+    
+
+<p>A user story is an informal, general explanation of a software feature written from the perspective of the <strong>end user or customer</strong>.</p>
+
+<p>As a <code>&lt;role&gt;</code> I can <code>&lt;perform action&gt;</code> so that I can <code>&lt;receive benefit&gt;</code></p>
+
+<p>User stories represent something the user/customer might want. There will be many ways to give the user/customer the benefit that they want.</p>
+
+<p>We need to refine these in order to determine what to build. We call these refinements “conditions of satisfaction” (COS)</p>
+
+<p>A COS should be a specific capability or behavior that the user expects, in the user’s terms.  It should be visible to and verifiable by the user.</p>
+
+<p>The COS is a guide to the implementation team. It should be specific enough so that the implementation team has a clear idea of what they are building.
+There still may be many ways to implement a COS. For example, a COS probably would not specify any of the graphic or layout details; these would likely be left to the implementation team.</p>
+<h1 id="user-stories-and-project-planning">
+  
+  
+    <a href="#user-stories-and-project-planning" class="anchor-heading" aria-labelledby="user-stories-and-project-planning"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> User Stories and Project Planning
+  
+  
+</h1>
+    
+
+<p>In planning a project, need to assign priorities to each user story and Condition of Satisfaction. Priorities tell us the order in which COS and their associated engineering tasks should be addressed, and how much effort should be devoted to each of them. 
+There are many ways to describe priorities. For example, a user story might be described as Essential, Desirable, or Extension:</p>
+<ul>
+  <li><strong>Essential</strong> means the project is useless without it.</li>
+  <li><strong>Desirable</strong> means the project is less usable without it, but is still usable.</li>
+  <li><strong>Extension</strong> describes a User story or COS that is desirable, but may not be achievable within the scope of the project.</li>
+</ul>
+<h2 id="minimum-viable-product-mvp">
+  
+  
+    <a href="#minimum-viable-product-mvp" class="anchor-heading" aria-labelledby="minimum-viable-product-mvp"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Minimum Viable Product (MVP)
+  
+  
+</h2>
+    
+<p>An MVP is a product that consists of all essential user stories. Developers should prioritize those above others.</p>
+<h1 id="user-stories-and-test-driven-development">
+  
+  
+    <a href="#user-stories-and-test-driven-development" class="anchor-heading" aria-labelledby="user-stories-and-test-driven-development"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> User Stories and Test-Driven Development
+  
+  
+</h1>
+    
+
+<p>We model the development process as a cycle of refinements:</p>
+
+<ol>
+  <li>User Stories</li>
+  <li>Conditions of Satisfaction</li>
+  <li>Testable behaviors</li>
+  <li>Executable Tests</li>
+  <li>Engineering Tasks (Code)</li>
+</ol>
+
+<p>As we proceed down these refinements, we will likely go back and revisit design decisions that we made at earlier stages. This is the topic of Module 02.</p>
+<h1 id="examples">
+  
+  
+    <a href="#examples" class="anchor-heading" aria-labelledby="examples"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Examples
+  
+  
+</h1>
+    
+<h2 id="user-stories">
+  
+  
+    <a href="#user-stories" class="anchor-heading" aria-labelledby="user-stories"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> User Stories:
+  
+  
+</h2>
+    
+<h3 id="user-story-1">
+  
+  
+    <a href="#user-story-1" class="anchor-heading" aria-labelledby="user-story-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> User Story #1:
+  
+  
+</h3>
+    
+<p>As a manager, I want to track my subordinates’ progress, so that the organization’s business goals are met. [Probably too general; in the agile terminology, this might be an “epic”, which is then refined into a set of user stories]</p>
+<h3 id="user-story-2">
+  
+  
+    <a href="#user-story-2" class="anchor-heading" aria-labelledby="user-story-2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> User Story #2:
+  
+  
+</h3>
+    
+<p>As a player in covey.town, I want to be able to play a game of connect4 with another player, so that I can pass the time enjoyably. (Essential)</p>
+<h3 id="user-story-3">
+  
+  
+    <a href="#user-story-3" class="anchor-heading" aria-labelledby="user-story-3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> User Story #3:
+  
+  
+</h3>
+    
+<p>As a player in covey.town, I want to see how well I’m doing at connect4 compared to other players, so I can feel superior to them. (Desirable)</p>
+<h3 id="user-story-4">
+  
+  
+    <a href="#user-story-4" class="anchor-heading" aria-labelledby="user-story-4"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> User Story #4:
+  
+  
+</h3>
+    
+<p>As a player in covey.town, I want to learn different strategies for connect4, so I can win more games. (Extension)</p>
+<h3 id="user-story-5">
+  
+  
+    <a href="#user-story-5" class="anchor-heading" aria-labelledby="user-story-5"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> User Story #5:
+  
+  
+</h3>
+    
+<p>As a user of Covey.Town, I want to be able to interact with other users in different activities like private chat, playing games, etc. while providing ability to customize user avatars to make the town more fun.  (Essential but too general. Best to split it in 3 different stories one for private chat, one for games and one for customization.)</p>
+<h2 id="conditions-of-satisfaction">
+  
+  
+    <a href="#conditions-of-satisfaction" class="anchor-heading" aria-labelledby="conditions-of-satisfaction"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Conditions of Satisfaction:
+  
+  
+</h2>
+    
+<h3 id="for-user-story-2">
+  
+  
+    <a href="#for-user-story-2" class="anchor-heading" aria-labelledby="for-user-story-2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> For User Story #2:
+  
+  
+</h3>
+    
+<ul>
+  <li>There should be a Conncect4 area in the town, where players can play Connect4. (Essential)</li>
+  <li>Whenever there are two players in the same Connect4 area, a Connect4 game is started between them. (Essential)</li>
+  <li>The status of the Connect4 game is presented in graphical form on the screen (Essential).</li>
+  <li>When one player wins (or there is a draw), both players are notified of the result. (Essential)</li>
+  <li>When a player makes a move in the Connect4 game, the tile visibly drops onto the game board, and a suitable sound effect is emitted (Extension)</li>
+  <li>If other players enter a Connect4 area while a game is going on, they can see the status of the game also (Desirable)</li>
+</ul>
+
+<p>[<strong>Note:</strong> these COSs do not describe the game board in detail, though that is pretty standard. They also do not describe what happens to the two players when the game is over. Do they stay in the area and spectate? Do the next two players play? Does the first spectator play the winner of the game? etc. etc.]</p>
+<ul>
+  <li>There should be a way for one player to challenge another to play the game of Connect4, no matter where they are in the town. (This might be an Extension, or it might be a different user story).</li>
+</ul>
+<h3 id="for-user-story-3">
+  
+  
+    <a href="#for-user-story-3" class="anchor-heading" aria-labelledby="for-user-story-3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> For User Story #3:
+  
+  
+</h3>
+    
+<ul>
+  <li>There should be a leaderboard showing the Connect4 ranking of all the players in the town. (Essential).</li>
+  <li>The leaderboard should show the current score of all the Connect4 games currently in progress. (Desirable)</li>
+  <li>The leaderboard should show the current score of all the Connect4 games currently in progress, and any player can click on the entry for a game and spectate that game. (Desirable; might be Extension, depending on the expertise of the team).</li>
+  <li>The leaderboard should show the lifetime standings of all the players who have ever logged in to this town. (Extension)</li>
+</ul>
+<h3 id="for-user-story-5">
+  
+  
+    <a href="#for-user-story-5" class="anchor-heading" aria-labelledby="for-user-story-5"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> For User Story #5:
+  
+  
+</h3>
+    
+<ul>
+  <li>User will be able to join an interactable area which includes leaderboards for all activities (This is too general and should be split in several conditions of satisfactions. For example, joining an area itself can be independent of being able to view leaderboard. Also each activity’s leaderboard should have its own condition of satisfaction. There could be several conditions for leaderboard alone to describe how data is organized)</li>
+  <li>User is able interact with an instance of interactable area created by another player (This COS is vague. What does interact mean? Does it mean enter an area or do something else?)</li>
+  <li>User is allowed to join an interactable area of another player in a town if the user was not invited (this sounds wrong, opposite to what the system should be doing)</li>
+  <li>User is allowed to join an interactable area (Desirable, The priority is wrong. For a user story that requires joining an interable area before anything else, this condition should be considered essential, instead of desirable)</li>
+</ul>
+
+<p><a href="https://www.simplilearn.com/tutorials/agile-scrum-tutorial/user-stories#how_to_write_user_stories">Reference</a></p>
+
+          
+
+          
+        </main>
+        
+
+  <hr>
+  <footer>
+    
+
+    <p class="text-small text-grey-dk-100 mb-0">&copy; 2023 Adeel Bhutta and Mitch Wand. Released under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> license</p>
+
+    
+  </footer>
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

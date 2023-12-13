@@ -1,0 +1,667 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/CS4530-Fall-2023/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/CS4530-Fall-2023/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+.site-nav > ul.nav-list:first-child > li > a,
+.site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(7)) > a,
+.site-nav > ul.nav-list:first-child > li > ul > li > ul > li > a {
+  background-image: none;
+}
+
+.site-nav > ul.nav-list:not(:first-child) a,
+.site-nav li.external a {
+  background-image: none;
+}
+
+.site-nav > ul.nav-list:first-child > li:nth-child(3) > ul > li:nth-child(7) > a {
+  font-weight: 600;
+  text-decoration: none;
+}.site-nav > ul.nav-list:first-child > li:nth-child(3) > button svg,
+.site-nav > ul.nav-list:first-child > li:nth-child(3) > ul > li:nth-child(7) > button svg {
+  transform: rotate(-90deg);
+}.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(3) > ul.nav-list,
+.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(3) > ul.nav-list > li.nav-list-item:nth-child(7) > ul.nav-list {
+  display: block;
+}
+  </style>
+
+  
+
+  
+    <script src="/CS4530-Fall-2023/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/CS4530-Fall-2023/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Final Project Grading | CS4530, Fall 2023</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Final Project Grading" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Fall 2023. Professors Adeel Bhutta and Mitch Wand." />
+<meta property="og:description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Fall 2023. Professors Adeel Bhutta and Mitch Wand." />
+<link rel="canonical" href="https://neu-se.github.io/CS4530-Fall-2023/assignments/project-grading" />
+<meta property="og:url" content="https://neu-se.github.io/CS4530-Fall-2023/assignments/project-grading" />
+<meta property="og:site_name" content="CS4530, Fall 2023" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Final Project Grading" />
+<script type="application/ld+json">
+{"description":"Northeastern University CS 4530 “Fundamentals of Software Engineering”, Fall 2023. Professors Adeel Bhutta and Mitch Wand.","url":"https://neu-se.github.io/CS4530-Fall-2023/assignments/project-grading","@type":"WebPage","headline":"Final Project Grading","dateModified":"2023-12-13T17:42:47+00:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/CS4530-Fall-2023/" class="site-title lh-tight">
+  CS4530, Fall 2023
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Calendar category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/CS4530-Fall-2023/calendar/" class="nav-list-link">Calendar</a><ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Fall-2023/calendar/s2" class="nav-list-link">Section 2 - Calendar</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/calendar/s4" class="nav-list-link">Section 4 - Calendar</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/calendar/s6" class="nav-list-link">Section 6 - Calendar</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/calendar/s7" class="nav-list-link">Section 7 - Calendar</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Modules category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/CS4530-Fall-2023/modules/" class="nav-list-link">Modules</a><ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/1-requirements-testing" class="nav-list-link">1 - Orientation & Requirements</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/2-requirements-to-code" class="nav-list-link">2 - From Requirements to Code</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/3-best-practices-for-effective-programmers" class="nav-list-link">3 - Best Practices for Effective Programmers</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/4-interaction-level-design-patterns" class="nav-list-link">4 - Interaction-Level Design Patterns</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/5-concurrency-patterns-in-typescript" class="nav-list-link">5 - Concurrency Patterns in Typescript</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/6-software-process" class="nav-list-link">6 - Software Process</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/7-react" class="nav-list-link">7 - React</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/8-patterns-of-react" class="nav-list-link">8 - React Hooks</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/9-distributed-systems-1" class="nav-list-link">9 - Distributed Systems (Part 1)</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/10-distributed-systems-2" class="nav-list-link">10 - Distributed Systems (Part 2)</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/11-good-tests" class="nav-list-link">11 - Test Adequacy</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/12-larger-tests" class="nav-list-link">12 - Larger Tests</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/13-cloud-infrastructure" class="nav-list-link">13 - Cloud Infrastructure</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/14-continuous-development" class="nav-list-link">14 - Continuous Development</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/15-security" class="nav-list-link">15 - Security</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/16-technical-debt" class="nav-list-link">16 - Technical Debt</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/17-ethics" class="nav-list-link">17 - Ethics</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Assignments category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/CS4530-Fall-2023/assignments/" class="nav-list-link">Assignments</a><ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/ip1" class="nav-list-link">Individual Project 1</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/ip2" class="nav-list-link">Individual Project 2</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/project-overview" class="nav-list-link">Project Overview</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/project-plan" class="nav-list-link">Preliminary Project Plan</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/revised-project-plan" class="nav-list-link">Revised Project Plan</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/project-deliverable" class="nav-list-link">Project Final Deliverable</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/project-grading" class="nav-list-link">Final Project Grading</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/project-showcase" class="nav-list-link">Project Showcase</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Tutorials category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/CS4530-Fall-2023/tutorials/" class="nav-list-link">Tutorials</a><ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Fall-2023/tutorials/week1-getting-started" class="nav-list-link">Installing a Development Environment</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/tutorials/week1-typescript-basics" class="nav-list-link">Typescript Basics</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/tutorials/week1-user-stories" class="nav-list-link">User Stories and Conditions of Satisfaction</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/tutorials/week1-unit-testing" class="nav-list-link">Unit Testing with Jest</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/tutorials/week4-react-basics" class="nav-list-link">React Tutorial</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/textbooks/" class="nav-list-link">Textbooks</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/staff/" class="nav-list-link">Staff</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Policies category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/CS4530-Fall-2023/policies/" class="nav-list-link">Policies</a><ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Fall-2023/policies/style/" class="nav-list-link">Code Style</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/resources/" class="nav-list-link">Other Resources</a></li></ul>
+
+  
+</nav>
+
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search CS4530, Fall 2023" aria-label="Search CS4530, Fall 2023" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+  
+    <li class="breadcrumb-nav-list-item"><a href="/CS4530-Fall-2023/assignments/">Assignments</a></li>
+  <li class="breadcrumb-nav-list-item"><span>Final Project Grading</span></li>
+  </ol>
+</nav>
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <div class="fs-1 text-right fw-300">Last updated: Dec 13, 23 17:42 UTC | <a href="/CS4530-Fall-2023/assignments/project-grading">Permalink</a></div>
+<h1 id="grading">
+  
+  
+    <a href="#grading" class="anchor-heading" aria-labelledby="grading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Grading
+  
+  
+</h1>
+    
+<p>Each project will be graded by the team’s assigned TA mentor and the instructor. For most of the submission components below, we provide two benchmark rubrics: one for a submission that is satisfactory (full marks), and one that would be meeting our minimum expectations (a pass). In practice, when grading projects we will usually assign numeric grades and provide partial credit, using these rubrics as guidelines for those two extremes. Rubric for remaining components will be provided by individual instructors.</p>
+<h3 id="adjustments-in-project-scope">
+  
+  
+    <a href="#adjustments-in-project-scope" class="anchor-heading" aria-labelledby="adjustments-in-project-scope"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Adjustments in project scope
+  
+  
+</h3>
+    
+<p>We are hopeful that all teams will deliver all essential AND desired features proposed in their revised project plans. However, it is possible that there might be some minor deviations from the origional plan - in the five-week implementation period, there are sure to be some teams that encounter unexpected technical hurdles. As described in greater detail in the rubrics below, teams that have regular communication with their TA regarding their project status may have the opportunity to request variances to their project scope.</p>
+<h3 id="individual-contributions-to-the-project">
+  
+  
+    <a href="#individual-contributions-to-the-project" class="anchor-heading" aria-labelledby="individual-contributions-to-the-project"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Individual Contributions to the project
+  
+  
+</h3>
+    
+<p>In cases where team members do not equally contribute to the project, we may assign different grades to different individuals, up to an extreme of deducting 50% of the marks from a student. In the event that a group member does not contribute at all to the project, student might receive 0. We will evaluate each individual’s contribution on the basis of a variety of factors, including progress reports at weekly meetings, through inspecting version control history, through each team’s (or student’s) peer evaluations during and/or at the end of the project, and through each student’s self-reflection. We will make regular efforts to collect and distribute this feedback throughout the project. Our ultimate goal is for all students to participate and receive full marks.</p>
+<h2 id="summary-of-grading">
+  
+  
+    <a href="#summary-of-grading" class="anchor-heading" aria-labelledby="summary-of-grading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Summary of grading
+  
+  
+</h2>
+    
+
+<p>From <a href="/CS4530-Fall-2023/assignments/project-overview">Project Overview</a></p>
+
+<ul>
+  <li>Planning (20%)
+    <ul>
+      <li>This includes the Preliminary Project Plan and the Revised Project Plan.</li>
+    </ul>
+  </li>
+  <li>Process (20%)
+    <ul>
+      <li>This includes: use of a structured development process, including code reviews,  timely completion of sprint progress reports and individual/team surveys, and weekly meetings with TA Mentor.</li>
+      <li>This also includes appropriate division of labor within the project.  For full credit, each member of the team must have at least 4 commits in the final delivered code.</li>
+    </ul>
+  </li>
+  <li>Product (40%)
+    <ul>
+      <li>20% Successful delivery of your Minimum Viable Product as defined in your project plan</li>
+      <li>10% Additional desirable features</li>
+      <li>10% Test suite of your features.</li>
+    </ul>
+  </li>
+  <li>Reports (20%)
+    <ul>
+      <li>10% Final Report</li>
+      <li>10% Poster and Demo</li>
+    </ul>
+  </li>
+</ul>
+
+<p>This adds up to 100%; this sum is worth 40% of the course grade.</p>
+<h2 id="detailed-rubrics">
+  
+  
+    <a href="#detailed-rubrics" class="anchor-heading" aria-labelledby="detailed-rubrics"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Detailed Rubrics
+  
+  
+</h2>
+    
+<p>Here are the detailed rubrics for the final deliverables:</p>
+<h3 id="minimum-viable-product-20">
+  
+  
+    <a href="#minimum-viable-product-20" class="anchor-heading" aria-labelledby="minimum-viable-product-20"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Minimum Viable Product (20%)
+  
+  
+</h3>
+    
+<h3 id="additional-desirable-features-10">
+  
+  
+    <a href="#additional-desirable-features-10" class="anchor-heading" aria-labelledby="additional-desirable-features-10"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Additional Desirable Features (10%)
+  
+  
+</h3>
+    
+<p>We will grade each of these using the following rubric:</p>
+<h4 id="satisfactory">
+  
+  
+    <a href="#satisfactory" class="anchor-heading" aria-labelledby="satisfactory"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Satisfactory:
+  
+  
+</h4>
+    
+<ul>
+  <li>Implemented feature satisfies the conditions of satisfaction as proposed by the team and as agreed to by the course staff. If technical difficulties resulted in features being dropped, the project may still earn full marks on “delivered features,” but these difficulties must have been documented with the course staff as you encountered them during development.</li>
+  <li>Implemented feature is deployed to a publicly-accessible URL, using Netlify and Heroku and/or Render.com for hosting (or as per deployement instructions provided).</li>
+  <li>Implemented feature contains no ESLint warnings or errors; does not include any eslint-disable or ts-ignore flags</li>
+</ul>
+<h4 id="meets-minimum-requirements">
+  
+  
+    <a href="#meets-minimum-requirements" class="anchor-heading" aria-labelledby="meets-minimum-requirements"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Meets minimum requirements:
+  
+  
+</h4>
+    
+<ul>
+  <li>Implemented feature largely satisfies acceptance criteria as proposed by the team, but may not meet the course staff’s interpretation of those criteria.</li>
+  <li>Implemented feature is deployed to a publicly-accessible URL, using Netlify and Heroku /Render for hosting (or as per deployement instructions provided).</li>
+  <li>The implementation may have some obvious flaws, but largely works without crashing.</li>
+  <li>Implemented feature does not include any eslint-disable or ts-ignore flag</li>
+</ul>
+<h3 id="testing-10">
+  
+  
+    <a href="#testing-10" class="anchor-heading" aria-labelledby="testing-10"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Testing (10%)
+  
+  
+</h3>
+    
+<p>The project must include evidence of testing. Ideally, all new features will be accompanied by fully automated tests, but in some circumstances (particularly when engaging with Phaser, the game library, or Tiled, the map editor), this may not be feasible. If automated tests are not possible, include a discussion of your manual testing strategy, including a script that a future developer could use to manually test the feature.</p>
+<h4 id="satisfactory-1">
+  
+  
+    <a href="#satisfactory-1" class="anchor-heading" aria-labelledby="satisfactory-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Satisfactory:
+  
+  
+</h4>
+    
+<ul>
+  <li>Any new or modified backend features include tests that validate that the feature works as intended. These tests cover the changed code, and also contain well-written assertions that thoroughly check the expected behaviors.</li>
+  <li>Tests contains no ESLint warnings or errors; does not include any eslint-disable or ts-ignore flags</li>
+</ul>
+<h4 id="meets-minimum-requirements-1">
+  
+  
+    <a href="#meets-minimum-requirements-1" class="anchor-heading" aria-labelledby="meets-minimum-requirements-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Meets minimum requirements:
+  
+  
+</h4>
+    
+<ul>
+  <li>Any new or modified backend features include at least one test, which may or may not be an effective test.</li>
+  <li>Tests may contain ESlint warnings (but no errors); does not include any eslint-disable or ts-ignore flags</li>
+</ul>
+<h3 id="process-20">
+  
+  
+    <a href="#process-20" class="anchor-heading" aria-labelledby="process-20"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Process (20%)
+  
+  
+</h3>
+    
+<p>The Process grade includes: use of a structured development process, including code reviews, timely completion of sprint progress reports/retrospectives, individual/team surveys, peer evaluations and weekly meetings with TA Mentor (for Week 6, 8-13). It also includes appropriate division of labor within the project. For full credit, each member of the team must have at least 4 commits in the final delivered code.</p>
+<ul>
+  <li>Ongoing development progress including code reviews, github commits, etc. count 10% of the grade</li>
+  <li>Peer evaluations, TA meeting, submission of surveys/reports counts 10% of the project grade. 
+These items will be evaluated using the rubrics below.</li>
+</ul>
+<h4 id="satisfactory-2">
+  
+  
+    <a href="#satisfactory-2" class="anchor-heading" aria-labelledby="satisfactory-2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Satisfactory:
+  
+  
+</h4>
+    
+<ul>
+  <li>There is a clear development history visible from the git repository: features were delivered incrementally, and not in a single (or several) commits at the end of the project</li>
+  <li>There is evidence of code review - for example, pull requests that have comments on them. Teams are expected to merge their developvemeent branches to main only after code review.</li>
+  <li>There is a correspondence between commit messages and the technical tasks that they are associated with; there are few (if any) commits with meaningless commits messages like <code class="language-plaintext highlighter-rouge">.</code> or <code class="language-plaintext highlighter-rouge">Add files via upload</code>.</li>
+  <li>Each team member has made at least 4 commits over the lifespan of the project</li>
+  <li>The team meets regularly with the TA mentor.  All or most members attend all meetings. Members who are absent from a TA Meeting send an excuse in advance.</li>
+  <li>Progress reports and other weekly reports and surveys are submitted in a timely fashion, not filled in later.</li>
+  <li>TA Meetings include demos or other evidence of progress.</li>
+</ul>
+<h4 id="meets-minimum-requirements-2">
+  
+  
+    <a href="#meets-minimum-requirements-2" class="anchor-heading" aria-labelledby="meets-minimum-requirements-2"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Meets minimum requirements:
+  
+  
+</h4>
+    
+<ul>
+  <li>There is a clear development history visible from the git repository: features were delivered incrementally, and not in a single (or several) commits at the end of the project</li>
+  <li>Each team member has made at least 2 commits over the lifespan of the project</li>
+  <li>Attendance at TA meetings may be irregular, but enough to give the TA a sense of the the team’s progress.</li>
+</ul>
+<h4 id="individual-grading-for-process-component">
+  
+  
+    <a href="#individual-grading-for-process-component" class="anchor-heading" aria-labelledby="individual-grading-for-process-component"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Individual grading for Process component
+  
+  
+</h4>
+    
+<p>Team members with unexcused absences from TA Meetings, or with fewer than 4 commits during the lifespan of the project, may receive a lowered grade for the Process component.</p>
+<h3 id="final-report-10">
+  
+  
+    <a href="#final-report-10" class="anchor-heading" aria-labelledby="final-report-10"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Final Report (10%)
+  
+  
+</h3>
+    
+<p>The final report should consist of three sections:</p>
+<ul>
+  <li>Feature Overview and User Manual</li>
+  <li>Technical Overview</li>
+  <li>Process Overview</li>
+</ul>
+
+<p>The allocation of the 10% credit will be as follows: Overview and manual will be worth 4%, technical and process overviews will be worth 3% each.</p>
+<h3 id="-feature-overview-and-user-manual">
+  
+  
+    <a href="#-feature-overview-and-user-manual" class="anchor-heading" aria-labelledby="-feature-overview-and-user-manual"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> * Feature Overview and User Manual
+  
+  
+</h3>
+    
+<h4 id="satisfactory-3">
+  
+  
+    <a href="#satisfactory-3" class="anchor-heading" aria-labelledby="satisfactory-3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Satisfactory:
+  
+  
+</h4>
+    
+<ul>
+  <li>The Feature section contains sufficient documentation for a user to build and interact with your updated version of Covey.Town.
+    <ul>
+      <li>The documentation covers all the steps that a user would need to build a working version of your project.</li>
+      <li>The documentation includes a link to the deployed version of your project</li>
+    </ul>
+  </li>
+  <li>The documentation covers all steps that the user would need to take to exercise all of your user stories.</li>
+  <li>Screenshots are included that capture the key interactions between a user and your new feature.</li>
+  <li>Course staff were able to follow these instructions to successfully interact with your project implementation.</li>
+  <li>URL of the deployed app.</li>
+  <li>The section is at most 4 pages (roughly 2,000 words maximum), NOT including figures. Fewer pages are absolutely acceptable; consider this a rough limit</li>
+</ul>
+<h4 id="meets-minimum-requirements-3">
+  
+  
+    <a href="#meets-minimum-requirements-3" class="anchor-heading" aria-labelledby="meets-minimum-requirements-3"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Meets minimum requirements:
+  
+  
+</h4>
+    
+<ul>
+  <li>The Feature contains documentation for a user to interact with your updated version of Covey.Town, but perhaps does not fully describe how.</li>
+  <li>The documentation includes at least one or two screenshots, but screenshots do not capture interactions with all of the user stories.</li>
+  <li>The course staff were able to figure out how to use it through trial and error.</li>
+  <li>URL of the deployed app.</li>
+  <li>The section is at most 4 pages, NOT including figures. Fewer pages are absolutely acceptable; consider this a rough limit</li>
+</ul>
+<h3 id="-technical-overview">
+  
+  
+    <a href="#-technical-overview" class="anchor-heading" aria-labelledby="-technical-overview"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> * Technical Overview
+  
+  
+</h3>
+    
+<h4 id="satisfactory-4">
+  
+  
+    <a href="#satisfactory-4" class="anchor-heading" aria-labelledby="satisfactory-4"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Satisfactory:
+  
+  
+</h4>
+    
+<ul>
+  <li>Technical Overview contains a description of any substantive changes to the existing Covey.Town codebase, and of the architecture of your new code.</li>
+  <li>It uses UML diagrams, CRC cards, state diagrams or other techniques that help describe the structure.</li>
+  <li>It provides a well-reasoned rationale for why this is the “right” design.</li>
+  <li>The document is at most 2 pages (fewer pages are absolutely acceptable, consider this a rough limit)</li>
+  <li>
+<h4 id="meets-minimum-requirements-4">
+  
+  
+    <a href="#meets-minimum-requirements-4" class="anchor-heading" aria-labelledby="meets-minimum-requirements-4"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Meets minimum requirements:
+  
+  
+</h4>
+    
+  </li>
+  <li>Technical Overview includes a description of all major changes to the code compared to our existing Covey.Town codebase.</li>
+  <li>The document is at most 2 pages (fewer pages are absolutely acceptable, consider this a rough limit)</li>
+</ul>
+<h3 id="-process-overview">
+  
+  
+    <a href="#-process-overview" class="anchor-heading" aria-labelledby="-process-overview"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> * Process Overview
+  
+  
+</h3>
+    
+<h4 id="satisfactory-5">
+  
+  
+    <a href="#satisfactory-5" class="anchor-heading" aria-labelledby="satisfactory-5"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Satisfactory:
+  
+  
+</h4>
+    
+<ul>
+  <li>Process overview contains a detailed description of the manner in which agile project management processes were used during the project (i.e., sprints, sprint reviews, retrospectives and blameless reviews).</li>
+  <li>It provides a summary of what was planned to happen in each sprint vs what actually happened, with a discussion of what was revised as a result.</li>
+  <li>The document is at most 2 pages (fewer pages are absolutely acceptable, consider this a rough limit)</li>
+</ul>
+<h4 id="meets-minimum-requirements-5">
+  
+  
+    <a href="#meets-minimum-requirements-5" class="anchor-heading" aria-labelledby="meets-minimum-requirements-5"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Meets minimum requirements:
+  
+  
+</h4>
+    
+<ul>
+  <li>It provides a summary of what was planned to happen in each sprint vs what actually happened, with a discussion of what was revised as a result.</li>
+  <li>The document is at most 2 pages (fewer pages are absolutely acceptable, consider this a rough limit)</li>
+</ul>
+<h3 id="posters-and-demo-10">
+  
+  
+    <a href="#posters-and-demo-10" class="anchor-heading" aria-labelledby="posters-and-demo-10"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Posters and Demo (10%)
+  
+  
+</h3>
+    
+<p>Each team will be required to submit a poster. In addition, some sections may have a demo (live in-person, via zoom or by recorded video). Each instructor will provide details regarding expectations for the demo and/or presentation. The schedule and manner of these demos might also vary from section to section.  The specifications for the different sections are listed below:</p>
+<ul>
+  <li><a href="https://neu-se.github.io/CS4530-Fall-2023/assignments/sec-247-demos">Sections 2, 4, 7 - Prof. Bhutta</a></li>
+  <li><a href="https://neu-se.github.io/CS4530-Fall-2023/assignments/sec-6-demos">Section 6 - Prof. Wand</a></li>
+</ul>
+
+<p>Select projects may be hosted in our project showcase. Here are selected projects from Fall 2022 <a href="https://neu-se.github.io/CS4530-Fall-2022/assignments/project-showcase">project showcase</a>.</p>
+<h2 id="individual-reflection">
+  
+  
+    <a href="#individual-reflection" class="anchor-heading" aria-labelledby="individual-reflection"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Individual Reflection
+  
+  
+</h2>
+    
+
+<p>Accompanying the final team deliverable will be an individual reflection, which every student must submit on their own.
+Satisfactory completion of all parts of this reflection is required to receive an “A” grade in the course, and may be used to calibrate project scores across multiple team members.
+The individual reflection also provides an opportunity for students to provide confidential feedback on the performance of their teammates.</p>
+<h3 id="project-concept">
+  
+  
+    <a href="#project-concept" class="anchor-heading" aria-labelledby="project-concept"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Project Concept
+  
+  
+</h3>
+    
+
+<p>Reflect on the evolution of your project concept: How does the project that you delivered compare to what you originally planned to deliver? What caused these deviations?</p>
+<h4 id="satisfactory-6">
+  
+  
+    <a href="#satisfactory-6" class="anchor-heading" aria-labelledby="satisfactory-6"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Satisfactory:
+  
+  
+</h4>
+    
+<ul>
+  <li>Is at least 2 paragraphs long;</li>
+  <li>Includes at least 1 paragraph describing all variances from original project concept;</li>
+  <li>Includes at least 1 paragraph of personal reflection on the cause of any variances from the project concept.</li>
+</ul>
+<h3 id="project-process">
+  
+  
+    <a href="#project-process" class="anchor-heading" aria-labelledby="project-process"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Project Process
+  
+  
+</h3>
+    
+
+<p>Reflect on the evolution of your development process: How did the process by which you designed and implemented evolve from your original project plan? Were there any processes that in hindsight, you wish that you followed, or wish that you followed better?</p>
+<h4 id="satisfactory-7">
+  
+  
+    <a href="#satisfactory-7" class="anchor-heading" aria-labelledby="satisfactory-7"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Satisfactory:
+  
+  
+</h4>
+    
+<ul>
+  <li>Is at least 2 paragraphs long;</li>
+  <li>Includes at least 1 paragraph describing all variances from the software development processes envisioned in your original project plan;</li>
+  <li>Includes at least 1 paragraph describing software processes (described in class or not) that you wish you had followed, or wish you had followed better, supported by evidence from your personal experience working on the project.</li>
+</ul>
+<h3 id="project-team">
+  
+  
+    <a href="#project-team" class="anchor-heading" aria-labelledby="project-team"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Project Team
+  
+  
+</h3>
+    
+
+<p>Reflect on your team dynamic: Provide a frank (and ideally, blameless) postmortem of your and your teammates collaborative performance and participation. If you had to do this same project over with the same teammates, what would you have done differently (or not) to improve your team’s overall performance? Do you think that each of your teammates are deserving of the same grade as you?</p>
+<h4 id="satisfactory-8">
+  
+  
+    <a href="#satisfactory-8" class="anchor-heading" aria-labelledby="satisfactory-8"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Satisfactory:
+  
+  
+</h4>
+    
+<ul>
+  <li>Is at least 2 paragraphs long;</li>
+  <li>Includes at least 1 paragraph reflecting on your own performance as a team member on this project, including what you would have done differently, given what you know now;</li>
+  <li>Includes at least 1 paragraph reflecting on your overall team dynamic, including strengths and weaknesses. Reflect on how you might have organized your team differently given what you know now.</li>
+</ul>
+
+          
+
+          
+        </main>
+        
+
+  <hr>
+  <footer>
+    
+
+    <p class="text-small text-grey-dk-100 mb-0">&copy; 2023 Adeel Bhutta and Mitch Wand. Released under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> license</p>
+
+    
+  </footer>
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+

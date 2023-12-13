@@ -1,0 +1,629 @@
+
+
+<!DOCTYPE html>
+
+<html lang="en-US">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+  <link rel="stylesheet" href="/CS4530-Fall-2023/assets/css/just-the-docs-default.css">
+
+  <link rel="stylesheet" href="/CS4530-Fall-2023/assets/css/just-the-docs-head-nav.css" id="jtd-head-nav-stylesheet">
+
+  <style id="jtd-nav-activation">
+  
+
+.site-nav > ul.nav-list:first-child > li > a,
+.site-nav > ul.nav-list:first-child > li > ul > li:not(:nth-child(1)) > a,
+.site-nav > ul.nav-list:first-child > li > ul > li > ul > li > a {
+  background-image: none;
+}
+
+.site-nav > ul.nav-list:not(:first-child) a,
+.site-nav li.external a {
+  background-image: none;
+}
+
+.site-nav > ul.nav-list:first-child > li:nth-child(3) > ul > li:nth-child(1) > a {
+  font-weight: 600;
+  text-decoration: none;
+}.site-nav > ul.nav-list:first-child > li:nth-child(3) > button svg,
+.site-nav > ul.nav-list:first-child > li:nth-child(3) > ul > li:nth-child(1) > button svg {
+  transform: rotate(-90deg);
+}.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(3) > ul.nav-list,
+.site-nav > ul.nav-list:first-child > li.nav-list-item:nth-child(3) > ul.nav-list > li.nav-list-item:nth-child(1) > ul.nav-list {
+  display: block;
+}
+  </style>
+
+  
+
+  
+    <script src="/CS4530-Fall-2023/assets/js/vendor/lunr.min.js"></script>
+  
+
+  <script src="/CS4530-Fall-2023/assets/js/just-the-docs.js"></script>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+
+
+
+  <!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Individual Project 1 | CS4530, Fall 2023</title>
+<meta name="generator" content="Jekyll v3.9.0" />
+<meta property="og:title" content="Individual Project 1" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Fall 2023. Professors Adeel Bhutta and Mitch Wand." />
+<meta property="og:description" content="Northeastern University CS 4530 “Fundamentals of Software Engineering”, Fall 2023. Professors Adeel Bhutta and Mitch Wand." />
+<link rel="canonical" href="https://neu-se.github.io/CS4530-Fall-2023/assignments/ip1" />
+<meta property="og:url" content="https://neu-se.github.io/CS4530-Fall-2023/assignments/ip1" />
+<meta property="og:site_name" content="CS4530, Fall 2023" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Individual Project 1" />
+<script type="application/ld+json">
+{"description":"Northeastern University CS 4530 “Fundamentals of Software Engineering”, Fall 2023. Professors Adeel Bhutta and Mitch Wand.","url":"https://neu-se.github.io/CS4530-Fall-2023/assignments/ip1","@type":"WebPage","headline":"Individual Project 1","dateModified":"2023-12-13T17:42:47+00:00","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+
+  
+
+</head>
+
+<body>
+  <a class="skip-to-main" href="#main-content">Skip to main content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+  <symbol id="svg-link" viewBox="0 0 24 24">
+  <title>Link</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-link">
+    <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+  </svg>
+</symbol>
+
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+  <title>Menu</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu">
+    <line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line>
+  </svg>
+</symbol>
+
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+  <title>Expand</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+    <polyline points="9 18 15 12 9 6"></polyline>
+  </svg>
+</symbol>
+
+  <!-- Feather. MIT License: https://github.com/feathericons/feather/blob/master/LICENSE -->
+<symbol id="svg-external-link" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-external-link">
+  <title id="svg-external-link-title">(external link)</title>
+  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line>
+</symbol>
+
+  
+    <symbol id="svg-doc" viewBox="0 0 24 24">
+  <title>Document</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-file">
+    <path d="M13 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V9z"></path><polyline points="13 2 13 9 20 9"></polyline>
+  </svg>
+</symbol>
+
+    <symbol id="svg-search" viewBox="0 0 24 24">
+  <title>Search</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-search">
+    <circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+  </svg>
+</symbol>
+
+  
+  
+    <!-- Bootstrap Icons. MIT License: https://github.com/twbs/icons/blob/main/LICENSE.md -->
+<symbol id="svg-copy" viewBox="0 0 16 16">
+  <title>Copy</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard" viewBox="0 0 16 16">
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1h1a1 1 0 0 1 1 1V14a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1h1v-1z"/>
+    <path d="M9.5 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3zm-3-1A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3z"/>
+  </svg>
+</symbol>
+<symbol id="svg-copied" viewBox="0 0 16 16">
+  <title>Copied</title>
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-clipboard-check-fill" viewBox="0 0 16 16">
+    <path d="M6.5 0A1.5 1.5 0 0 0 5 1.5v1A1.5 1.5 0 0 0 6.5 4h3A1.5 1.5 0 0 0 11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3Zm3 1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1-.5-.5v-1a.5.5 0 0 1 .5-.5h3Z"/>
+    <path d="M4 1.5H3a2 2 0 0 0-2 2V14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V3.5a2 2 0 0 0-2-2h-1v1A2.5 2.5 0 0 1 9.5 5h-3A2.5 2.5 0 0 1 4 2.5v-1Zm6.854 7.354-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708.708Z"/>
+  </svg>
+</symbol>
+
+  
+</svg>
+
+  <div class="side-bar">
+  <div class="site-header" role="banner">
+    <a href="/CS4530-Fall-2023/" class="site-title lh-tight">
+  CS4530, Fall 2023
+
+</a>
+    <button id="menu-button" class="site-button btn-reset" aria-label="Toggle menu" aria-pressed="false">
+      <svg viewBox="0 0 24 24" class="icon" aria-hidden="true"><use xlink:href="#svg-menu"></use></svg>
+    </button>
+  </div>
+
+  <nav aria-label="Main" id="site-nav" class="site-nav">
+  
+  
+    <ul class="nav-list"><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Calendar category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/CS4530-Fall-2023/calendar/" class="nav-list-link">Calendar</a><ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Fall-2023/calendar/s2" class="nav-list-link">Section 2 - Calendar</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/calendar/s4" class="nav-list-link">Section 4 - Calendar</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/calendar/s6" class="nav-list-link">Section 6 - Calendar</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/calendar/s7" class="nav-list-link">Section 7 - Calendar</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Modules category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/CS4530-Fall-2023/modules/" class="nav-list-link">Modules</a><ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/1-requirements-testing" class="nav-list-link">1 - Orientation & Requirements</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/2-requirements-to-code" class="nav-list-link">2 - From Requirements to Code</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/3-best-practices-for-effective-programmers" class="nav-list-link">3 - Best Practices for Effective Programmers</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/4-interaction-level-design-patterns" class="nav-list-link">4 - Interaction-Level Design Patterns</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/5-concurrency-patterns-in-typescript" class="nav-list-link">5 - Concurrency Patterns in Typescript</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/6-software-process" class="nav-list-link">6 - Software Process</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/7-react" class="nav-list-link">7 - React</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/8-patterns-of-react" class="nav-list-link">8 - React Hooks</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/9-distributed-systems-1" class="nav-list-link">9 - Distributed Systems (Part 1)</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/10-distributed-systems-2" class="nav-list-link">10 - Distributed Systems (Part 2)</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/11-good-tests" class="nav-list-link">11 - Test Adequacy</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/12-larger-tests" class="nav-list-link">12 - Larger Tests</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/13-cloud-infrastructure" class="nav-list-link">13 - Cloud Infrastructure</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/14-continuous-development" class="nav-list-link">14 - Continuous Development</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/15-security" class="nav-list-link">15 - Security</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/16-technical-debt" class="nav-list-link">16 - Technical Debt</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/modules/17-ethics" class="nav-list-link">17 - Ethics</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Assignments category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/CS4530-Fall-2023/assignments/" class="nav-list-link">Assignments</a><ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/ip1" class="nav-list-link">Individual Project 1</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/ip2" class="nav-list-link">Individual Project 2</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/project-overview" class="nav-list-link">Project Overview</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/project-plan" class="nav-list-link">Preliminary Project Plan</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/revised-project-plan" class="nav-list-link">Revised Project Plan</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/project-deliverable" class="nav-list-link">Project Final Deliverable</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/project-grading" class="nav-list-link">Final Project Grading</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/assignments/project-showcase" class="nav-list-link">Project Showcase</a></li></ul></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Tutorials category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/CS4530-Fall-2023/tutorials/" class="nav-list-link">Tutorials</a><ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Fall-2023/tutorials/week1-getting-started" class="nav-list-link">Installing a Development Environment</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/tutorials/week1-typescript-basics" class="nav-list-link">Typescript Basics</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/tutorials/week1-user-stories" class="nav-list-link">User Stories and Conditions of Satisfaction</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/tutorials/week1-unit-testing" class="nav-list-link">Unit Testing with Jest</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/tutorials/week4-react-basics" class="nav-list-link">React Tutorial</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/textbooks/" class="nav-list-link">Textbooks</a></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/staff/" class="nav-list-link">Staff</a></li><li class="nav-list-item"><button class="nav-list-expander btn-reset" aria-label="toggle items in Policies category" aria-pressed="false">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use xlink:href="#svg-arrow-right"></use></svg>
+    </button><a href="/CS4530-Fall-2023/policies/" class="nav-list-link">Policies</a><ul class="nav-list"><li class="nav-list-item"><a href="/CS4530-Fall-2023/policies/style/" class="nav-list-link">Code Style</a></li></ul></li><li class="nav-list-item"><a href="/CS4530-Fall-2023/resources/" class="nav-list-link">Other Resources</a></li></ul>
+
+  
+</nav>
+
+
+  
+  
+    <footer class="site-footer">
+      This site uses <a href="https://github.com/just-the-docs/just-the-docs">Just the Docs</a>, a documentation theme for Jekyll.
+    </footer>
+  
+</div>
+
+  <div class="main" id="top">
+    <div id="main-header" class="main-header">
+  
+    
+
+<div class="search" role="search">
+  <div class="search-input-wrap">
+    <input type="text" id="search-input" class="search-input" tabindex="0" placeholder="Search CS4530, Fall 2023" aria-label="Search CS4530, Fall 2023" autocomplete="off">
+    <label for="search-input" class="search-label"><svg viewBox="0 0 24 24" class="search-icon"><use xlink:href="#svg-search"></use></svg></label>
+  </div>
+  <div id="search-results" class="search-results"></div>
+</div>
+
+  
+  
+  
+</div>
+
+    <div class="main-content-wrap">
+      <nav aria-label="Breadcrumb" class="breadcrumb-nav">
+  <ol class="breadcrumb-nav-list">
+  
+    <li class="breadcrumb-nav-list-item"><a href="/CS4530-Fall-2023/assignments/">Assignments</a></li>
+  <li class="breadcrumb-nav-list-item"><span>Individual Project 1</span></li>
+  </ol>
+</nav>
+      <div id="main-content" class="main-content">
+        <main>
+          
+            <h2 class="fs-6" id="individual-project-1">
+  
+  
+    <a href="#individual-project-1" class="anchor-heading" aria-labelledby="individual-project-1"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> 
+    
+    Individual Project 1
+    
+    <strong class="label label-red">Due Wednesday September 20, 11:00am EDT</strong>
+
+  
+  
+</h2>
+    
+
+
+<p>Welcome aboard to the Covey.Town team! We’re glad that you’re here and ready to join our development team as a new software engineer.
+We’re building an open source virtual meeting application, and are very happy to see that we have so many new developers who can help make this application a reality.
+By the end of the semester, you’ll be able to propose, design, implement and test a new feature for our project.
+We understand that some of you may have some web development experience, but don’t expect that most of you do, and hence, have created an individual project to help you get up to speed with our existing codebase and development environment.</p>
+
+<p>Covey.Town is a web application that consists of some code that runs in each client’s web browser, and also code that runs on a server.
+Users join the application in a “town”: a 2D arcade-style map with different rooms to explore.
+Each town is also a video call: when two players get close to each other, they can see and hear each other; there is also a text chat available within the town.
+In Winter of 2021, our lead software engineer, Avery, developed a prototype for Covey.Town, and since then, hundreds of students in this class have built on that codebase.
+The most recent class-wide effort added a concept called <a href="https://neu-se.github.io/CS4530-Spring-2023/assignments/ip1">Poster Areas</a>, allowing players to upload a poster which is then dispalyed and discussed in a special part of the town.
+Many student projects over the past few years (some of which are publicy showcased <a href="https://neu-se.github.io/CS4530-Spring-2022/assignments/project-showcase">from Spring 2022</a> and <a href="https://neu-se.github.io/CS4530-Fall-2022/assignments/project-showcase">from Fall 2022</a>) involved creating games within Covey.Town.
+For example: students created implementations of soccer, blackjack, dance dance revolution and tic-tac-toe.</p>
+
+<p>After studying all of the student projects and their implementation challenges, our lead software engineer, Avery, has refactored Covey.Town, designing a new abstraction to make it easier to create games like these. 
+Avery’s new abstraction, <code class="language-plaintext highlighter-rouge">GameArea</code>, is a region of the town that provides some core elements to allow players to play games within that area.
+The abstraction cuts across the entire technology stack: <code class="language-plaintext highlighter-rouge">GameArea</code>s exist in the 2D map and the application automatically tracks when players enter and exit them.
+By pressing the spacebar within an <code class="language-plaintext highlighter-rouge">GameArea</code>, the user can trigger an interaction with that area, which in turn can be easily used to display new content in the web app using React.
+A <code class="language-plaintext highlighter-rouge">GameArea</code> in one user’s browser can also emit events that are delivered in real-time to other players interacting with that same area.
+The <code class="language-plaintext highlighter-rouge">GameArea</code> provides common functionalities that all games might want to provide: allowing players to join and observe a game, as well as tracking a leaderboard.</p>
+
+<p>The objective for this semester’s individual project is to implement this new <code class="language-plaintext highlighter-rouge">GameArea</code> abstraction, with one concrete implementation: <code class="language-plaintext highlighter-rouge">TicTacToeArea</code>. 
+The <code class="language-plaintext highlighter-rouge">TicTacToeArea</code> will implement the gameplay for the classic game, <a href="https://en.wikipedia.org/wiki/Tic-tac-toe">Tic-Tac-Toe</a>.
+This implementation effort will be split across two deliverables. In this first deliverable, you will implement and test the core backend components for this feature, and in the second deliverable, you will implement and test the frontend components.</p>
+<h2 id="objectives-of-this-assignment">
+  
+  
+    <a href="#objectives-of-this-assignment" class="anchor-heading" aria-labelledby="objectives-of-this-assignment"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Objectives of this assignment
+  
+  
+</h2>
+    
+<p>The objectives of this assignment are to:</p>
+<ul>
+  <li>Get you familiar with the basics of TypeScript, VSCode, and the project codebase</li>
+  <li>Learn how to read and write code in TypeScript</li>
+  <li>Translate high-level requirements into code</li>
+  <li>Learn how to write unit tests with Jest</li>
+</ul>
+<h2 id="getting-started-with-this-assignment">
+  
+  
+    <a href="#getting-started-with-this-assignment" class="anchor-heading" aria-labelledby="getting-started-with-this-assignment"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Getting started with this assignment
+  
+  
+</h2>
+    
+
+<p>Before you begin, be sure to check that you have NodeJS 18.x installed, along with VSCode. We have provided a <a href="/CS4530-Fall-2023/tutorials/week1-getting-started">tutorial on setting up a development environment for this class</a> 
+Start by <a href="/CS4530-Fall-2023/Assignments/ip1/ip1-handout.zip">downloading the starter code</a>. Extract the archive and run <code class="language-plaintext highlighter-rouge">npm install</code> to fetch the dependencies. Avery has provided you with some very basic sanity tests that you can extend for testing your implementation as you go. You can run these tests with the command <code class="language-plaintext highlighter-rouge">npm test TicTacToe</code> (note that many tests are <em>expected</em> to fail until you have begun to implement the assignment).</p>
+<h2 id="grading">
+  
+  
+    <a href="#grading" class="anchor-heading" aria-labelledby="grading"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Grading
+  
+  
+</h2>
+    
+<p>This submission will be scored out of 100 points, 90 of which will be automatically awarded by the grading script, with the remaining 10 manually awarded by the course staff.</p>
+
+<p>Your code will automatically be evaluated for linter errors and warnings. Submissions that have <em>any</em> linter errors will automatically receive a grade of 0. <strong>Do not wait to run the linter until the last minute</strong>. To check for linter errors, run the command <code class="language-plaintext highlighter-rouge">npm run lint</code> from the terminal. The handout contains the same eslint configuration that is used by our grading script.</p>
+
+<p>Your code will be automatically evaluated for functional correctness by a test suite that expands on the core tests that are distributed in the handout. 
+Your tests will be automatically evaluated for functional correctness by a process that will inject bugs into our reference solution: to receive full marks your tests must detect a minimum number of injected bugs. 
+Each submission will be graded against the same set of injected bugs (repeated submissions will not receive new/different injected bugs).
+You will <strong>not</strong> receive detailed feedback on which injected bugs you do or do not find.</p>
+
+<p>The autograding script will impose a strict rate limit of 5 submissions per 24 hours.
+Submissions that fail to grade will not count against the quota.
+This limit exists to encourage you to start early on this assignment: students generally report that assignments like this take between 3-20 hours.
+If you start early, you will be able to take full advantage of the resources that we provide to help you succeed: office hours, discussion on Piazza — and the ability to have a greater total number of submission attempts.</p>
+
+<p>Your code will be manually evaluated for conformance to our course <a href="/CS4530-Fall-2023/policies/style/">style guide</a>. This manual evaluation will account for 10% of your total grade on this assignment. We will manually evaluate your code for style on the following rubric:</p>
+
+<p>To receive all 10 points:</p>
+<ul>
+  <li>All new names (e.g. for local variables, methods, and properties) follow the naming conventions defined in our style guide</li>
+  <li>There are no unused local variables</li>
+  <li>All public properties and methods (other than getters, setters, and constructors) are documented with JSDoc-style comments that describes what the property/method does, as defined in our style guide</li>
+  <li>The code and tests that you write generally follows the design principles discussed in week one. In particular, your design does not have duplicated code that could have been refactored into a shared method.</li>
+</ul>
+
+<p>We will review your code and note each violation of this rubric. We will deduct two points for each violation, up to a maximum of deducting all 10 style points.</p>
+<h2 id="overview-of-relevant-classes">
+  
+  
+    <a href="#overview-of-relevant-classes" class="anchor-heading" aria-labelledby="overview-of-relevant-classes"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Overview of Relevant Classes
+  
+  
+</h2>
+    
+<p>The UML class diagram below shows the three main classes that you will be implementing for this deliverable (<code class="language-plaintext highlighter-rouge">TicTacToeGameArea</code> and <code class="language-plaintext highlighter-rouge">TicTacToeGame</code>) along with several relevant classes for additional context. An <code class="language-plaintext highlighter-rouge">InteractableArea</code> represents a region of the 2D map that the player can interact with - existing implementations of this interface include <code class="language-plaintext highlighter-rouge">ConversationArea</code> and <code class="language-plaintext highlighter-rouge">ViewingArea</code>.</p>
+
+<p>The new <code class="language-plaintext highlighter-rouge">GameArea</code> abstraction extends <code class="language-plaintext highlighter-rouge">InteractableArea</code>, adding state to track the current <code class="language-plaintext highlighter-rouge">Game</code> in the area and the history of past games using its <code class="language-plaintext highlighter-rouge">GameResult</code> array. Subclasses of <code class="language-plaintext highlighter-rouge">GameArea</code> must implement the <code class="language-plaintext highlighter-rouge">handleCommand</code> method of <code class="language-plaintext highlighter-rouge">InteractableArea</code>, which is how messages are passed from clients to the server.</p>
+
+<p>The base <code class="language-plaintext highlighter-rouge">Game</code> abstract class tracks the state of the game, including who is playing it. The abstract class includes the glue that allows the socket protocol to serialize the game state such that it can be sent from the server to clients. Implementors of the <code class="language-plaintext highlighter-rouge">Game</code> abstract class implement the methods <code class="language-plaintext highlighter-rouge">applyMove</code>, <code class="language-plaintext highlighter-rouge">_join</code> and <code class="language-plaintext highlighter-rouge">_leave</code>.</p>
+
+<script src="/CS4530-Fall-2023/assets/js/mermaid.min.js"></script>
+
+<div class="mermaid">
+%%{init: { 'theme':'forest', } }%%
+classDiagram
+    class Game {
+      +GameState state
+      +GameInstanceID id
+      ~Player[] _players
+      ~GameResult _result
+    + join(player: Player)
+    + leave(player: Player)
+    ~ _join(player: Player)
+    ~ _leave(player: Player)
+    + applyMove(move: GameMove)
+
+    }
+    class  GameArea {
+        ~Game _game
+        ~GameResult _history
+    }
+    class TicTacToeGame {
+
+    }
+    class TicTacToeGameArea {
+    }
+    class InteractableArea {
+        +string id
+       ~Player[] _occupants
+       +string[] occupantsByID
+       +boolean isActive
+       +BoundingBox boundingBox
+       +add(player: Player)
+       +remove(player: Player)
+       +addPlayersWithinBounds(allPlayers: Player[])
+       +toModel()
+       +contains(location: PlayerLocation)
+       +overlaps(otherInteractable: Interactable)
+       + handleCommand(command: InteractableCommand, player:Player)
+       #_emitAreaChanged()
+    }
+
+    class GameResult {
+        +GameInstanceID gameID
+        +Map scores
+    }
+    GameArea o-- GameResult
+    TicTacToeGame ..|&gt; Game
+    TicTacToeGameArea ..|&gt; GameArea
+    GameArea ..|&gt; InteractableArea
+    GameArea o-- Game
+</div>
+<h2 id="implementation-tasks">
+  
+  
+    <a href="#implementation-tasks" class="anchor-heading" aria-labelledby="implementation-tasks"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Implementation Tasks
+  
+  
+</h2>
+    
+<p>This deliverable has four parts; each part will be graded on its own rubric. You should complete the assignment one part at a time, in the order presented here.</p>
+
+<p><strong>General Requirements</strong>: Implement your code <em>only</em> in the files specified: <code class="language-plaintext highlighter-rouge">src/town/games/TicTacToeGame.ts</code>, <code class="language-plaintext highlighter-rouge">src/town/games/TicTacToeGame.test.ts</code> and <code class="language-plaintext highlighter-rouge">src/town/games/TicTacToeGameArea.ts</code>. You should not install any additional dependencies. The autograder will ignore any other files that you modify, and will not install any dependencies that you add to the project.</p>
+<h3 id="task-1-joining-and-leaving-the-tictactoegame-24-points">
+  
+  
+    <a href="#task-1-joining-and-leaving-the-tictactoegame-24-points" class="anchor-heading" aria-labelledby="task-1-joining-and-leaving-the-tictactoegame-24-points"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Task 1: Joining and Leaving the TicTacToeGame (24 points)
+  
+  
+</h3>
+    
+<p>The <code class="language-plaintext highlighter-rouge">TicTacToeGame</code> class extends the base <code class="language-plaintext highlighter-rouge">Game</code> class, implementing the semantics of the game Tic-Tac-Toe. Avery has provided a definition for the types that will be used to represent the state of a <code class="language-plaintext highlighter-rouge">TicTacToeGame</code> - <code class="language-plaintext highlighter-rouge">TicTacToeGameState</code>. That type definition is reproduced below:</p>
+
+<figure class="highlight"><pre><code class="language-typescript" data-lang="typescript"><span class="cm">/**
+ * Type for the state of a TicTacToe game
+ * The state of the game is represented as a list of moves, and the playerIDs of the players (x and o)
+ * The first player to join the game is x, the second is o
+ */</span>
+<span class="k">export</span> <span class="kr">interface</span> <span class="nx">TicTacToeGameState</span> <span class="p">{</span>
+  <span class="nl">moves</span><span class="p">:</span> <span class="nx">ReadonlyArray</span><span class="o">&lt;</span><span class="nx">TicTacToeMove</span><span class="o">&gt;</span><span class="p">;</span>
+  <span class="nl">x</span><span class="p">?:</span> <span class="nx">PlayerID</span><span class="p">;</span>
+  <span class="nl">o</span><span class="p">?:</span> <span class="nx">PlayerID</span><span class="p">;</span>
+  <span class="nl">winner</span><span class="p">?:</span> <span class="nx">PlayerID</span><span class="p">;</span>
+  <span class="nl">status</span><span class="p">:</span> <span class="dl">'</span><span class="s1">IN_PROGRESS</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">WAITING_TO_START</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">OVER</span><span class="dl">'</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="cm">/**
+ * Type for a move in TicTacToe
+ * The row and column are 0-indexed, so the top left square is (0,0) and the bottom right square is (2,2)
+ */</span>
+<span class="k">export</span> <span class="kr">interface</span> <span class="nx">TicTacToeMove</span> <span class="p">{</span>
+  <span class="nl">gamePiece</span><span class="p">:</span> <span class="dl">'</span><span class="s1">X</span><span class="dl">'</span> <span class="o">|</span> <span class="dl">'</span><span class="s1">O</span><span class="dl">'</span><span class="p">;</span>
+  <span class="nl">row</span><span class="p">:</span> <span class="nx">TicTacToeGridPosition</span><span class="p">;</span>
+  <span class="nl">col</span><span class="p">:</span> <span class="nx">TicTacToeGridPosition</span><span class="p">;</span>
+<span class="p">}</span>
+<span class="k">export</span> <span class="kd">type</span> <span class="nx">TicTacToeGridPosition</span> <span class="o">=</span> <span class="mi">0</span> <span class="o">|</span> <span class="mi">1</span> <span class="o">|</span> <span class="mi">2</span><span class="p">;</span></code></pre></figure>
+
+<p>As a gentle introduction to this abstraction, your first task is to implement the <code class="language-plaintext highlighter-rouge">_join</code> and <code class="language-plaintext highlighter-rouge">_leave</code> methods of <code class="language-plaintext highlighter-rouge">TicTacToeGame</code>. To implement these methods, you should not need to read any other parts of the codebase besides <code class="language-plaintext highlighter-rouge">Game.ts</code>.</p>
+
+<details>
+  <summary>View the specification for these methods</summary>
+
+  <figure class="highlight">
+    <pre><code class="language-typescript" data-lang="typescript">  <span class="cm">/**
+   * Adds a player to the game.
+   * Updates the game's state to reflect the new player.
+   * If the game is now full (has two players), updates the game's state to set the status to IN_PROGRESS.
+   *
+   * @param player The player to join the game
+   * @throws InvalidParametersError if the player is already in the game (PLAYER_ALREADY_IN_GAME_MESSAGE)
+   *  or the game is full (GAME_FULL_MESSAGE)
+   */</span>
+  <span class="k">protected</span> <span class="nx">_join</span><span class="p">(</span><span class="nx">player</span><span class="p">:</span> <span class="nx">Player</span><span class="p">):</span> <span class="k">void</span>
+
+ <span class="cm">/**
+  * Removes a player from the game.
+  * Updates the game's state to reflect the player leaving.
+  * If the game has two players in it at the time of call to this method,
+  *   updates the game's status to OVER and sets the winner to the other player.
+  * If the game does not yet have two players in it at the time of call to this method,
+  *   updates the game's status to WAITING_TO_START.
+  *
+  * @param player The player to remove from the game
+  * @throws InvalidParametersError if the player is not in the game (PLAYER_NOT_IN_GAME_MESSAGE)
+  */</span>
+  <span class="k">protected</span> <span class="nx">_leave</span><span class="p">(</span><span class="nx">player</span><span class="p">:</span> <span class="nx">Player</span><span class="p">):</span> <span class="k">void</span></code></pre>
+  </figure>
+
+</details>
+
+<p><em>Testing</em>: Avery has provided you with some very simple (and incomplete) tests for <code class="language-plaintext highlighter-rouge">_join</code> and <code class="language-plaintext highlighter-rouge">_leave</code>. You can run these tests by running the command <code class="language-plaintext highlighter-rouge">npx jest --watch TicTacToeGame.test</code>, which will automatically re-run the tests as you update the file (note that tests for <code class="language-plaintext highlighter-rouge">applyMove</code> will also run - but you can ignore those at this point). You should improve the <code class="language-plaintext highlighter-rouge">_join</code> and <code class="language-plaintext highlighter-rouge">_leave</code> tests to check the entire specification. Please implement these additional tests in the file <code class="language-plaintext highlighter-rouge">src/town/games/TicTacToeGame.test.ts</code>.</p>
+
+<p>Grading for implementation tasks:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_join</code>: 6 points</li>
+  <li><code class="language-plaintext highlighter-rouge">_leave</code>: 6 points</li>
+</ul>
+
+<p>Grading for testing tasks:</p>
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">_join</code>:
+    <ul>
+      <li>6 points for detecting all 25 faults, or</li>
+      <li>3 points for detecting 24 faults</li>
+    </ul>
+  </li>
+  <li><code class="language-plaintext highlighter-rouge">_leave</code>: 6 points</li>
+</ul>
+<h3 id="task-2-tic-tac-toe-game-semantics-50-points-total">
+  
+  
+    <a href="#task-2-tic-tac-toe-game-semantics-50-points-total" class="anchor-heading" aria-labelledby="task-2-tic-tac-toe-game-semantics-50-points-total"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Task 2: Tic-Tac-Toe Game Semantics (50 points total)
+  
+  
+</h3>
+    
+<p>The next (and largest) task for this deliverable is to implement the method <code class="language-plaintext highlighter-rouge">TicTacToeGame.applyMove</code>, which applies a player’s move to the game. This method is responsible for validating the move, and updating the game state to reflect the move. Given the complexity of this method, you should anticipate creating (at least one) private, helper method to implement its logic.</p>
+
+<details>
+  <summary>View the specification for this method</summary>
+
+  <figure class="highlight">
+    <pre><code class="language-typescript" data-lang="typescript">  <span class="cm">/* 
+   * Applies a player's move to the game.
+   * Uses the player's ID to determine which game piece they are using (ignores move.gamePiece)
+   * Validates the move before applying it. If the move is invalid, throws an InvalidParametersError with
+   * the error message specified below.
+   * A move is invalid if:
+   *    - The move is on a space that is already occupied (use BOARD_POSITION_NOT_EMPTY_MESSAGE)
+   *    - The move is not the player's turn (MOVE_NOT_YOUR_TURN_MESSAGE)
+   *    - The game is not in progress (GAME_NOT_IN_PROGRESS_MESSAGE)
+   *
+   * If the move is valid, applies the move to the game and updates the game state.
+   *
+   * If the move ends the game, updates the game's state.
+   * If the move results in a tie, updates the game's state to set the status to OVER and sets winner to undefined.
+   * If the move results in a win, updates the game's state to set the status to OVER and sets the winner to the player who made the move.
+   * A player wins if they have 3 in a row (horizontally, vertically, or diagonally).
+   *
+   * @param move The move to apply to the game
+   * @throws InvalidParametersError if the move is invalid
+   */</span>
+  <span class="k">public</span> <span class="nx">applyMove</span><span class="p">(</span><span class="nx">move</span><span class="p">:</span> <span class="nx">GameMove</span><span class="o">&lt;</span><span class="nx">TicTacToeMove</span><span class="o">&gt;</span><span class="p">):</span> <span class="k">void</span></code></pre>
+  </figure>
+
+</details>
+
+<p>Grading for implementation tasks:</p>
+<ul>
+  <li>Applying moves: 8 points</li>
+  <li>Checking for invalid moves: 9 points</li>
+  <li>Handling game-ending moves: 11 points</li>
+</ul>
+
+<p>Grading for testing tasks:</p>
+<ul>
+  <li>Applying moves: 6 points</li>
+  <li>Checking for invalid moves:
+    <ul>
+      <li>7 points for detecting all 35 faults</li>
+      <li>4 points for detecting 34 faults</li>
+    </ul>
+  </li>
+  <li>Handling game-ending moves: 9 points</li>
+</ul>
+<h3 id="task-3-implement-the-tictactoegamearea-16-points-total">
+  
+  
+    <a href="#task-3-implement-the-tictactoegamearea-16-points-total" class="anchor-heading" aria-labelledby="task-3-implement-the-tictactoegamearea-16-points-total"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Task 3: Implement the TicTacToeGameArea (16 points total)
+  
+  
+</h3>
+    
+<p>The <code class="language-plaintext highlighter-rouge">TicTacToeGameArea</code> receives <code class="language-plaintext highlighter-rouge">InteractbleCommand</code>s from players who enter the area on their client. The main responsibility of this class is to interpet those commands, dispatching them as appropriate to the <code class="language-plaintext highlighter-rouge">TicTacToeGame</code> instance that it manages. Your final task is to implement the <code class="language-plaintext highlighter-rouge">handleCommand</code> method of <code class="language-plaintext highlighter-rouge">TicTacToeGameArea</code>.</p>
+
+<p>There are three types of commands that the <code class="language-plaintext highlighter-rouge">TicTacToeGameArea</code> will receive, which map directly to the three methods of <code class="language-plaintext highlighter-rouge">TicTacToeGame</code> that you implemented in the previous task.</p>
+
+<p>Avery has provided a complete test suite for <code class="language-plaintext highlighter-rouge">handleCommand</code> - you do not need to write any additional tests.</p>
+
+<details>
+  <summary>View the specification for this methods</summary>
+
+  <figure class="highlight">
+    <pre><code class="language-typescript" data-lang="typescript">   <span class="cm">/**
+   * Handle a command from a player in this game area.
+   * Supported commands:
+   * - JoinGame (joins the game `this._game`, or creates a new one if none is in progress)
+   * - GameMove (applies a move to the game)
+   * - LeaveGame (leaves the game)
+   *
+   * If the command ended the game, records the outcome in this._history
+   * If the command is successful (does not throw an error), calls this._emitAreaChanged (necessary 
+   *  to notify any listeners of a state update, including any change to history)
+   * If the command is unsuccessful (throws an error), the error is propagated to the caller
+   *
+   * @see InteractableCommand
+   *
+   * @param command command to handle
+   * @param player player making the request
+   * @returns response to the command, @see InteractableCommandResponse
+   * @throws InvalidParametersError if the command is not supported or is invalid. Invalid commands:
+   *  - LeaveGame and GameMove: No game in progress (GAME_NOT_IN_PROGRESS_MESSAGE),
+   *        or gameID does not match the game in progress (GAME_ID_MISSMATCH_MESSAGE)
+   *  - Any command besides LeaveGame, GameMove and JoinGame: INVALID_COMMAND_MESSAGE
+   */</span>
+  <span class="k">public</span> <span class="nx">handleCommand</span><span class="o">&lt;</span><span class="nx">CommandType</span> <span class="kd">extends</span> <span class="nx">InteractableCommand</span><span class="o">&gt;</span><span class="p">(</span>
+    <span class="nx">command</span><span class="p">:</span> <span class="nx">CommandType</span><span class="p">,</span>
+    <span class="nx">player</span><span class="p">:</span> <span class="nx">Player</span><span class="p">,</span>
+  <span class="p">):</span> <span class="nx">InteractableCommandReturnType</span><span class="o">&lt;</span><span class="nx">CommandType</span><span class="o">&gt;</span> </code></pre>
+  </figure>
+
+</details>
+
+<p>Grading for implementation tasks:</p>
+<ul>
+  <li>Handling JoinGame: 4 points</li>
+  <li>Handling GameMove: 6 points</li>
+  <li>Handling LeaveGame: 5 points</li>
+  <li>Handling invalid commands: 1 point</li>
+</ul>
+<h2 id="submission-instructions">
+  
+  
+    <a href="#submission-instructions" class="anchor-heading" aria-labelledby="submission-instructions"><svg viewBox="0 0 16 16" aria-hidden="true"><use xlink:href="#svg-link"></use></svg></a> Submission Instructions
+  
+  
+</h2>
+    
+<p>Submit your assignment to the instance of Autograder.io running at <a href="https://neu.autograder.io">neu.autograder.io</a>.
+Navigate to <a href="https://neu.autograder.io">neu.autograder.io</a> in your web browser, click the “Sign in” button, and log in with your Northeastern account.
+You should then see the course listed on the neu.autograder.io home page.
+Please contact the instructors immediately if you have difficulty accessing the course on Autograder.io.
+If you haven’t been added to the course roster yet, you can access the assignment page at <a href="https://neu.autograder.io/web/project/10">this direct link</a>.</p>
+
+<p>To submit your assignment: run the command <code class="language-plaintext highlighter-rouge">npm run zip</code> in the top-level directory of the handout. This will produce a file called <code class="language-plaintext highlighter-rouge">covey-town-townService.zip</code>. Submit that zip file on Autograder.io.</p>
+
+<p>Autograder.io will provide you with feedback on your submission, but note that it will <em>not</em> include any marks that will be assigned after we manually grade your submission for code style (these marks will remain hidden until it is graded). It may take several minutes for the grading script to complete.</p>
+
+<p>Autograder.io is configured to only provide feedback on at most 5 submissions per-24-hours per-student (submissions that fail to run or receive a grade of 0 are not counted in that limit). We strongly encourage you to lint and test your submission on your local development machine, and <em>not</em> rely on Autograder.io for providing grading feedback - relying on Autograder.io is a very slow feedback loop.
+To check for linter errors, run the command <code class="language-plaintext highlighter-rouge">npm run lint</code> from the terminal. The handout contains the same eslint configuration that is used by our grading script.
+Submission limit resets at 11am EST.</p>
+
+          
+
+          
+        </main>
+        
+
+  <hr>
+  <footer>
+    
+
+    <p class="text-small text-grey-dk-100 mb-0">&copy; 2023 Adeel Bhutta and Mitch Wand. Released under the <a href="https://creativecommons.org/licenses/by-sa/4.0/">CC BY-SA</a> license</p>
+
+    
+  </footer>
+
+
+      </div>
+    </div>
+    
+      
+
+<div class="search-overlay"></div>
+
+    
+  </div>
+
+  
+</body>
+</html>
+
