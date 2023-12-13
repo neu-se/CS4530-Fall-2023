@@ -7,14 +7,14 @@ nav_order: 8
 ---
 
 Posters and Demos from this semester can be found below:
-* [Section 2](#Section-2---Bhutta) 
-* [Section 4](#Section-4---Bhutta)
-* [Section 6](#Section-6---Wand)
-* [Section 7](#Section-7---Bhutta)
+* [Section 2](#Section-2) 
+* [Section 4](#Section-4)
+* [Section 6](#Section-6)
+* [Section 7](#Section-7)
 
 The following group projects were chosen as best projects by their peers: 203, 401 and 707
 
-# Section 2 - Bhutta
+# Section 2
 
 ## Group 201: DJ Room
 [Demo](https://cs4530-covey-town-project-201.onrender.com/)
@@ -64,7 +64,7 @@ The following group projects were chosen as best projects by their peers: 203, 4
 [Demo](https://covey-town-frontend-212.onrender.com)
 [![Group 212 Poster]({{ site.baseurl }}{% link /assets/images/project_showcase/212.png %})]({{ site.baseurl}}{% link /assets/images/project_showcase/212.pdf %})
 
-# Section 4 - Bhutta
+# Section 4
 
 ## Group 401: Hide and Seek Game
 [Demo](https://hide-and-seek.onrender.com/)
@@ -111,7 +111,7 @@ The following group projects were chosen as best projects by their peers: 203, 4
 [![Group 411 Poster]({{ site.baseurl }}{% link /assets/images/project_showcase/411.png %})]({{ site.baseurl}}{% link /assets/images/project_showcase/411.pdf %})
 
 
-# Section 6 - Wand
+# Section 6
 
 ## Group 601: Farmer's Fury
 [Demo](https://covey-town-farm-game-frontend.onrender.com/)
@@ -158,7 +158,7 @@ The following group projects were chosen as best projects by their peers: 203, 4
 [![Group 611 Poster]({{ site.baseurl }}{% link /assets/images/project_showcase/611.png %})]({{ site.baseurl}}{% link /assets/images/project_showcase/611.pdf %})
 
 
-# Section 7 - Bhutta
+# Section 7
 
 ## Group 701: Tradign Cards API
 [Demo](https://cs4530-group701-tradingcards-frontend.onrender.com/)
